@@ -15,7 +15,8 @@ position = Vector2(576, 648)
 collision_mask = 4
 
 [node name="Player" parent="planet" instance=ExtResource("3_bis2w")]
-position = Vector2(2.08165e-12, -90)
+position = Vector2(2.08165e-12, 2.08165e-12)
+TURN_SPEED = 10.0
 
 [node name="planet2" parent="." instance=ExtResource("2_syidj")]
 position = Vector2(384, 324)

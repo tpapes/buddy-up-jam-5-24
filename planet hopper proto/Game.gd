@@ -21,9 +21,10 @@ var playing:bool:
 			playing = value 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player.connect("turn", planet.turn) #connect input to planet turning
 	player.connect("new_planet", _on_planet_changed)
 	player.connect("jump", _on_jump)
+	player.set("planet_size", planet.SIZE)
+	player.update_offset_from_planet()
 	for node in get_tree().get_nodes_in_group("spawner"):
 		spawners.append(node)
 
@@ -56,7 +57,7 @@ func _process(delta):
 
 func _on_planet_changed(new_planet): #called when player hits new planet
 	planet = new_planet #stores new planet in memory
-	player.connect("turn", planet.turn) #connects turn input to planet
+	player.set("planet_size", planet.SIZE) #updates planet size so player knows how far to sit
 	remove_child(player)
 	planet.add_child(player)
 
@@ -68,8 +69,6 @@ func _on_jump(): #called when player jumps
 	var prepos = player.global_position
 	var prerot = player.global_rotation
 	
-	#disconnect old planet from input
-	player.disconnect("turn", planet.turn)
 	planet.remove_child(player)
 	
 	#add player as child of Game so it doesn't disappear for not having a parent

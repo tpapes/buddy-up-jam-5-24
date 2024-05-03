@@ -8,8 +8,14 @@ signal jump #emitted when ui_accept is pressed
 @export var FALL_SPEED = 500.0
 @export var TURN_SPEED = 60.0
 
+@onready var player_collision = $CollisionShape2D
+
 var jumping = false #player starts jumping when on a planet and they hit space
 var falling = false #player starts falling if they hit a wall
+var planet_size:float: #size of active planet, set by Game node
+	set(value):
+		planet_size = value
+		
 var target_rotation:float: #rotation value to lerp to
 	set(value):
 		target_rotation = value
@@ -27,7 +33,10 @@ func _physics_process(delta):
 	emit_signal("turn", turn_dir)
 	
 	#updates rotation every frame
-	rotation = lerp_angle(rotation, target_rotation, TURN_SPEED * delta)
+	rotation = lerp_angle(rotation, rotation - (turn_dir * TURN_SPEED), delta) 
+	#I don't know why, but the calculation here needs a minus for it 
+	#to work correctly, otherwise the directions are flipped -- tpapes
+	
 	
 	var collision_object
 	
@@ -49,9 +58,8 @@ func _physics_process(delta):
 			falling = false
 			#for Game node to use
 			emit_signal("new_planet", collider)
-			
-			position = Vector2.UP * collider.anchor_y
-			target_rotation = 0
+			update_offset_from_planet()
+			position = Vector2.ZERO
 		
 		#only called when player hits floor
 		elif collider is Floor:
@@ -65,7 +73,7 @@ func _unhandled_input(event):
 	#handle jump input
 	if event.is_action_pressed("ui_accept") and jumping == false:
 		#adjust trajectory base on where the planet is aiming
-		up_direction = Vector2.UP.rotated(get_parent().global_rotation)
+		up_direction = Vector2.UP.rotated(global_rotation)
 		emit_signal("jump")
 		
 		#change state so _physics_process can handle the movement
@@ -73,3 +81,21 @@ func _unhandled_input(event):
 
 func game_over():
 	get_tree().get_current_scene().free()
+
+func update_offset_from_planet():
+	player_collision.position.y = -planet_size*10 - 35 
+	# the 35 here comes from the size in px of the 
+	# first planet (200px) + the size in px of the player's
+	# collision box (60px) - the SIZE value of the first planet
+	# times the 10 in the equation
+	#
+	# -- steps to replace the b in the y=mx+b for this function: --
+	# planet_px = size in px of first planet
+	# player_px = size of player's collision box
+	# planet_default_size = SIZE value of first planet
+	# (idk how to get this and store as vars so that's why im making this comment)
+	# 
+	# equation:
+	# b = planet_size*10 - (planet_px/2 + player_px/2 +)
+	# add a bit of buffer so that the player isn't riding too close on the planet
+

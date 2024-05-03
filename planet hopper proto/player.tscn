@@ -11,6 +11,6 @@ script = ExtResource("1_c2wee")
 JUMP_SPEED = 400.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.08165e-12, -45)
+position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_21xg5")
