@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0vntm4so186"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_c2wee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xg5"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+collision_layer = 2
+script = ExtResource("1_c2wee")
+JUMP_SPEED = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, -45)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_21xg5")

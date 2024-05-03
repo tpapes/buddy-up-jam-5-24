@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://boy5gskpraxnu"]
+
+[ext_resource type="Script" path="res://Planet.gd" id="1_s7ml0"]
+[ext_resource type="Texture2D" uid="uid://dm7lsp6dohmaa" path="res://icon.svg" id="2_fxrgm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elrki"]
+
+[node name="planet" type="AnimatableBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+collision_mask = 0
+script = ExtResource("1_s7ml0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_elrki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fxrgm")

@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://cig3s0o6pcily"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_t0u1h"]
+[ext_resource type="Script" path="res://Floor.gd" id="2_egg71"]
+[ext_resource type="PackedScene" uid="uid://boy5gskpraxnu" path="res://planet.tscn" id="2_syidj"]
+[ext_resource type="PackedScene" uid="uid://t0vntm4so186" path="res://player.tscn" id="3_bis2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlp2u"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_t0u1h")
+
+[node name="planet" parent="." instance=ExtResource("2_syidj")]
+position = Vector2(576, 648)
+collision_mask = 4
+
+[node name="Player" parent="planet" instance=ExtResource("3_bis2w")]
+position = Vector2(2.08165e-12, -90)
+
+[node name="planet2" parent="." instance=ExtResource("2_syidj")]
+position = Vector2(384, 324)
+rotation = 1.5708
+
+[node name="planet3" parent="." instance=ExtResource("2_syidj")]
+position = Vector2(772, 1)
+rotation = -1.5708
+
+[node name="spawner" type="Node2D" parent="." groups=["spawner"]]
+position = Vector2(391, -198)
+rotation = 1.5708
+
+[node name="spawner2" type="Node2D" parent="." groups=["spawner"]]
+position = Vector2(760, -195)
+rotation = -1.5708
+
+[node name="spawner3" type="Node2D" parent="." groups=["spawner"]]
+position = Vector2(577, -195)
+rotation = 3.14159
+
+[node name="walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(190, 320)
+scale = Vector2(19.594, 33)
+shape = SubResource("RectangleShape2D_hlp2u")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
+position = Vector2(768, 2.08165e-12)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2(190, 320)
+scale = Vector2(19.594, 33)
+shape = SubResource("RectangleShape2D_hlp2u")
+
+[node name="planet deletor" type="StaticBody2D" parent="walls"]
+position = Vector2(900, 900)
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/planet deletor"]
+position = Vector2(190, 320)
+scale = Vector2(19, 32)
+shape = SubResource("RectangleShape2D_hlp2u")
+
+[node name="floor" type="StaticBody2D" parent="walls"]
+position = Vector2(900, 648)
+rotation = 1.5708
+collision_mask = 0
+script = ExtResource("2_egg71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/floor"]
+position = Vector2(190, 320)
+scale = Vector2(19, 32)
+shape = SubResource("RectangleShape2D_hlp2u")
