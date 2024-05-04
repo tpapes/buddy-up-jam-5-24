@@ -6,6 +6,8 @@ class_name Inventory
 	set(value):
 		inventory_size = value
 
+var item_map = {}
+
 var last_selected:int = 0
 
 func _ready():
@@ -23,7 +25,11 @@ func _unhandled_input(event):
 		toggle()
 	if visible and event.is_action_pressed("test"):
 		var item = load("res://Test_Item.tres")
-		add_item(item.get("item_name"), item.get("texture"))
+		add(item)
+
+func add(item):
+	var index = add_item(item.get("item_name"), item.get("texture"))
+	item_map[index] = item
 
 func select_item(item_ind:int):
 	last_selected = item_ind

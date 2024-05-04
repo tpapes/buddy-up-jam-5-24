@@ -10,7 +10,7 @@ func _ready():
 #func _process(_delta):
 #	pass
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("up"):
 		full_move(Vector2.UP)
 		
