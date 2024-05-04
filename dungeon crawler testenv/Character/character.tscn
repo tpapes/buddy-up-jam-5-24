@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blp105qoeh1tv"]
+
+[ext_resource type="Script" path="res://Character/Movement.gd" id="1_rbrw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oecns"]
+size = Vector2(56, 56)
+
+[node name="Character" type="Node2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+script = ExtResource("1_rbrw0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_oecns")

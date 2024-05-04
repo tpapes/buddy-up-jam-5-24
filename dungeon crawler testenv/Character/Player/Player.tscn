@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwp6k14335tjt"]
+
+[ext_resource type="PackedScene" uid="uid://blp105qoeh1tv" path="res://Character/character.tscn" id="1_wuavh"]
+[ext_resource type="Script" path="res://Character/Player/Input.gd" id="2_fano4"]
+[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="3_8ygba"]
+
+[node name="Player" instance=ExtResource("1_wuavh")]
+
+[node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="Input" type="Node" parent="." index="2" node_paths=PackedStringArray("movement")]
+script = ExtResource("2_fano4")
+movement = NodePath("../RayCast2D")
+
+[node name="BodySprite" type="Sprite2D" parent="." index="3"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_8ygba")
