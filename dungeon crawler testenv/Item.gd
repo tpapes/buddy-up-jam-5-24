@@ -7,6 +7,7 @@ class_name Item
 @export var texture:Texture:
 	get:
 		return texture
+
 @export var action:Script
 
 func use():

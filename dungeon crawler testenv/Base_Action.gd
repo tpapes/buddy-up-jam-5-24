@@ -1,4 +1,5 @@
 extends Node
+class_name Item_Script
 
-static func use(item):
-	print(item.get("item_name") + ".use() not implemmented")
+func use(item):
+	print(name + ".use() not implemmented")

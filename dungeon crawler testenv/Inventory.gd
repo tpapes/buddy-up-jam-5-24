@@ -32,7 +32,9 @@ func _unhandled_input(event):
 
 func add(item):
 	var index = add_item(item.get("item_name"), item.get("texture"))
-	item_map[index] = item
+	var script = item.get("action").new()
+	add_child(script)
+	item_map[index] = script
 
 func select_item(item_ind:int):
 	last_selected = item_ind

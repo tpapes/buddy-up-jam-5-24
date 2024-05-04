@@ -1,7 +1,7 @@
 extends Node
 @export var movement:Movement
 @export var inventory:Inventory
-var currentItem:Item
+var currentItem:Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -24,7 +24,7 @@ func _unhandled_input(event):
 		full_move(Vector2.DOWN)
 	
 	if event.is_action_pressed("use"):
-		if currentItem: currentItem.use()
+		if currentItem: currentItem.use(currentItem)
 
 
 

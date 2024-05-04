@@ -1,4 +1,7 @@
-extends Node
+extends Item_Script
 
-static func use(item):
+const CHARACTER_SCENE = preload("res://Character/Player/Player.tscn")
+func use(item):
+	get_tree().root.add_child(CHARACTER_SCENE.instantiate())
+
 	print("This is a different Item!")
