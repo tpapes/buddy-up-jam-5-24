@@ -1,10 +1,11 @@
 extends ItemList
 class_name Inventory
 
-
 @export var inventory_size:int = 100:
 	set(value):
 		inventory_size = value
+
+@export var starting_items:Array[Item]
 
 var item_map = {}
 
@@ -13,6 +14,8 @@ var last_selected:int = 0
 func _ready():
 	connect("item_selected", select_item)
 	connect("item_activated", activate_item)
+	for item in starting_items:
+		add(item)
 
 func toggle():
 	visible = !visible
