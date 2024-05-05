@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjbj7tmbbup8p"]
+
+[ext_resource type="Script" path="res://Menus/OptionsMenu.gd" id="1_llk4c"]
+
+[node name="OptionsMenu" type="HBoxContainer"]
+visible = false
+script = ExtResource("1_llk4c")
+
+[node name="Volume" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+columns = 2
+
+[node name="Master Label" type="Label" parent="Volume"]
+layout_mode = 2
+text = "Master"
+
+[node name="Master Slider" type="HSlider" parent="Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 10.0
+tick_count = 20
+
+[node name="Music Label" type="Label" parent="Volume"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music Slider" type="HSlider" parent="Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 10.0
+tick_count = 20
+
+[node name="SFX Label" type="Label" parent="Volume"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFX Slider" type="HSlider" parent="Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+value = 10.0
+tick_count = 20
+
+[connection signal="value_changed" from="Volume/Master Slider" to="." method="_on_master_volume_slider_changed"]
+[connection signal="value_changed" from="Volume/Music Slider" to="." method="_on_music_volume_slider_changed"]
+[connection signal="value_changed" from="Volume/SFX Slider" to="." method="_on_sfx_volume_slider_changed"]

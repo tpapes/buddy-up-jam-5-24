@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://blp105qoeh1tv"]
+[gd_scene load_steps=5 format=3 uid="uid://blp105qoeh1tv"]
 
+[ext_resource type="Script" path="res://Character/Character.gd" id="1_ak6ds"]
 [ext_resource type="Script" path="res://Character/Movement.gd" id="1_rbrw0"]
+[ext_resource type="AudioStream" uid="uid://bxrn4c726rtvr" path="res://Test Assets/sand_walk.wav" id="3_llfmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oecns"]
 size = Vector2(56, 56)
 
 [node name="Character" type="Node2D"]
+script = ExtResource("1_ak6ds")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 script = ExtResource("1_rbrw0")
@@ -14,3 +17,6 @@ script = ExtResource("1_rbrw0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_oecns")
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_llfmv")

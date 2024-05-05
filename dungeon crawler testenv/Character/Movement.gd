@@ -1,6 +1,7 @@
 extends RayCast2D
 class_name Movement
 
+signal movement_started
 signal movement_finished
 @export var parent:Node2D
 var moving:bool = false
@@ -21,6 +22,7 @@ func check_move(movement:Vector2)->bool:
 
 func move(dir:Vector2,time:float):
 	moving = true
+	movement_started.emit()
 	var tween = create_tween()
 	var targetPosition = dir * Sizes.tileSize
 	tween.tween_property(parent,"position",

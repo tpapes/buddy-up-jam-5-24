@@ -4,11 +4,11 @@ class_name Inventory
 @export var inventory_size:int = 100:
 	set(value):
 		inventory_size = value
-
 @export var starting_items:Array[Item]
 
-var item_map = {}
+@onready var audio = $AudioStreamPlayer
 
+var item_map = {}
 var last_selected:int = 0
 
 func _ready():
@@ -19,12 +19,16 @@ func _ready():
 
 func toggle():
 	visible = !visible
-	if visible and item_count > 0:
-		select(last_selected)
-		grab_focus()
+	if visible:
+		if item_count > 0:
+			select(last_selected)
+			audio.play_open()
+			grab_focus()
+	else:
+		audio.play_close()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("inventory"):
 		toggle()
 	if visible and event.is_action_pressed("test"):
 		var item = load("res://Test_Item.tres")

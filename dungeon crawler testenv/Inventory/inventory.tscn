@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbahc0rp87tck"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="1_j25ku"]
+[ext_resource type="Script" path="res://Inventory/MenuAudio.gd" id="2_ijxou"]
+[ext_resource type="AudioStream" uid="uid://dyafpek3hc74h" path="res://Test Assets/menu_open.wav" id="3_gwoqm"]
+[ext_resource type="AudioStream" uid="uid://cjan6804tnis6" path="res://Test Assets/menu_close.wav" id="4_3hsg7"]
+
+[node name="Inventory" type="ItemList"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_height = true
+max_columns = 8
+icon_mode = 0
+script = ExtResource("1_j25ku")
+inventory_size = 24
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+script = ExtResource("2_ijxou")
+open_sound = ExtResource("3_gwoqm")
+close_sound = ExtResource("4_3hsg7")

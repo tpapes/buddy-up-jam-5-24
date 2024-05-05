@@ -16,3 +16,6 @@ movement = NodePath("../RayCast2D")
 [node name="BodySprite" type="Sprite2D" parent="." index="3"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_8ygba")
+
+[node name="Footstep" parent="." index="4"]
+bus = &"SFX"

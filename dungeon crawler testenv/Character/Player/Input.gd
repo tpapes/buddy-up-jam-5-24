@@ -1,6 +1,10 @@
 extends Node
 @export var movement:Movement
-@export var inventory:Inventory
+@export var inventory:Inventory:
+	set(value):
+		if inventory: inventory.disconnect("item_activated", _on_inventory_item_activated)
+		inventory = value
+		inventory.connect("item_activated", _on_inventory_item_activated)
 var currentItem:Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
