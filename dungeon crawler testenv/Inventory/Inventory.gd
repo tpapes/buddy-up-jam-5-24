@@ -31,7 +31,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("inventory"):
 		toggle()
 	if visible and event.is_action_pressed("test"):
-		var item = load("res://Test_Item.tres")
+		var item = load("res://Items/Test_Item.tres")
 		add(item)
 
 func add(item):

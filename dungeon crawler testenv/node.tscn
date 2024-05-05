@@ -3,17 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bbahc0rp87tck" path="res://Inventory/inventory.tscn" id="1_1oc30"]
 [ext_resource type="Script" path="res://Level.gd" id="1_eegb7"]
 [ext_resource type="PackedScene" uid="uid://dwp6k14335tjt" path="res://Character/Player/Player.tscn" id="2_g15jq"]
-[ext_resource type="Script" path="res://Test_Action_Two.gd" id="2_rdqk0"]
-[ext_resource type="Resource" uid="uid://cwcbkc2sxonh1" path="res://Test_Item.tres" id="3_apdr6"]
-[ext_resource type="Script" path="res://Inventory/Item.gd" id="3_jd5in"]
-[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="4_dwswi"]
+[ext_resource type="Script" path="res://Test Assets/Test_Action_Two.gd" id="3_3l5e5"]
+[ext_resource type="Script" path="res://Inventory/Item.gd" id="4_p88u0"]
+[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="5_tcc0c"]
+[ext_resource type="Resource" uid="uid://dm7jgjaw4435e" path="res://Items/Test_Item.tres" id="6_2xtxi"]
 [ext_resource type="PackedScene" uid="uid://cjbj7tmbbup8p" path="res://Menus/options_menu.tscn" id="7_t2amq"]
 
-[sub_resource type="Resource" id="Resource_uwr42"]
-script = ExtResource("3_jd5in")
-item_name = "Item One"
-texture = ExtResource("4_dwswi")
-action = ExtResource("2_rdqk0")
+[sub_resource type="Resource" id="Resource_p8d5g"]
+script = ExtResource("4_p88u0")
+item_name = "Spawn New Player"
+texture = ExtResource("5_tcc0c")
+action = ExtResource("3_3l5e5")
 
 [node name="Level" type="Node"]
 script = ExtResource("1_eegb7")
@@ -31,7 +31,7 @@ grow_vertical = 2
 
 [node name="Inventory" parent="ui/Control" instance=ExtResource("1_1oc30")]
 layout_mode = 1
-starting_items = Array[ExtResource("3_jd5in")]([SubResource("Resource_uwr42"), ExtResource("3_apdr6")])
+starting_items = Array[ExtResource("4_p88u0")]([SubResource("Resource_p8d5g"), ExtResource("6_2xtxi")])
 
 [node name="MarginContainer" type="MarginContainer" parent="ui/Control"]
 layout_mode = 1
