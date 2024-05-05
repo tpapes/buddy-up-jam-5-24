@@ -5,6 +5,7 @@ class_name Inventory
 	set(value):
 		inventory_size = value
 @export var starting_items:Array[Item]
+@export var player:Player
 
 @onready var audio = $AudioStreamPlayer
 
@@ -12,6 +13,7 @@ var item_map = {}
 var last_selected:int = 0
 
 func _ready():
+	assert(player != null, "player must be set in the inspector.")
 	connect("item_selected", select_item)
 	connect("item_activated", activate_item)
 	for item in starting_items:
@@ -37,6 +39,7 @@ func _unhandled_input(event):
 func add(item):
 	var index = add_item(item.get("item_name"), item.get("texture"))
 	var script = item.get("action").new()
+	script.init(player)
 	add_child(script)
 	item_map[index] = script
 
