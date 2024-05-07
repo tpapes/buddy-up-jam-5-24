@@ -6,5 +6,5 @@ var player:Player
 func init(_player:Player):
 	player = _player
 
-func use(item):
+func use(_item):
 	print(name + ".use() not implemmented")

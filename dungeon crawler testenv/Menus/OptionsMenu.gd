@@ -5,7 +5,7 @@ extends Control
 @onready var SFX_BUS_INDEX = AudioServer.get_bus_index("SFX")
 
 func _ready():
-	var volume = 10
+	var volume = 0.5
 	AudioServer.set_bus_volume_db(MASTER_BUS_INDEX, linear_to_db(volume))
 	AudioServer.set_bus_volume_db(MUSIC_BUS_INDEX, linear_to_db(volume))
 	AudioServer.set_bus_volume_db(SFX_BUS_INDEX, linear_to_db(volume))

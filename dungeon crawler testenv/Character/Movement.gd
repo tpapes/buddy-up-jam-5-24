@@ -9,6 +9,10 @@ var current_direction:Vector2 = Vector2.RIGHT
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	parent.position.x -= posmod(int(parent.position.x),Sizes.tileSize)
+	parent.position.y -= posmod(int(parent.position.y),Sizes.tileSize)
+	print(parent.position)
+	parent.position += Vector2(Sizes.tileSize/2.0,Sizes.tileSize/2.0)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

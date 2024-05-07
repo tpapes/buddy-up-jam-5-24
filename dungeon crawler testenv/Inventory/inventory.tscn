@@ -19,6 +19,7 @@ script = ExtResource("1_j25ku")
 inventory_size = 24
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
 bus = &"SFX"
 script = ExtResource("2_ijxou")
 open_sound = ExtResource("3_gwoqm")

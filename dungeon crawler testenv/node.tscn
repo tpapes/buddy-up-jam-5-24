@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu8iw0hke35ws"]
+[gd_scene load_steps=15 format=3 uid="uid://bu8iw0hke35ws"]
 
 [ext_resource type="PackedScene" uid="uid://bbahc0rp87tck" path="res://Inventory/inventory.tscn" id="1_1oc30"]
 [ext_resource type="Script" path="res://Level.gd" id="1_eegb7"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="4_dwswi"]
 [ext_resource type="Script" path="res://Weapon/BlasterGun.gd" id="6_phj50"]
 [ext_resource type="PackedScene" uid="uid://cjbj7tmbbup8p" path="res://Menus/options_menu.tscn" id="7_t2amq"]
+[ext_resource type="PackedScene" uid="uid://j0glf0nj5ale" path="res://wall.tscn" id="9_stdf1"]
+[ext_resource type="PackedScene" uid="uid://buy8jko2bv6e6" path="res://Character/Enemy/enemy.tscn" id="10_ctudr"]
 
 [sub_resource type="Resource" id="Resource_uwr42"]
 script = ExtResource("3_jd5in")
@@ -20,6 +22,13 @@ script = ExtResource("3_jd5in")
 item_name = "Blaster Gun"
 texture = ExtResource("4_dwswi")
 action = ExtResource("6_phj50")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xc1of"]
+scenes/1/scene = ExtResource("9_stdf1")
+
+[sub_resource type="TileSet" id="TileSet_24fw5"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetScenesCollectionSource_xc1of")
 
 [node name="Level" type="Node"]
 script = ExtResource("1_eegb7")
@@ -58,3 +67,18 @@ layout_mode = 2
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_g15jq")]
+position = Vector2(215, 152)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_24fw5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65536, 131072, 0, 65536, 196608, 0, 65536, 262144, 0, 65536, 1, 0, 65536, 2, 0, 65536, 3, 0, 65536, 4, 0, 65536, 5, 0, 65536, 6, 0, 65536, 7, 0, 65536, 8, 0, 65536, 9, 0, 65536, 10, 0, 65536, 11, 0, 65536, 327680, 0, 65536, 393216, 0, 65536, 458752, 0, 65536, 524288, 0, 65536, 589824, 0, 65536, 589825, 0, 65536, 589826, 0, 65536, 589827, 0, 65536, 589828, 0, 65536, 589829, 0, 65536, 589830, 0, 65536, 589831, 0, 65536, 589832, 0, 65536, 589833, 0, 65536, 589834, 0, 65536, 589835, 0, 65536, 589836, 0, 65536, 589837, 0, 65536, 589838, 0, 65536, 589839, 0, 65536, 589840, 0, 65536, 589841, 0, 65536, 524305, 0, 65536, 458769, 0, 65536, 393233, 0, 65536, 327697, 0, 65536, 262161, 0, 65536, 196625, 0, 65536, 131089, 0, 65536, 65553, 0, 65536, 17, 0, 65536, 16, 0, 65536, 15, 0, 65536, 14, 0, 65536, 13, 0, 65536, 12, 0, 65536, 327683, 0, 65536, 327684, 0, 65536, 327685, 0, 65536, 327686, 0, 65536, 262148, 0, 65536, 196612, 0, 65536, 131076, 0, 65536, 524300, 0, 65536, 458764, 0, 65536, 393228, 0, 65536, 327692, 0, 65536, 327693, 0, 65536, 327694, 0, 65536, 131084, 0, 65536, 131085, 0, 65536, 131086, 0, 65536, 131087, 0, 65536, 131088, 0, 65536)
+
+[node name="Enemy3" parent="." instance=ExtResource("10_ctudr")]
+position = Vector2(1049, 102)
+
+[node name="Enemy" parent="." instance=ExtResource("10_ctudr")]
+position = Vector2(1005, 274)
+
+[node name="Enemy2" parent="." instance=ExtResource("10_ctudr")]
+position = Vector2(356, 421)

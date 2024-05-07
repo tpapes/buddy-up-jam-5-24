@@ -20,3 +20,4 @@ shape = SubResource("RectangleShape2D_oecns")
 
 [node name="Footstep" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_llfmv")
+volume_db = -60.0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://buy8jko2bv6e6"]
+
+[ext_resource type="PackedScene" uid="uid://blp105qoeh1tv" path="res://Character/character.tscn" id="1_4umkh"]
+[ext_resource type="Script" path="res://Character/Enemy/DiagonalWander.gd" id="2_bgnxr"]
+
+[node name="Enemy" instance=ExtResource("1_4umkh")]
+
+[node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="MovementBehavior" type="Node" parent="." index="2" node_paths=PackedStringArray("movement", "timer")]
+script = ExtResource("2_bgnxr")
+movement = NodePath("../RayCast2D")
+timer = NodePath("../Delay")
+movement_time = 0.08
+delay = 0.16
+
+[node name="Delay" type="Timer" parent="." index="4"]
+one_shot = true
+autostart = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="5"]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
