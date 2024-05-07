@@ -5,7 +5,7 @@
 [node name="Void" instance=ExtResource("1_rf778")]
 
 [node name="Polygon2D" parent="." index="0"]
-color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="StaticBody2D" parent="." index="1"]
-collision_layer = 24
+collision_layer = 16

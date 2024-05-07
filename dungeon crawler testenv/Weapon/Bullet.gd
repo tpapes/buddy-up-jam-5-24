@@ -21,13 +21,9 @@ func _physics_process(delta):
 			global_position.y > SCREEN_SIZE.y + SCREEN_BORDER:
 		queue_free()
 
-
-
-
 func _on_body_entered(body):
 	queue_free()
 	pass # Replace with function body.
-
 
 func _on_area_entered(area):
 	#print("Entered " + area.name)

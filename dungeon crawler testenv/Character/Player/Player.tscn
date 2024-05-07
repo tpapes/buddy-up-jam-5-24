@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="3_8ygba"]
 
 [node name="Player" instance=ExtResource("1_wuavh")]
+z_index = 1000
 
 [node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
 collision_mask = 25
