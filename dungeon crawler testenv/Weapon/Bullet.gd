@@ -22,3 +22,13 @@ func _physics_process(delta):
 		queue_free()
 
 
+
+
+func _on_body_entered(body):
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_area_entered(area):
+	#print("Entered " + area.name)
+	pass # Replace with function body.

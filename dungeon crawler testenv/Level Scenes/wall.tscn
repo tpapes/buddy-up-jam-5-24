@@ -11,6 +11,8 @@ color = Color(0.894118, 0.894118, 0.894118, 1)
 polygon = PackedVector2Array(64, 64, 64, -64, -64, -64, -64, 64)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 15
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_5huvy")

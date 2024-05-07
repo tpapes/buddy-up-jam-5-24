@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmxce0x8w3bwe"]
+
+[ext_resource type="PackedScene" uid="uid://j0glf0nj5ale" path="res://Level Scenes/wall.tscn" id="1_rf778"]
+
+[node name="Void" instance=ExtResource("1_rf778")]
+
+[node name="Polygon2D" parent="." index="0"]
+color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[node name="StaticBody2D" parent="." index="1"]
+collision_layer = 24

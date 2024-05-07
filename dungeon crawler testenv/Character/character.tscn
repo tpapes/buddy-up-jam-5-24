@@ -13,9 +13,9 @@ script = ExtResource("1_ak6ds")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 script = ExtResource("1_rbrw0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("RectangleShape2D_oecns")
 
 [node name="Footstep" type="AudioStreamPlayer2D" parent="."]

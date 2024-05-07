@@ -8,6 +8,9 @@
 [node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
 parent = NodePath("..")
 
+[node name="Hurtbox" parent="." index="1"]
+collision_layer = 2
+
 [node name="MovementBehavior" type="Node" parent="." index="2" node_paths=PackedStringArray("movement", "timer")]
 script = ExtResource("2_bgnxr")
 movement = NodePath("../RayCast2D")
