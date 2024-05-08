@@ -18,6 +18,7 @@ func _ready():
 	connect("item_activated", activate_item)
 	for item in starting_items:
 		add(item)
+	player.get_node("Input").set("currentItem",item_map[0])
 
 func toggle():
 	visible = !visible

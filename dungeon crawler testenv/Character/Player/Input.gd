@@ -1,13 +1,14 @@
 extends Node
 @export var movement:Movement
-@export var inventory:Inventory:
-	set(value):
-		if inventory: inventory.disconnect("item_activated", _on_inventory_item_activated)
-		inventory = value
-		inventory.connect("item_activated", _on_inventory_item_activated)
+@export var inventory:Inventory
+	#set(value):
+		#if inventory: inventory.disconnect("item_activated", _on_inventory_item_activated)
+		#inventory = value
+		#inventory.connect("item_activated", _on_inventory_item_activated)
 var currentItem:Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	inventory.connect("item_activated", _on_inventory_item_activated)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +30,9 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("use"):
 		if currentItem: currentItem.use(currentItem)
+	
+	if event.is_action_pressed("r"):
+		get_tree().reload_current_scene()
 
 
 
@@ -50,4 +54,5 @@ func full_move(dir:Vector2,buffered:bool=false):
 
 func _on_inventory_item_activated(index):
 	currentItem = inventory.item_map[index]
+	
 	pass # Replace with function body.
