@@ -19,6 +19,4 @@ func _on_area_2d_area_entered(area):
 		polygon.color = Color.GREEN
 		beenTriggered = true
 		triggered.emit()
-	else:
-		print("Non-Projectile colliding with door, this isn't supposed to hapen: " + area.name)
 	pass # Replace with function body.

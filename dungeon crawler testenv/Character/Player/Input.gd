@@ -1,6 +1,6 @@
 extends Node
 @export var movement:Movement
-@export var inventory:Inventory
+var inventory:Inventory
 	#set(value):
 		#if inventory: inventory.disconnect("item_activated", _on_inventory_item_activated)
 		#inventory = value
@@ -8,7 +8,11 @@ extends Node
 var currentItem:Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	inventory = get_tree().get_first_node_in_group("Inventory")
 	inventory.connect("item_activated", _on_inventory_item_activated)
+	inventory.player = get_parent()
+	currentItem = inventory.item_map[inventory.last_selected]
+	inventory.level_start()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

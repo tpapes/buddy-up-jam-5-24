@@ -1,15 +1,19 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://6w3y8yvk6gw"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://6w3y8yvk6gw"]
 
 [ext_resource type="PackedScene" uid="uid://j0glf0nj5ale" path="res://Level Scenes/wall.tscn" id="1_h5rcl"]
 [ext_resource type="PackedScene" uid="uid://dmxce0x8w3bwe" path="res://Level Scenes/void.tscn" id="2_ydg8a"]
 [ext_resource type="PackedScene" uid="uid://dgujda36gnibk" path="res://Level Scenes/Collapsable/Collapsable.tscn" id="3_pyk1i"]
 [ext_resource type="PackedScene" uid="uid://dl2hkp4ebhg8w" path="res://Level Scenes/DoorTrigger/door_trigger.tscn" id="4_c4hya"]
+[ext_resource type="PackedScene" uid="uid://dwp6k14335tjt" path="res://Character/Player/Player.tscn" id="5_se21q"]
+[ext_resource type="PackedScene" uid="uid://buy8jko2bv6e6" path="res://Character/Enemy/enemy.tscn" id="6_intst"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xc1of"]
 scenes/1/scene = ExtResource("1_h5rcl")
 scenes/2/scene = ExtResource("2_ydg8a")
 scenes/3/scene = ExtResource("3_pyk1i")
 scenes/4/scene = ExtResource("4_c4hya")
+scenes/6/scene = ExtResource("5_se21q")
+scenes/7/scene = ExtResource("6_intst")
 
 [resource]
 tile_size = Vector2i(64, 64)

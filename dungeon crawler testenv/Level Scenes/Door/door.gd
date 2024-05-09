@@ -17,5 +17,4 @@ func check_triggers():
 	var allClear:bool = true
 	for trigger in triggers:
 		if !trigger.beenTriggered:allClear = false
-
 	if allClear: queue_free()

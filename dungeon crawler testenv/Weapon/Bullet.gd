@@ -25,10 +25,10 @@ func _physics_process(delta):
 	if global_position.distance_to(spawnPosition) > Sizes.tileSize:
 		queue_free()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	queue_free()
 	pass # Replace with function body.
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	#print("Entered " + area.name)
 	pass # Replace with function body.

@@ -1,15 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bu8iw0hke35ws"]
+[gd_scene load_steps=8 format=3 uid="uid://bu8iw0hke35ws"]
 
 [ext_resource type="PackedScene" uid="uid://bbahc0rp87tck" path="res://Inventory/inventory.tscn" id="1_1oc30"]
-[ext_resource type="Script" path="res://Level.gd" id="1_eegb7"]
-[ext_resource type="PackedScene" uid="uid://dwp6k14335tjt" path="res://Character/Player/Player.tscn" id="2_g15jq"]
 [ext_resource type="Script" path="res://Inventory/Item.gd" id="3_jd5in"]
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="4_dwswi"]
 [ext_resource type="Script" path="res://Weapon/BlasterGun.gd" id="6_phj50"]
+[ext_resource type="PackedScene" uid="uid://dsajjc5iivurf" path="res://Levels/PrototypePuzzle.tscn" id="6_tsgme"]
 [ext_resource type="PackedScene" uid="uid://cjbj7tmbbup8p" path="res://Menus/options_menu.tscn" id="7_t2amq"]
-[ext_resource type="TileSet" uid="uid://6w3y8yvk6gw" path="res://Level Scenes/TileSet.tres" id="9_yfhn4"]
-[ext_resource type="PackedScene" uid="uid://ohrb5jgxd8gp" path="res://Level Scenes/Door/door.tscn" id="11_syjg2"]
-[ext_resource type="PackedScene" uid="uid://dl2hkp4ebhg8w" path="res://Level Scenes/DoorTrigger/door_trigger.tscn" id="11_uyqcy"]
 
 [sub_resource type="Resource" id="Resource_1b3r4"]
 script = ExtResource("3_jd5in")
@@ -17,8 +13,7 @@ item_name = "Gun"
 texture = ExtResource("4_dwswi")
 action = ExtResource("6_phj50")
 
-[node name="Level" type="Node"]
-script = ExtResource("1_eegb7")
+[node name="Game" type="Node"]
 
 [node name="ui" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -31,10 +26,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Inventory" parent="ui/Control" node_paths=PackedStringArray("player") instance=ExtResource("1_1oc30")]
+[node name="Inventory" parent="ui/Control" groups=["Inventory"] instance=ExtResource("1_1oc30")]
 layout_mode = 1
 starting_items = Array[ExtResource("3_jd5in")]([SubResource("Resource_1b3r4")])
-player = NodePath("../../../Player")
 
 [node name="MarginContainer" type="MarginContainer" parent="ui/Control"]
 layout_mode = 1
@@ -53,34 +47,4 @@ layout_mode = 2
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, 64)
-tile_set = ExtResource("9_yfhn4")
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 131072, 65536, 0, 131072, 131072, 0, 131072, 196608, 0, 131072, 262144, 0, 131072, 327680, 0, 131072, 1, 0, 196608, 65537, 0, 196608, 131073, 0, 196608, 196609, 0, 196608, 262145, 0, 196608, 2, 0, 196608, 65538, 0, 196608, 131074, 0, 196608, 196610, 0, 196608, 262146, 0, 196608, 3, 0, 196608, 65539, 0, 196608, 131075, 0, 196608, 196611, 0, 196608, 262147, 0, 196608, 4, 0, 196608, 65540, 0, 196608, 131076, 0, 196608, 196612, 0, 196608, 262148, 0, 196608, 5, 0, 196608, 65541, 0, 196608, 131077, 0, 196608, 196613, 0, 196608, 262149, 0, 196608, 327681, 0, 131072, 327682, 0, 131072, 327683, 0, 131072, 327684, 0, 131072, 327685, 0, 131072, 327686, 0, 131072, -65530, 0, 131072, 262150, 0, 131072, -65536, 0, 131072, -65535, 0, 131072, -65534, 0, 131072, -65533, 0, 131072, -65532, 0, 131072, -65531, 0, 131072, 6, 0, 131072, 262151, 0, 131072, 327687, 0, 131072, 262152, 0, 131072, 327688, 0, 131072, 262153, 0, 131072, 327689, 0, 131072, 262154, 0, 131072, 327690, 0, 131072, 262155, 0, 131072, 327691, 0, 131072, 262156, 0, 131072, 327692, 0, 131072, 262157, 0, 131072, 327693, 0, 131072, 393216, 0, 131072, 458752, 0, 131072, 524288, 0, 131072, 393217, 0, 131072, 458753, 0, 131072, 524289, 0, 131072, 393218, 0, 131072, 458754, 0, 131072, 524290, 0, 131072, 393219, 0, 131072, 458755, 0, 131072, 524291, 0, 131072, 393220, 0, 131072, 458756, 0, 131072, 524292, 0, 131072, 393221, 0, 131072, 458757, 0, 131072, 524293, 0, 131072, 393222, 0, 131072, 458758, 0, 131072, 524294, 0, 131072, 393223, 0, 131072, 458759, 0, 131072, 524295, 0, 131072, 393224, 0, 131072, 458760, 0, 131072, 524296, 0, 131072, 393225, 0, 131072, 458761, 0, 131072, 524297, 0, 131072, 393226, 0, 131072, 458762, 0, 131072, 524298, 0, 131072, 393227, 0, 131072, 458763, 0, 131072, 524299, 0, 131072, 393228, 0, 131072, 458764, 0, 131072, 524300, 0, 131072, 393229, 0, 131072, 458765, 0, 131072, 524301, 0, 131072, 393230, 0, 131072, 458766, 0, 131072, 524302, 0, 131072, 393231, 0, 131072, 458767, 0, 131072, 524303, 0, 131072, 393232, 0, 131072, 458768, 0, 131072, 524304, 0, 131072, -65528, 0, 131072, 8, 0, 131072, -65527, 0, 131072, 9, 0, 131072, -65526, 0, 131072, 10, 0, 131072, -65525, 0, 131072, 11, 0, 131072, -65524, 0, 131072, 12, 0, 131072, -65523, 0, 131072, 13, 0, 131072, -65522, 0, 131072, 14, 0, 131072, -65521, 0, 131072, 15, 0, 131072, -65520, 0, 131072, 16, 0, 131072, -65529, 0, 131072, 7, 0, 131072, 196614, 0, 196608, 196615, 0, 196608, 196616, 0, 196608, 196617, 0, 196608, 196618, 0, 196608, 196619, 0, 196608, 196620, 0, 196608, 196621, 0, 196608, -65519, 0, 131072, 17, 0, 131072, 393233, 0, 131072, 458769, 0, 131072, 524305, 0, 131072, 65542, 0, 131072, 131078, 0, 131072, 65543, 0, 131072, 131079, 0, 131072, 65544, 0, 131072, 131080, 0, 131072, 65545, 0, 131072, 131081, 0, 131072, 65546, 0, 131072, 131082, 0, 131072, 65547, 0, 131072, 131083, 0, 131072, 65548, 0, 131072, 131084, 0, 131072, 65549, 0, 131072, 131085, 0, 131072, 65550, 0, 131072, 131086, 0, 131072, 65551, 0, 131072, 131087, 0, 131072, 65552, 0, 131072, 131088, 0, 131072, 65553, 0, 131072, 131089, 0, 131072, 196623, 0, 131072, 262159, 0, 131072, 327695, 0, 131072, 196624, 0, 131072, 262160, 0, 131072, 327696, 0, 131072, 196625, 0, 131072, 262161, 0, 131072, 327697, 0, 131072, 262158, 0, 131072, 327694, 0, 131072, 196622, 0, 131072)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Player" parent="." instance=ExtResource("2_g15jq")]
-position = Vector2(160, 160)
-
-[node name="Input" parent="Player" index="2" node_paths=PackedStringArray("inventory")]
-inventory = NodePath("../../ui/Control/Inventory")
-
-[node name="Door" parent="." node_paths=PackedStringArray("triggers") instance=ExtResource("11_syjg2")]
-z_index = 5
-position = Vector2(416, 288)
-triggers = [NodePath("../DoorTrigger"), NodePath("../DoorTrigger2"), NodePath("../DoorTrigger3")]
-
-[node name="DoorTrigger" parent="." instance=ExtResource("11_uyqcy")]
-position = Vector2(288, 160)
-
-[node name="DoorTrigger2" parent="." instance=ExtResource("11_uyqcy")]
-position = Vector2(352, 224)
-
-[node name="DoorTrigger3" parent="." instance=ExtResource("11_uyqcy")]
-position = Vector2(160, 288)
-
-[editable path="Player"]
+[node name="Level" parent="." instance=ExtResource("6_tsgme")]

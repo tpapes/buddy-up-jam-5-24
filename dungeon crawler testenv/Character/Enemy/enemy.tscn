@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Character/Enemy/DiagonalWander.gd" id="2_bgnxr"]
 
 [node name="Enemy" instance=ExtResource("1_4umkh")]
+z_index = 1
 
 [node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
 parent = NodePath("..")
@@ -24,4 +25,5 @@ autostart = true
 
 [node name="Polygon2D" type="Polygon2D" parent="." index="5"]
 scale = Vector2(0.5, 0.5)
+color = Color(0.819608, 0.203922, 0.203922, 1)
 polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://j0glf0nj5ale" path="res://Level Scenes/wall.tscn" id="1_rf778"]
 
 [node name="Void" instance=ExtResource("1_rf778")]
+z_index = -8
 
 [node name="Polygon2D" parent="." index="0"]
 color = Color(0.0627451, 0.0627451, 0.0627451, 1)
