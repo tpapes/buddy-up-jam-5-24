@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3w68tt5c1ron"]
+[gd_scene load_steps=7 format=3 uid="uid://d3w68tt5c1ron"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_havo8"]
 [ext_resource type="TileSet" uid="uid://6w3y8yvk6gw" path="res://Level Scenes/TileSet.tres" id="2_ywkyi"]
 [ext_resource type="PackedScene" uid="uid://dji4fyrb3l67h" path="res://Level Scenes/Exit/level_transition.tscn" id="3_coos4"]
+[ext_resource type="PackedScene" uid="uid://j4mvcj8hglxg" path="res://Character/Enemy/Charger/Charger.tscn" id="4_ceq8n"]
+[ext_resource type="PackedScene" uid="uid://dwp6k14335tjt" path="res://Character/Player/Player.tscn" id="5_q3djx"]
+[ext_resource type="PackedScene" uid="uid://cntebeexa3d5x" path="res://Character/Enemy/Mimic/Mimic.tscn" id="6_g0xu2"]
 
 [node name="Level" type="Node"]
 script = ExtResource("1_havo8")
@@ -16,3 +19,12 @@ layer_0/tile_data = PackedInt32Array(327680, 0, 393216, 131074, 0, 65536, 196610
 position = Vector2(-32, 352)
 currentLevel = NodePath("..")
 targetLevelPath = "res://Levels/PrototypePuzzle.tscn"
+
+[node name="Charger" parent="." instance=ExtResource("4_ceq8n")]
+position = Vector2(288, 224)
+
+[node name="Player" parent="." instance=ExtResource("5_q3djx")]
+position = Vector2(32, 352)
+
+[node name="Character" parent="." instance=ExtResource("6_g0xu2")]
+position = Vector2(544, 224)

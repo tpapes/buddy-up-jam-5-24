@@ -11,6 +11,7 @@ size = Vector2(56, 56)
 script = ExtResource("1_ak6ds")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 25
 script = ExtResource("1_rbrw0")
 
 [node name="Hurtbox" type="Area2D" parent="."]

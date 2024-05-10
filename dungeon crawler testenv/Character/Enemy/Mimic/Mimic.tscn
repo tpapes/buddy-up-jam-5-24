@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cntebeexa3d5x"]
+
+[ext_resource type="PackedScene" uid="uid://blp105qoeh1tv" path="res://Character/character.tscn" id="1_f5xtj"]
+[ext_resource type="Script" path="res://Character/Enemy/Mimic/Mimic.gd" id="2_53nml"]
+[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="3_uxgyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8gyr"]
+
+[node name="Character" instance=ExtResource("1_f5xtj")]
+
+[node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
+parent = NodePath("..")
+
+[node name="Copycat" type="Node" parent="." index="3" node_paths=PackedStringArray("movement")]
+script = ExtResource("2_53nml")
+movement = NodePath("../RayCast2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
+collision_layer = 15
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_d8gyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_uxgyw")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4mvcj8hglxg"]
+
+[ext_resource type="PackedScene" uid="uid://blp105qoeh1tv" path="res://Character/character.tscn" id="1_jqbpp"]
+[ext_resource type="Script" path="res://Character/Enemy/Charger/ChargerBehavior.gd" id="2_5eajj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nesve"]
+
+[node name="Charger" instance=ExtResource("1_jqbpp")]
+
+[node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
+collision_mask = 25
+parent = NodePath("..")
+
+[node name="Visual" type="Polygon2D" parent="." index="3"]
+polygon = PackedVector2Array(-30, -15, 26, -16, 26, 10, -31, 10)
+
+[node name="ChargerBehavior" type="Node2D" parent="." index="4" node_paths=PackedStringArray("movement", "trip")]
+script = ExtResource("2_5eajj")
+movement = NodePath("../RayCast2D")
+trip = NodePath("../RayCast2D2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+collision_layer = 15
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_nesve")
+
+[node name="RayCast2D2" type="RayCast2D" parent="." index="6"]
+target_position = Vector2(128, 0)
+collide_with_areas = true
+collide_with_bodies = false
