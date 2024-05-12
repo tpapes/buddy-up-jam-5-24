@@ -8,7 +8,6 @@
 z_index = 1000
 
 [node name="RayCast2D" parent="." index="0" node_paths=PackedStringArray("parent")]
-collision_mask = 25
 parent = NodePath("..")
 
 [node name="Input" type="Node" parent="." index="2" node_paths=PackedStringArray("movement")]
