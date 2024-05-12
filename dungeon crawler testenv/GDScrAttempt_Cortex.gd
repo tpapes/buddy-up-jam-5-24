@@ -16,37 +16,43 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	# get inputs
+	# Get inputs
 	if (Input.is_action_just_pressed("left")):
-		inputLog += Vector2.LEFT
+		inputLog.x = -1
 	if (Input.is_action_just_pressed("right")):
-		inputLog += Vector2.RIGHT
+		inputLog.x = 1
 	if (Input.is_action_just_pressed("up")):
-		inputLog += Vector2.UP
+		inputLog.y = -1
 	if (Input.is_action_just_pressed("down")):
-		inputLog += Vector2.DOWN
+		inputLog.y = 1
 	
-	inputLog.x = clampf(inputLog.x, -1, 1)
-	inputLog.y = clampf(inputLog.y, -1, 1)
-	
-	# move target position, if there is a tile in the new position
+	# When the player is ready to move, determine the move direction for this step
 	if (move_ready):
 		var direction = Vector2.ZERO
+		# The point of this breakdown is so that inputs aren't dropped due to my arbitrary choice in
+		# which direction is checked first
+		# Start with X direction
 		if (inputLog.x != 0 and check_direction(targetPos, Vector2.RIGHT * sign(inputLog.x) * 32)):
+			self.position = targetPos
 			direction.x += sign(inputLog.x) * 32
 			inputLog.x -= sign(inputLog.x)
+			move_ready = false
+		# Then check Y direction
 		elif (inputLog.y != 0 and check_direction(targetPos, Vector2.DOWN * sign(inputLog.y) * 32)):
+			self.position = targetPos
 			direction.y += sign(inputLog.y) * 32
 			inputLog.y -= sign(inputLog.y)
+			move_ready = false
+		# Only forget inputs if neither direction passes
 		else:
-			direction = Vector2.ZERO
 			inputLog = Vector2.ZERO
 		targetPos += direction
 	
-	move_ready = self.position.distance_to(targetPos) < 5
-	
-	# slide player into target position
+	# Slide player into target position
 	self.position = lerp(self.position, targetPos, 16 * delta)
+	
+	# Determine if the player is ready to move on next update
+	move_ready = self.position.distance_to(targetPos) < 5
 	
 	pass
 
