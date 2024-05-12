@@ -3,6 +3,7 @@ extends Node
 @onready var targetPos = $Vector2
 @onready var inputLog = $Vector2
 @onready var move_ready = $bool
+@onready var ray = $RayCast2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,13 +31,17 @@ func _process(delta):
 	
 	# move target position, if there is a tile in the new position
 	if (move_ready):
-		if (inputLog.x != 0):
-			targetPos.x += sign(inputLog.x) * 32
+		var direction = Vector2.ZERO
+		if (inputLog.x != 0 and check_direction(targetPos, Vector2.RIGHT * sign(inputLog.x) * 32)):
+			direction.x += sign(inputLog.x) * 32
 			inputLog.x -= sign(inputLog.x)
+		elif (inputLog.y != 0 and check_direction(targetPos, Vector2.DOWN * sign(inputLog.y) * 32)):
+			direction.y += sign(inputLog.y) * 32
+			inputLog.y -= sign(inputLog.y)
 		else:
-			if (inputLog.y != 0):
-				targetPos.y += sign(inputLog.y) * 32
-				inputLog.y -= sign(inputLog.y)
+			direction = Vector2.ZERO
+			inputLog = Vector2.ZERO
+		targetPos += direction
 	
 	move_ready = self.position.distance_to(targetPos) < 5
 	
@@ -44,3 +49,9 @@ func _process(delta):
 	self.position = lerp(self.position, targetPos, 16 * delta)
 	
 	pass
+
+func check_direction(from, direction):
+	ray.global_position = from + direction
+	ray.target_position = -direction
+	ray.force_raycast_update()
+	return ray.is_colliding()

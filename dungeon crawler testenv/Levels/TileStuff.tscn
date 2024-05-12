@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bn5gl7ejdmpl6"]
+[gd_scene load_steps=11 format=3 uid="uid://bn5gl7ejdmpl6"]
 
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_77276"]
 [ext_resource type="Texture2D" uid="uid://djq8sv4s1fcrt" path="res://Levels/tileSet.png" id="1_uxxg6"]
 [ext_resource type="Script" path="res://GDScrAttempt_Cortex.gd" id="2_cuxst"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2x1h"]
-size = Vector2(128, 128)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1wgci"]
 tile_data = PackedInt32Array(0, 262145, 6, 65536, 262145, 7)
@@ -544,8 +541,10 @@ script = ExtResource("2_cuxst")
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 zoom = Vector2(2, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-shape = SubResource("RectangleShape2D_k2x1h")
+[node name="RayCast2D" type="RayCast2D" parent="Sprite2D"]
+target_position = Vector2(0, 128)
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(320, 192)
