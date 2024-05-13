@@ -4,14 +4,13 @@ extends Node
 @onready var inputLog = $Vector2
 @onready var move_ready = $bool
 @onready var ray = $RayCast2D
+@onready var foot = $Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	targetPos = self.position
 	inputLog = Vector2.ZERO
 	move_ready = true
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -52,9 +51,10 @@ func _process(delta):
 	self.position = lerp(self.position, targetPos, 16 * delta)
 	
 	# Determine if the player is ready to move on next update
-	move_ready = self.position.distance_to(targetPos) < 5
+	move_ready = self.position.distance_to(targetPos) < 4
 	
-	pass
+	# Move foot onto target position
+	foot.global_position = targetPos
 
 func check_direction(from, direction):
 	ray.global_position = from + direction
