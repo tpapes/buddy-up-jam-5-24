@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyh2kklgqk0ma"]
+
+[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_wj5pv"]
+[ext_resource type="Script" path="res://Element0_Cortex.gd" id="2_totul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
+size = Vector2(16, 16)
+
+[node name="Element0_CTX" type="Sprite2D" groups=["player"]]
+z_index = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_wj5pv")
+script = ExtResource("2_totul")
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="Foot" type="Area2D" parent="." groups=["player"]]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot" groups=["player"]]
+z_index = 1
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_tu7dl")
