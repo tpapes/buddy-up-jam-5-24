@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq11o7lxqq2e0"]
+[gd_scene load_steps=6 format=3 uid="uid://bq11o7lxqq2e0"]
 
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_hxr1c"]
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
+[ext_resource type="Script" path="res://CTX/Drill_Cortex.gd" id="3_okef3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgyi"]
+size = Vector2(128, 128)
 
 [node name="Player_CTX" type="Sprite2D" groups=["player"]]
 z_index = 1
@@ -29,3 +33,20 @@ collision_mask = 3
 z_index = 1
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
+
+[node name="Drill" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hxr1c")
+script = ExtResource("3_okef3")
+
+[node name="DrillArea" type="Area2D" parent="Drill"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drill/DrillArea"]
+shape = SubResource("RectangleShape2D_3sgyi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drill/DrillArea"]
+texture = ExtResource("1_hxr1c")

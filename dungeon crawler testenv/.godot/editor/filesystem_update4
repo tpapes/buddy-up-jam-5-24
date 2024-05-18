@@ -1,5 +1,9 @@
-res://node.tscn
-res://Level Scenes/TileSet.tres
 res://CTX/TileStuff.tscn
-res://CTX/BreakingTile_Cortex.gd
 res://CTX/BreakingTile_CTX.tscn
+res://CTX/Player_CTX.tscn
+res://CTX/FracPoint_CTX.tscn
+res://CTX/Drill_Cortex.gd
+res://CTX/GDScrAttempt_Cortex.gd
+res://CTX/Element0_Cortex.gd
+res://CTX/BreakingTile_Cortex.gd
+res://CTX/FracPoint_Cortex.gd

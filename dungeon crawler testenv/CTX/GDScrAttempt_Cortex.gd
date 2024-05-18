@@ -8,7 +8,8 @@ extends Node
 @onready var groundCheck = $GroundCheck
 @onready var wallCheck = $WallCheck
 @onready var foot = $Foot
-signal move
+
+signal move(direction)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -57,6 +58,8 @@ func _process(delta):
 		else:
 			inputLog = Vector2.ZERO
 		targetPos += direction
+		if (direction.length() > 0):
+			move.emit(direction)
 	
 	# Slide player into target position
 	self.position = lerp(self.position, targetPos, 16 * delta)
@@ -70,7 +73,7 @@ func _process(delta):
 	
 	# Signal Elements to move
 	if (move_timer <= 0.0 / 2.0 and !move_fire):
-		move.emit()
+		#move.emit()
 		move_fire = true
 	
 	# move_fire is basically a timer

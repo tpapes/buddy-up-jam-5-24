@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn5gl7ejdmpl6"]
+[gd_scene load_steps=9 format=3 uid="uid://bn5gl7ejdmpl6"]
 
 [ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://tileSet.png" id="1_ccldg"]
 [ext_resource type="PackedScene" uid="uid://bq11o7lxqq2e0" path="res://CTX/Player_CTX.tscn" id="3_0wtbg"]
 [ext_resource type="PackedScene" uid="uid://c2iosvxk0kfon" path="res://CTX/BreakingTile_CTX.tscn" id="4_vg6iy"]
 [ext_resource type="PackedScene" uid="uid://dyh2kklgqk0ma" path="res://CTX/Element0_CTX.tscn" id="4_yla42"]
 [ext_resource type="PackedScene" uid="uid://bi28cacpoo5tt" path="res://CTX/breaking_group.tscn" id="5_ict30"]
+[ext_resource type="PackedScene" uid="uid://dljflyvx8db8a" path="res://CTX/FracPoint_CTX.tscn" id="6_meavi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybgho"]
 texture = ExtResource("1_ccldg")
@@ -567,7 +568,8 @@ layer_1/z_index = -2
 layer_1/tile_data = PackedInt32Array(786428, 327680, 3, 786429, 327680, 5, 786430, 327680, 5, 786431, 327680, 3, 720898, 327680, 3, 720899, 327680, 3, 720900, 327680, 5, 720901, 327680, 3, 720902, 327680, 3, 655367, 327680, 3, 589832, 327680, 3, 524297, 327680, 3, 458762, 327680, 3, 393227, 327680, 5, 458764, 327680, 3, 1179643, 327680, 3, 1179644, 327680, 5, 1179645, 327680, 3, 1179646, 327680, 5, 1179647, 327680, 3, 1114112, 327680, 3, 1114113, 327680, 5, 1114114, 327680, 3, 1114115, 327680, 3, 1114116, 327680, 5, 1114117, 327680, 3, 1114118, 327680, 3, 655373, 327680, 5, 655374, 327680, 3, 786447, 327680, 5, 786448, 327680, 5, 786449, 327680, 5, 655378, 327680, 3, 655379, 327680, 5, 196622, 327680, 5, 196615, 327680, 3, 131075, 327680, 5, 131074, 327680, 3, 196605, 327680, 5, 196604, 327680, 3, -196591, 327680, 3, -196590, 327680, 3, -196588, 327680, 3, 524286, 327680, 5, 524287, 327680, 3, 131083, 327680, 3, 131082, 327680, 3)
 
 [node name="Player_CTX" parent="." instance=ExtResource("3_0wtbg")]
-position = Vector2(304, 176)
+y_sort_enabled = true
+position = Vector2(304, 112)
 
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)
@@ -702,3 +704,9 @@ offset_top = 512.0
 offset_right = 960.0
 offset_bottom = 608.0
 metadata/_edit_group_ = true
+
+[node name="FracPoint_CTX" parent="." instance=ExtResource("6_meavi")]
+position = Vector2(400, 208)
+
+[node name="FracPoint_CTX2" parent="." instance=ExtResource("6_meavi")]
+position = Vector2(336, 112)

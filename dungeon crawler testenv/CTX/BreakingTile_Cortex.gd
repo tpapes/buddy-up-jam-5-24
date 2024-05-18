@@ -43,6 +43,6 @@ func _process(delta):
 			
 			var c:CanvasItem = shape
 			var f = 1 - falling / 0.45
-			c.modulate = Color(f,pow(f,0.82),pow(f,0.70),1)
+			c.modulate = Color(f,pow(f,0.82),pow(f,0.70),pow(f,0.1))
 			
 		if (falling > 0.45): queue_free()

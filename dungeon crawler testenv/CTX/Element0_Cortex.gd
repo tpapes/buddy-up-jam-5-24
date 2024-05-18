@@ -61,5 +61,5 @@ func check_direction(from, direction):
 	# Return true if there is ground and spot is not taken
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()
 
-func _on_player_move():
+func _on_player_move(direction):
 	move_ready = true
