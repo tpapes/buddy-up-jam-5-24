@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715912695
+Floor.gd::GDScript::-1::1715912677::0::1::::Floor<>StaticBody2D<>::
+Game.gd::GDScript::-1::1715912677::0::1::::<>Node2D<>::
+game.tscn::PackedScene::5348471939242215822::1715912677::0::1::::<><>::res://Game.gd<>res://Floor.gd<>uid://boy5gskpraxnu::::res://planet.tscn<>uid://t0vntm4so186::::res://player.tscn
+icon.svg::CompressedTexture2D::8068289129970816872::1715912677::1715912696::1::::<><>::
+Planet.gd::GDScript::-1::1715912677::0::1::::Planet<>AnimatableBody2D<>::
+planet.tscn::PackedScene::3420442746842035226::1715912677::0::1::::<><>::res://Planet.gd<>uid://dm7lsp6dohmaa::::res://icon.svg
+Player.gd::GDScript::-1::1715912677::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::1386496762966537625::1715912677::0::1::::<><>::res://Player.gd
