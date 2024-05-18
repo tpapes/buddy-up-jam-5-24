@@ -572,6 +572,7 @@ position = Vector2(304, 176)
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)
 zoom = Vector2(2, 2)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Player_CTX/Camera2D"]
 z_index = -20
@@ -581,6 +582,7 @@ offset_right = -276.0
 offset_bottom = -146.0
 scale = Vector2(48, 24)
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="Element0_CTX" parent="." instance=ExtResource("4_yla42")]
 position = Vector2(208, 688)
