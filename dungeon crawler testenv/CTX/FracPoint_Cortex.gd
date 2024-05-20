@@ -17,13 +17,13 @@ func _process(delta):
 	pass
 
 func _on_drill_break(frac_area):
-	if (frac_area == area):
-		area.get_node(".").queue_free()
+	if (frac_area == area and !broken):
 		var spr : Sprite2D = self.get_node(".")
 		var p = spr.region_rect.position + Vector2.RIGHT * 32
 		var s = spr.region_rect.size
 		spr.region_rect = Rect2(p, s)
-		self.z_index = 1
-		self.name = "Beans"
-		self.reparent(get_parent().get_parent())
-		print("borken")
+		self.z_index = 0
+		self.name = "Broken_FracPoint_CTX"
+		broken = true
+		#self.reparent(get_parent().get_parent())
+		#print("borken")

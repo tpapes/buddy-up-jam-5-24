@@ -17,5 +17,5 @@ func _process(delta):
 		var s = spr.region_rect.size
 		spr.region_rect = Rect2(p, s)
 		self.z_index = 1
-		print("borken")
+		#print("borken")
 	pass

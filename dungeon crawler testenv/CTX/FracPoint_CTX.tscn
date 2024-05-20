@@ -7,7 +7,6 @@
 size = Vector2(16, 16)
 
 [node name="FracPoint_CTX" type="Sprite2D" groups=["frac_point"]]
-z_index = 2
 y_sort_enabled = true
 position = Vector2(16, 0)
 texture = ExtResource("1_a33qo")
