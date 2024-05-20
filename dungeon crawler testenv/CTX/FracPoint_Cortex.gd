@@ -2,10 +2,12 @@ extends Node
 
 @onready var drill_obj : Node2D
 @onready var area = $Area2D
+@onready var broken : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	drill_obj = get_node("/root/TileStuff/Player_CTX/Drill")
+	broken = false
+	drill_obj = get_node("/root/TileStuff/Player_CTX/Foot/Drill")
 	if (drill_obj != null):
 		drill_obj.drill.connect(_on_drill_break)
 
@@ -16,4 +18,12 @@ func _process(delta):
 
 func _on_drill_break(frac_area):
 	if (frac_area == area):
-		queue_free()
+		area.get_node(".").queue_free()
+		var spr : Sprite2D = self.get_node(".")
+		var p = spr.region_rect.position + Vector2.RIGHT * 32
+		var s = spr.region_rect.size
+		spr.region_rect = Rect2(p, s)
+		self.z_index = 1
+		self.name = "Beans"
+		self.reparent(get_parent().get_parent())
+		print("borken")

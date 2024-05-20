@@ -34,19 +34,20 @@ z_index = 1
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
 
-[node name="Drill" type="Sprite2D" parent="."]
+[node name="Drill" type="Sprite2D" parent="Foot"]
 z_index = 1
 position = Vector2(128, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hxr1c")
 script = ExtResource("3_okef3")
 
-[node name="DrillArea" type="Area2D" parent="Drill"]
+[node name="DrillArea" type="Area2D" parent="Foot/Drill"]
 collision_layer = 0
 collision_mask = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drill/DrillArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot/Drill/DrillArea"]
 shape = SubResource("RectangleShape2D_3sgyi")
 
-[node name="Sprite2D" type="Sprite2D" parent="Drill/DrillArea"]
+[node name="Sprite2D" type="Sprite2D" parent="Foot/Drill/DrillArea"]
+visible = false
 texture = ExtResource("1_hxr1c")

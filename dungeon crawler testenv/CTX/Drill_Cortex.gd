@@ -12,7 +12,7 @@ func _ready():
 	curr_direction = Vector2.RIGHT * 32
 	targ_direction = curr_direction
 	
-	player = get_parent()
+	player = get_parent().get_parent()
 	if (player != null):
 		player.move.connect(_on_player_move)
 
@@ -29,15 +29,15 @@ func _process(delta):
 	targ_direction = targ_direction.normalized() * 32
 	
 	# Move sprite's position and area's position
-	var base_position = player.global_position
-	self.global_position = base_position + curr_direction
-	area.global_position = base_position + targ_direction
+	self.global_position = player.global_position + curr_direction
+	area.global_position = self.get_parent().global_position + targ_direction
 	area.force_update_transform()
 	
 	# Find and destroy fracture points on input
 	if (Input.is_action_just_pressed("use")):
 		for n in area.get_overlapping_areas():
 			if (n.is_in_group("frac_point")):
+				curr_direction = targ_direction
 				drill.emit(n)
 
 func _on_player_move(dir):

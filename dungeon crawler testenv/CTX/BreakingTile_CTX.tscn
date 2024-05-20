@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2iosvxk0kfon"]
 
-[ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://tileSet.png" id="1_0c3ib"]
+[ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://CTX/tileSet.png" id="1_0c3ib"]
 [ext_resource type="Script" path="res://CTX/BreakingTile_Cortex.gd" id="1_7o02j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbqni"]

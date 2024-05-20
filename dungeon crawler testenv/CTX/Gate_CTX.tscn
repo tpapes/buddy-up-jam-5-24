@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://np2xcg220yh0"]
+
+[ext_resource type="Texture2D" uid="uid://cutbt2d3vkgtw" path="res://CTX/crystalsSet.png" id="1_h4hbs"]
+[ext_resource type="Script" path="res://CTX/Gate_Cortex.gd" id="2_vtf1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2ky"]
+size = Vector2(64, 64)
+
+[node name="Gate_CTX" type="Sprite2D"]
+z_index = 3
+position = Vector2(32, 0)
+texture = ExtResource("1_h4hbs")
+offset = Vector2(0, 16)
+region_enabled = true
+region_rect = Rect2(96, 0, 64, 96)
+script = ExtResource("2_vtf1t")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_gi2ky")

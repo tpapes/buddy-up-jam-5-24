@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://dljflyvx8db8a"]
 
-[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_y645v"]
+[ext_resource type="Texture2D" uid="uid://cutbt2d3vkgtw" path="res://CTX/crystalsSet.png" id="1_a33qo"]
 [ext_resource type="Script" path="res://CTX/FracPoint_Cortex.gd" id="2_y1yyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3kty"]
-size = Vector2(63.9995, 64)
+size = Vector2(16, 16)
 
 [node name="FracPoint_CTX" type="Sprite2D" groups=["frac_point"]]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
-position = Vector2(16, 16)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_y645v")
+position = Vector2(16, 0)
+texture = ExtResource("1_a33qo")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 64)
 script = ExtResource("2_y1yyx")
 
 [node name="Area2D" type="Area2D" parent="." groups=["frac_point"]]
@@ -19,6 +20,6 @@ collision_layer = 6
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -6.10352e-05)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_y3kty")
 debug_color = Color(0.767954, 0.446538, 1.92523e-07, 0.42)
