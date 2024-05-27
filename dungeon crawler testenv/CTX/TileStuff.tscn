@@ -588,55 +588,53 @@ position = Vector2(256, 416)
 position = Vector2(640, 32)
 
 [node name="Breaking_Group3" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("5_ict30")]
-position = Vector2(32, 0)
-
-[node name="BreakingTile_CTX27" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(88, -152)
-
-[node name="BreakingTile_CTX33" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(160, -64)
 
 [node name="Breaking_Group4" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("5_ict30")]
 position = Vector2(160, 0)
 
-[node name="BreakingTile_CTX32" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(-112, -72)
-
-[node name="BreakingTile_CTX34" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(-24, -120)
-
 [node name="BreakingTile_CTX35" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(96, 0)
+position = Vector2(64, 0)
 
 [node name="BreakingTile_CTX22" parent="Breaking_Tiles/Breaking_Path1" instance=ExtResource("4_vg6iy")]
-position = Vector2(32, 64)
+position = Vector2(0, 64)
 
 [node name="Breaking_Path2" type="Node2D" parent="Breaking_Tiles"]
 position = Vector2(832, 160)
 
-[node name="BreakingTile_CTX36" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
-position = Vector2(360, -192)
-
 [node name="BreakingTile_CTX37" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
 position = Vector2(64, 0)
 
-[node name="BreakingTile_CTX38" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
-position = Vector2(64, -64)
+[node name="Breaking_Group4" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_ict30")]
 
-[node name="BreakingTile_CTX39" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
-position = Vector2(200, -224)
-
-[node name="BreakingTile_CTX40" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
-position = Vector2(112, -216)
-
-[node name="Breaking_Group5" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_ict30")]
+[node name="BreakingTile_CTX" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
 position = Vector2(128, -64)
 
-[node name="BreakingTile_CTX41" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
-position = Vector2(64, 64)
+[node name="BreakingTile_CTX2" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(128, -32)
 
-[node name="Breaking_Group4" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_ict30")]
-position = Vector2(64, 128)
+[node name="BreakingTile_CTX3" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(128, 0)
+
+[node name="BreakingTile_CTX4" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(128, 32)
+
+[node name="BreakingTile_CTX5" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(96, -128)
+
+[node name="BreakingTile_CTX7" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(-64, -128)
+
+[node name="BreakingTile_CTX8" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(-64, -96)
+
+[node name="BreakingTile_CTX6" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("5_fyigq")]
+position = Vector2(96, -96)
+
+[node name="BreakingTile_CTX41" parent="Breaking_Tiles/Breaking_Path2" instance=ExtResource("4_vg6iy")]
+position = Vector2(0, 64)
+
+[node name="BreakingTile_CTX36" parent="Breaking_Tiles" instance=ExtResource("4_vg6iy")]
+position = Vector2(896, 512)
 
 [node name="Breaking_Group8" parent="Breaking_Tiles" instance=ExtResource("5_ict30")]
 position = Vector2(640, 256)
@@ -648,28 +646,13 @@ position = Vector2(544, 160)
 position = Vector2(736, 160)
 
 [node name="Breaking_Group6" parent="Breaking_Tiles" instance=ExtResource("5_ict30")]
-position = Vector2(896, 352)
+position = Vector2(832, 288)
 
 [node name="Breaking_Group7" parent="Breaking_Tiles" instance=ExtResource("5_ict30")]
 position = Vector2(736, 512)
 
-[node name="BreakingTile_CTX46" parent="Breaking_Tiles" instance=ExtResource("4_vg6iy")]
-metadata/_edit_group_ = true
-
 [node name="BP_Puzzle1" type="Node2D" parent="Breaking_Tiles"]
 position = Vector2(1136, 624)
-
-[node name="BreakingTile_CTX3" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-80, -112)
-
-[node name="BreakingTile_CTX38" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-48, -112)
-
-[node name="BreakingTile_CTX39" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(16, -112)
-
-[node name="BreakingTile_CTX40" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(48, -112)
 
 [node name="BreakingTile_CTX37" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-80, -80)
@@ -679,9 +662,6 @@ position = Vector2(-16, -80)
 
 [node name="BreakingTile_CTX2" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-48, -80)
-
-[node name="BreakingTile_CTX22" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-112, -80)
 
 [node name="BreakingTile_CTX4" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-80, -48)
@@ -707,9 +687,6 @@ position = Vector2(-80, -16)
 [node name="BreakingTile_CTX10" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(48, -80)
 
-[node name="BreakingTile_CTX23" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(80, -80)
-
 [node name="BreakingTile_CTX21" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-48, -16)
 
@@ -719,35 +696,17 @@ position = Vector2(-80, 16)
 [node name="BreakingTile_CTX11" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(48, -48)
 
-[node name="BreakingTile_CTX24" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(80, -48)
-
-[node name="BreakingTile_CTX41" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(80, 48)
-
-[node name="BreakingTile_CTX36" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(80, -16)
-
-[node name="BreakingTile_CTX25" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-112, -48)
-
 [node name="BreakingTile_CTX12" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(48, 16)
 
 [node name="BreakingTile_CTX34" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(48, 48)
 
-[node name="BreakingTile_CTX35" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(48, 80)
-
 [node name="BreakingTile_CTX13" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(16, 16)
 
 [node name="BreakingTile_CTX32" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(16, 48)
-
-[node name="BreakingTile_CTX33" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(16, 80)
 
 [node name="BreakingTile_CTX14" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-16, 16)
@@ -758,29 +717,11 @@ position = Vector2(-16, 48)
 [node name="BreakingTile_CTX16" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-16, 48)
 
-[node name="BreakingTile_CTX31" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-16, 80)
-
 [node name="BreakingTile_CTX17" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-48, 48)
 
-[node name="BreakingTile_CTX30" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-48, 80)
-
-[node name="BreakingTile_CTX26" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-112, -16)
-
-[node name="BreakingTile_CTX27" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-112, 16)
-
-[node name="BreakingTile_CTX28" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-112, 48)
-
 [node name="BreakingTile_CTX18" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(-80, 48)
-
-[node name="BreakingTile_CTX29" parent="Breaking_Tiles/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(-80, 80)
 
 [node name="Fracture_Points" type="Node2D" parent="."]
 position = Vector2(320, 160)
