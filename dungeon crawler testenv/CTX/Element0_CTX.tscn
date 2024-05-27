@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
 size = Vector2(16, 16)
 
-[node name="Element0_CTX" type="Sprite2D" groups=["player"]]
+[node name="Element0_CTX" type="Sprite2D" groups=["player", "undoable"]]
 z_index = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_wj5pv")

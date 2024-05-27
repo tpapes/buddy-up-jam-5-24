@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2ky"]
 size = Vector2(32, 32)
 
-[node name="Gate_CTX" type="Sprite2D"]
+[node name="Gate_CTX" type="Sprite2D" groups=["gate", "undoable"]]
 z_index = 3
 position = Vector2(16, 0)
 texture = ExtResource("1_xxcm3")

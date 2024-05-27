@@ -10,7 +10,7 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgyi"]
 size = Vector2(128, 128)
 
-[node name="Player_CTX" type="Sprite2D" groups=["player"]]
+[node name="Player_CTX" type="Sprite2D" groups=["player", "undoable"]]
 z_index = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_hxr1c")
@@ -34,7 +34,7 @@ z_index = 1
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
 
-[node name="Drill" type="Sprite2D" parent="Foot"]
+[node name="Drill" type="Sprite2D" parent="Foot" groups=["drill", "undoable"]]
 z_index = 2
 position = Vector2(128, 0)
 scale = Vector2(0.5, 0.5)

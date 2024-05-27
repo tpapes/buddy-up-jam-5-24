@@ -6,6 +6,7 @@ extends Node
 @onready var area = $DrillArea
 
 signal drill(frac_area)
+signal drilled_frac
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,10 +36,14 @@ func _process(delta):
 	
 	# Find and destroy fracture points on input
 	if (Input.is_action_just_pressed("use")):
+		var drill_used = false
 		for n in area.get_overlapping_areas():
 			if (n.is_in_group("frac_point")):
 				curr_direction = targ_direction
+				drill_used = true
 				drill.emit(n)
+		if drill_used:
+			drilled_frac.emit()
 
 func _on_player_move(dir):
 	curr_direction = targ_direction

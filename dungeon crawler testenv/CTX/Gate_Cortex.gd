@@ -2,20 +2,44 @@ extends Sprite2D
 
 @onready var area = $Area2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var is_open:= false
+var all_frac_points:= []
 
+func _ready():
+	for child in get_children():
+		if child.is_in_group("frac_point"):
+			all_frac_points.append(child)
+
+func attempt_undo(was_open: bool):
+	if was_open and !is_open:
+		open_gate()
+	elif !was_open and is_open:
+		close_gate()
+
+func set_collision(toggle: bool):
+	area.collision_layer = 2 if toggle else 0
+
+func open_gate():
+	set_collision(false)
+	region_rect.position.x += 96
+	z_index = 1
+	is_open = true
+
+func close_gate():
+	set_collision(true)
+	region_rect.position.x -= 96
+	z_index = 3
+	is_open = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var c = self.find_child("FracPoint_CTX*")
-	if (c == null and area != null):
-		area.get_node(".").queue_free()
-		var spr : Sprite2D = self
-		var p = spr.region_rect.position + Vector2.RIGHT * 96
-		var s = spr.region_rect.size
-		spr.region_rect = Rect2(p, s)
-		self.z_index = 1
-		#print("borken")
-	pass
+	if is_open:
+		return
+	var all_broken:= true
+	for frac_point in all_frac_points:
+		if !frac_point.is_broken:
+			all_broken = false
+			break
+	if all_broken:
+		open_gate()
+

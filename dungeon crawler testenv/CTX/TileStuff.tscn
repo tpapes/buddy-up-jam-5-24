@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn5gl7ejdmpl6"]
+[gd_scene load_steps=12 format=3 uid="uid://bn5gl7ejdmpl6"]
 
+[ext_resource type="Script" path="res://CTX/TileStuff.gd" id="1_06nho"]
 [ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://CTX/tileSet.png" id="1_ccldg"]
 [ext_resource type="PackedScene" uid="uid://bq11o7lxqq2e0" path="res://CTX/Player_CTX.tscn" id="3_0wtbg"]
 [ext_resource type="PackedScene" uid="uid://np2xcg220yh0" path="res://CTX/Gate_CTX.tscn" id="4_juaek"]
@@ -554,7 +555,9 @@ terrain_set_0/terrain_1/name = "Terrain 1"
 terrain_set_0/terrain_1/color = Color(0.139207, 0.5323, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_ybgho")
 
-[node name="TileStuff" type="Node2D"]
+[node name="TileStuff" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_06nho")
+player = NodePath("Player_CTX")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

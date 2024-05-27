@@ -8,7 +8,7 @@ resource_local_to_scene = true
 resource_name = "thisShape"
 size = Vector2(16, 16)
 
-[node name="BreakingTile_CTX" type="NinePatchRect"]
+[node name="BreakingTile_CTX" type="NinePatchRect" groups=["breaking_tile", "undoable"]]
 z_as_relative = false
 y_sort_enabled = true
 offset_right = 32.0

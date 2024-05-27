@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3kty"]
 size = Vector2(16, 16)
 
-[node name="FracPoint_CTX" type="Sprite2D" groups=["frac_point"]]
+[node name="FracPoint_CTX" type="Sprite2D" groups=["frac_point", "undoable"]]
 y_sort_enabled = true
 position = Vector2(16, 0)
 texture = ExtResource("1_a33qo")
