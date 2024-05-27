@@ -4,50 +4,48 @@
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
 [ext_resource type="Script" path="res://CTX/Drill_Cortex.gd" id="3_okef3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6nyx"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sgyi"]
-size = Vector2(128, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
+size = Vector2(4, 4)
 
-[node name="Player_CTX" type="Sprite2D" groups=["player", "undoable"]]
+[node name="Player_CTX" type="CharacterBody2D" groups=["player", "undoable"]]
 z_index = 1
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hxr1c")
+collision_layer = 8
 script = ExtResource("2_160q7")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k6nyx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_hxr1c")
+
 [node name="GroundCheck" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, 32)
 hit_from_inside = true
 collide_with_areas = true
 
 [node name="WallCheck" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, 32)
 collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 
-[node name="Foot" type="Area2D" parent="." groups=["player"]]
-collision_layer = 2
-collision_mask = 3
+[node name="Drill" type="Area2D" parent="." groups=["drill", "undoable"]]
+position = Vector2(32, 2.08165e-12)
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("3_okef3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot" groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drill"]
 z_index = 1
+position = Vector2(0, -2.08165e-12)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
 
-[node name="Drill" type="Sprite2D" parent="Foot" groups=["drill", "undoable"]]
+[node name="Sprite2D" type="Sprite2D" parent="Drill"]
 z_index = 2
-position = Vector2(128, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_hxr1c")
-script = ExtResource("3_okef3")
-
-[node name="DrillArea" type="Area2D" parent="Foot/Drill"]
-collision_layer = 0
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot/Drill/DrillArea"]
-shape = SubResource("RectangleShape2D_3sgyi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Foot/Drill/DrillArea"]
-visible = false
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_hxr1c")

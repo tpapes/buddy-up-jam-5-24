@@ -7,7 +7,7 @@ var is_broken:= false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	drill_obj = get_node("/root/TileStuff/Player_CTX/Foot/Drill")
+	drill_obj = get_node("/root/TileStuff/Player_CTX/Drill")
 	if (drill_obj != null):
 		drill_obj.drill.connect(_on_drill_break)
 

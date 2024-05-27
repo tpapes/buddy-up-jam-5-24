@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 res://CTX/TileStuff.tscn
 res://CTX/Gate_CTX.tscn
 res://CTX/BreakingTile_CTX.tscn
@@ -5,3 +6,18 @@ res://CTX/Element0_CTX.tscn
 res://CTX/FracPoint_CTX.tscn
 res://CTX/Gate_Small_CTX.tscn
 res://CTX/Player_CTX.tscn
+=======
+res://CTX/BreakingTile_CTX.tscn
+res://CTX/breaking_group.tscn
+res://CTX/TileStuff.tscn
+res://CTX/BreakingTileSmall_CTX.tscn
+res://CTX/BreakingTileLarge_CTX.tscn
+res://CTX/BreakingTile_Cortex.gd
+res://CTX/Player_CTX.tscn
+res://CTX/Element0_CTX.tscn
+res://CTX/FracPoint_CTX.tscn
+res://CTX/Gate_CTX.tscn
+res://CTX/Gate_Small_CTX.tscn
+res://CTX/GDScrAttempt_Cortex.gd
+res://Undo/UndoControl.gd
+>>>>>>> Stashed changes

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://deiukgv3sml0d"]
+
+[ext_resource type="Script" path="res://CTX/BreakingTile_Cortex.gd" id="1_ei7de"]
+[ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://CTX/tileSet.png" id="2_rhsb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbqni"]
+resource_local_to_scene = true
+resource_name = "thisShape"
+size = Vector2(16, 16)
+
+[node name="BreakingTile_CTX" type="Area2D" groups=["breaking_tile", "undoable"]]
+z_as_relative = false
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+collision_mask = 3
+script = ExtResource("1_ei7de")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rhsb1")
+centered = false
+region_enabled = true
+region_rect = Rect2(96, 160, 64, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_as_relative = false
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_wbqni")
+debug_color = Color(1, 0.352941, 0.580392, 0.176471)
