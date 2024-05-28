@@ -1,90 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi28cacpoo5tt"]
+[gd_scene load_steps=2 format=3 uid="uid://bi28cacpoo5tt"]
 
-[ext_resource type="Script" path="res://CTX/BreakingTile_Cortex.gd" id="1_u6xv5"]
-[ext_resource type="Texture2D" uid="uid://c8mycung3lkfl" path="res://CTX/tileSet.png" id="2_h2vk6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpnjc"]
-resource_local_to_scene = true
-resource_name = "thisShape"
-size = Vector2(16, 16)
+[ext_resource type="PackedScene" uid="uid://deiukgv3sml0d" path="res://CTX/BreakingTileSmall_CTX.tscn" id="1_h8s13"]
 
 [node name="Breaking_Group" type="Node2D"]
 
-[node name="BreakingTile_CTX" type="Area2D" parent="." groups=["breaking_tile", "undoable"]]
-z_as_relative = false
-y_sort_enabled = true
-scale = Vector2(0.5, 0.5)
-collision_mask = 3
-script = ExtResource("1_u6xv5")
+[node name="BreakingTile_CTX" parent="." instance=ExtResource("1_h8s13")]
 
-[node name="Sprite2D" type="Sprite2D" parent="BreakingTile_CTX"]
-texture = ExtResource("2_h2vk6")
-centered = false
-region_enabled = true
-region_rect = Rect2(96, 160, 64, 96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakingTile_CTX"]
-z_as_relative = false
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_fpnjc")
-debug_color = Color(1, 0.352941, 0.580392, 0.176471)
-
-[node name="BreakingTile_CTX2" type="Area2D" parent="." groups=["breaking_tile", "undoable"]]
-z_as_relative = false
-y_sort_enabled = true
+[node name="BreakingTile_CTX2" parent="." instance=ExtResource("1_h8s13")]
 position = Vector2(32, 0)
-scale = Vector2(0.5, 0.5)
-collision_mask = 3
-script = ExtResource("1_u6xv5")
 
-[node name="Sprite2D" type="Sprite2D" parent="BreakingTile_CTX2"]
-texture = ExtResource("2_h2vk6")
-centered = false
-region_enabled = true
-region_rect = Rect2(96, 160, 64, 96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakingTile_CTX2"]
-z_as_relative = false
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_fpnjc")
-debug_color = Color(1, 0.352941, 0.580392, 0.176471)
-
-[node name="BreakingTile_CTX3" type="Area2D" parent="." groups=["breaking_tile", "undoable"]]
-z_as_relative = false
-y_sort_enabled = true
+[node name="BreakingTile_CTX3" parent="." instance=ExtResource("1_h8s13")]
 position = Vector2(0, 32)
-scale = Vector2(0.5, 0.5)
-collision_mask = 3
-script = ExtResource("1_u6xv5")
 
-[node name="Sprite2D" type="Sprite2D" parent="BreakingTile_CTX3"]
-texture = ExtResource("2_h2vk6")
-centered = false
-region_enabled = true
-region_rect = Rect2(96, 160, 64, 96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakingTile_CTX3"]
-z_as_relative = false
+[node name="BreakingTile_CTX4" parent="." instance=ExtResource("1_h8s13")]
 position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_fpnjc")
-debug_color = Color(1, 0.352941, 0.580392, 0.176471)
-
-[node name="BreakingTile_CTX4" type="Area2D" parent="." groups=["breaking_tile", "undoable"]]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(32, 32)
-scale = Vector2(0.5, 0.5)
-collision_mask = 3
-script = ExtResource("1_u6xv5")
-
-[node name="Sprite2D" type="Sprite2D" parent="BreakingTile_CTX4"]
-texture = ExtResource("2_h2vk6")
-centered = false
-region_enabled = true
-region_rect = Rect2(96, 160, 64, 96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakingTile_CTX4"]
-z_as_relative = false
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_fpnjc")
-debug_color = Color(1, 0.352941, 0.580392, 0.176471)

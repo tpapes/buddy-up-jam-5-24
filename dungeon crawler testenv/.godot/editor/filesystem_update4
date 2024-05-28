@@ -1,3 +1,5 @@
 res://node.tscn
 res://Level Scenes/TileSet.tres
 res://CTX/TileStuff.tscn
+res://CTX/BreakingTileSmall_CTX.tscn
+res://CTX/breaking_group.tscn
