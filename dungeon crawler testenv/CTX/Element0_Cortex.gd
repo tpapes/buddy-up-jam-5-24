@@ -41,7 +41,7 @@ func _process(delta):
 		targetPos += direction
 		moveStep = (moveStep + 1) % movePattern.size()
 	
-	# Slide player into target position
+	# Slide into target position
 	self.position = lerp(self.position, targetPos, 16 * delta)
 	
 	# Move foot onto target position
