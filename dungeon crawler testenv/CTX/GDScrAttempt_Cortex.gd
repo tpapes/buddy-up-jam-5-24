@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var groundCheck = $GroundCheck
 @onready var wallCheck = $WallCheck
 @onready var drill = $Drill
+@onready var sprite = $Sprite2D
 
 const LERP_SPEED:= 16
 
@@ -54,7 +55,8 @@ func update_move_state():
 	var move_direction = inputLog * Sizes.newTileSize
 	if check_direction(global_position, move_direction):
 		startPos = global_position
-		targetPos = global_position + move_direction
+		global_position = global_position + move_direction
+		sprite.offset -= move_direction
 		is_moving = true
 		drill.start_move(move_direction)
 		move.emit(move_direction)
@@ -70,9 +72,9 @@ func end_move():
 
 func _physics_process(delta):
 	update_move_state()
-	if !is_moving:
-		return
-	self.global_position = lerp(startPos, targetPos, lerp_weight)
+	#if !is_moving:
+	#	return
+	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
 	if lerp_weight == 1:
 		end_move()
 	lerp_weight += LERP_SPEED * delta

@@ -12,7 +12,7 @@ size = Vector2(4, 4)
 
 [node name="Player_CTX" type="CharacterBody2D" groups=["player", "undoable"]]
 z_index = 1
-collision_layer = 8
+collision_layer = 10
 script = ExtResource("2_160q7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

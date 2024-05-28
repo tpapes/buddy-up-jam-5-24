@@ -8,9 +8,11 @@ extends Node
 @onready var groundCheck = $GroundCheck
 @onready var wallCheck = $WallCheck
 @onready var foot = $Foot
+@onready var sprite : Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite = self.get_node(".")
 	targetPos = self.position
 	moveStep = 0
 	move_ready = true
@@ -24,28 +26,29 @@ func _process(delta):
 	# When the player is ready to move, determine the move direction for this step
 	if (player != null and move_ready and movePattern.size() > 0):
 		move_ready = false
-		self.position = targetPos
 		var direction = Vector2.ZERO
 		
 		for i in movePattern.size():
-			if (check_direction(targetPos, movePattern[moveStep] * 32)):
+			if (check_direction(self.position, movePattern[moveStep] * 32)):
 				direction = movePattern[moveStep] * 32
 				break;
 			else:
 				movePattern[moveStep] *= -1
-				if (check_direction(targetPos, movePattern[moveStep] * 32)):
+				if (check_direction(self.position, movePattern[moveStep] * 32)):
 					direction = movePattern[moveStep] * 32
 					break;
 				else:
 					moveStep = (moveStep + 1) % movePattern.size()
-		targetPos += direction
+		self.position += direction
+		sprite.offset -= direction * 2
 		moveStep = (moveStep + 1) % movePattern.size()
+		
 	
 	# Slide into target position
-	self.position = lerp(self.position, targetPos, 16 * delta)
+	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
 	
 	# Move foot onto target position
-	foot.global_position = targetPos
+	foot.global_position = self.global_position
 	foot.force_update_transform()
 	
 
