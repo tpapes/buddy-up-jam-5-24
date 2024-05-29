@@ -1,3 +1,5 @@
-res://node.tscn
-res://Level Scenes/TileSet.tres
 res://CTX/TileStuff.tscn
+res://Level Scenes/TileSet.tres
+res://CTX/BreakingTileLarge_CTX.tscn
+res://CTX/Gate_Small_CTX.tscn
+res://CTX/BreakingTileSmall_CTX.tscn
