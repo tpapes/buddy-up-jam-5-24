@@ -4,3 +4,5 @@ res://CTX/Player_CTX.tscn
 res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/Element0_CTX.tscn
 res://CTX/Gate_CTX.tscn
+res://CTX/PressurePlate.tscn
+res://CTX/PressurePlate.gd
