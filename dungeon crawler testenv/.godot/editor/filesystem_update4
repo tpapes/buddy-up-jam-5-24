@@ -1,5 +1,6 @@
 res://CTX/TileStuff.tscn
-res://Level Scenes/TileSet.tres
-res://CTX/BreakingTileLarge_CTX.tscn
 res://CTX/Gate_Small_CTX.tscn
+res://CTX/Player_CTX.tscn
 res://CTX/BreakingTileSmall_CTX.tscn
+res://CTX/Element0_CTX.tscn
+res://CTX/Gate_CTX.tscn
