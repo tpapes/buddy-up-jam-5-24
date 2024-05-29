@@ -1,6 +1,11 @@
 extends Node
 class_name UndoControl
 
+@onready var timer = 0
+@onready var undoing = false
+@onready var curr_max_time = 0
+var max_time = 0.5
+var time_falloff = 2
 
 var all_items:= []
 var all_breakable_tiles:= []
@@ -32,6 +37,17 @@ func update_states():
 			current_state[item] = item.is_broken
 	item_states.append(current_state)
 
+func _process(delta):
+	if (undoing):
+		curr_max_time -= (curr_max_time * time_falloff) * delta
+		if (timer <= 0):
+			undo()
+			timer = curr_max_time
+		else:
+			timer -= delta
+	else:
+		timer = 0
+
 func undo():
 	if len(item_states) < 2:
 		return
@@ -53,5 +69,8 @@ func undo():
 
 func _input(event):
 	if event.is_action_pressed("undo"):
-		undo()
+		undoing = true
+		curr_max_time = max_time
+	if event.is_action_released("undo"):
+		undoing = false
 

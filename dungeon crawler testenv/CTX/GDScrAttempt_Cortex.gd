@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var wallCheck = $WallCheck
 @onready var drill = $Drill
 @onready var sprite = $Sprite2D
+@onready var camera = $Camera2D
 
 const LERP_SPEED:= 16
 
@@ -72,12 +73,16 @@ func end_move():
 
 func _physics_process(delta):
 	update_move_state()
-	#if !is_moving:
-	#	return
+	if !is_moving:
+		return
 	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
-	if lerp_weight == 1:
+	if (sprite.offset.length() < 3):
 		end_move()
-	lerp_weight += LERP_SPEED * delta
-	lerp_weight = clamp(lerp_weight, 0.0, 1.0)
+		sprite.offset = Vector2.ZERO
+	#lerp_weight += LERP_SPEED * delta
+	#lerp_weight = clamp(lerp_weight, 0.0, 1.0)
 
-
+func _process(delta):
+	if (camera != null):
+		camera.position = sprite.offset
+	pass

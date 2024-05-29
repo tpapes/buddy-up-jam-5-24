@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq11o7lxqq2e0"]
+[gd_scene load_steps=7 format=3 uid="uid://bq11o7lxqq2e0"]
 
 [ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_hxr1c"]
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
+[ext_resource type="Texture2D" uid="uid://dqyk8atftcbdw" path="res://CTX/astronaut1.png" id="2_opavn"]
 [ext_resource type="Script" path="res://CTX/Drill_Cortex.gd" id="3_okef3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6nyx"]
@@ -19,8 +20,7 @@ script = ExtResource("2_160q7")
 shape = SubResource("RectangleShape2D_k6nyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_hxr1c")
+texture = ExtResource("2_opavn")
 
 [node name="GroundCheck" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, 32)

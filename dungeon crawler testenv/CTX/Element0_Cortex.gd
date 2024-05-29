@@ -29,23 +29,25 @@ func _process(delta):
 		var direction = Vector2.ZERO
 		
 		for i in movePattern.size():
-			if (check_direction(self.position, movePattern[moveStep] * 32)):
+			if (check_direction(self.global_position, movePattern[moveStep] * 32)):
 				direction = movePattern[moveStep] * 32
 				break;
 			else:
 				movePattern[moveStep] *= -1
-				if (check_direction(self.position, movePattern[moveStep] * 32)):
+				if (check_direction(self.global_position, movePattern[moveStep] * 32)):
 					direction = movePattern[moveStep] * 32
 					break;
 				else:
 					moveStep = (moveStep + 1) % movePattern.size()
 		self.position += direction
-		sprite.offset -= direction * 2
+		sprite.offset = -direction
 		moveStep = (moveStep + 1) % movePattern.size()
 		
 	
 	# Slide into target position
 	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
+	if (sprite.offset.length() < 3):
+		sprite.offset = Vector2.ZERO
 	
 	# Move foot onto target position
 	foot.global_position = self.global_position
@@ -54,12 +56,12 @@ func _process(delta):
 
 func check_direction(from, direction):
 	# Check if there is ground
-	groundCheck.global_position = from + direction
-	groundCheck.target_position = -direction
+	groundCheck.position = Vector2.ZERO
+	groundCheck.target_position = direction
 	groundCheck.force_raycast_update()
 	# Check if the spot is taken
-	wallCheck.global_position = from + direction
-	wallCheck.target_position = -direction
+	wallCheck.position = Vector2.ZERO
+	wallCheck.target_position = direction
 	wallCheck.force_raycast_update()
 	# Return true if there is ground and spot is not taken
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()
