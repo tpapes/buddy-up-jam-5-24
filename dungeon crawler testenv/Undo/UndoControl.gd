@@ -11,6 +11,14 @@ var all_items:= []
 var all_breakable_tiles:= []
 var item_states:= []
 
+class EnemyState:
+	var glob_pos: Vector2
+	var active: bool
+	
+	func init(_glob_pos: Vector2, _active: bool):
+		glob_pos = _glob_pos
+		active = _active
+
 func init(_all_items: Array):
 	all_items = _all_items
 
@@ -30,11 +38,15 @@ func update_states():
 		elif item.is_in_group("breaking_tile"):
 			current_state[item] = item.is_broken
 		elif item.is_in_group("enemy"):
-			current_state[item] = item.global_position
+			var enemy_state = EnemyState.new()
+			enemy_state.init(item.global_position, item.active)
+			current_state[item] = enemy_state
 		elif item.is_in_group("gate"):
 			current_state[item] = item.is_open
 		elif item.is_in_group("frac_point"):
 			current_state[item] = item.is_broken
+		elif item.is_in_group("pressure_plate"):
+			current_state[item] = item.is_triggered
 	item_states.append(current_state)
 
 func _process(delta):
@@ -61,11 +73,16 @@ func undo():
 		elif item.is_in_group("breaking_tile"):
 			item.attempt_undo(previous_state[item])
 		elif item.is_in_group("enemy"):
-			item.global_position = previous_state[item]
+			var enemy_state = previous_state[item]
+			item.global_position = enemy_state.glob_pos
+			item.toggle_activation(enemy_state.active)
 		elif item.is_in_group("gate"):
 			item.attempt_undo(previous_state[item])
 		elif item.is_in_group("frac_point"):
 			item.attempt_undo(previous_state[item])
+		elif item.is_in_group("pressure_plate"):
+			if item.is_triggered and not previous_state[item]:
+				item.is_triggered = false
 
 func _input(event):
 	if event.is_action_pressed("undo"):

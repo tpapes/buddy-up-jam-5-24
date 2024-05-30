@@ -1,5 +1,7 @@
 extends Node
 
+@export var pressure_plate: PressurePlate
+
 @onready var player = Node
 @onready var move_ready : bool
 @onready var targetPos : Vector2
@@ -10,19 +12,31 @@ extends Node
 @onready var foot = $Foot
 @onready var sprite : Sprite2D
 
+var active:= false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	assert(pressure_plate != null, "pressure_plate must be set in the inspector.")
 	sprite = self.get_node(".")
 	targetPos = self.position
 	moveStep = 0
-	move_ready = true
+	move_ready = false
 	player = get_node("/root/TileStuff/Player_CTX")
-	if (player != null):
-		player.move.connect(_on_player_move)
+	pressure_plate.triggered.connect(toggle_activation.bind(true))
+
+func toggle_activation(toggle: bool):
+	if toggle:
+		if not player.move.is_connected(_on_player_move):
+			player.move.connect(_on_player_move)
+	else:
+		if player.move.is_connected(_on_player_move):
+			player.move.disconnect(_on_player_move)
+	active = toggle
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	if not active:
+		return
 	# When the player is ready to move, determine the move direction for this step
 	if (player != null and move_ready and movePattern.size() > 0):
 		move_ready = false
@@ -32,6 +46,10 @@ func _process(delta):
 			if (check_direction(self.global_position, movePattern[moveStep] * 32)):
 				direction = movePattern[moveStep] * 32
 				break;
+			elif check_player(self.global_position, movePattern[moveStep] * 32):
+				#If the player is moving in front, it stops instead of going the other way
+				move_ready = false
+				return
 			else:
 				movePattern[moveStep] *= -1
 				if (check_direction(self.global_position, movePattern[moveStep] * 32)):
@@ -65,6 +83,17 @@ func check_direction(from, direction):
 	wallCheck.force_raycast_update()
 	# Return true if there is ground and spot is not taken
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()
+
+func check_player(from, direction) -> bool:
+	wallCheck.position = Vector2.ZERO
+	wallCheck.target_position = direction
+	wallCheck.force_raycast_update()
+	if !wallCheck.is_colliding():
+		return false
+	var collider = wallCheck.get_collider()
+	if collider.is_in_group("player"):
+		return true
+	return false
 
 func _on_player_move(direction):
 	move_ready = true
