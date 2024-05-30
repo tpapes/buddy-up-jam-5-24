@@ -10,3 +10,4 @@ res://CTX/Gate_CTX.tscn
 res://CTX/Gate_Small_CTX.tscn
 res://CTX/Drill_Cortex.gd
 res://CTX/GDScrAttempt_Cortex.gd
+res://Undo/UndoControl.gd
