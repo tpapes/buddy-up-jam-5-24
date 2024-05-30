@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717085272
+::res://::1717104705
 default_bus_layout.tres::AudioBusLayout::230519161501026014::1715087759::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1716083260::0::1::::<><>::
 icon.svg::CompressedTexture2D::4969517964276732136::1715025647::1715025711::1::::<><>::
 Level.gd::GDScript::-1::1716083260::0::1::::Level<>Node<>::
-node.tscn::PackedScene::3858848370103980822::1717045535::0::1::::<><>::uid://bbahc0rp87tck::::res://Inventory/inventory.tscn<>res://Inventory/Item.gd<>uid://cc2jh8phbpu05::::res://icon.svg<>res://Weapon/BlasterGun.gd<>uid://dsajjc5iivurf::::res://Levels/PrototypePuzzle.tscn<>uid://cjbj7tmbbup8p::::res://Menus/options_menu.tscn
+node.tscn::PackedScene::3858848370103980822::1717104705::0::1::::<><>::uid://bbahc0rp87tck::::res://Inventory/inventory.tscn<>res://Inventory/Item.gd<>uid://cc2jh8phbpu05::::res://icon.svg<>res://Weapon/BlasterGun.gd<>uid://dsajjc5iivurf::::res://Levels/PrototypePuzzle.tscn<>uid://cjbj7tmbbup8p::::res://Menus/options_menu.tscn
 Test_Action_Two.gd::GDScript::-1::1716083260::0::1::::<>Item_Script<>::
 ::res://Autoloads/::1716843712
 movement_server.gd::GDScript::-1::1716083260::0::1::::<>Node<>::
@@ -25,38 +25,41 @@ Mimic.tscn::PackedScene::5724764383091467615::1716083260::0::1::::<><>::uid://bl
 ::res://Character/Player/::1716083260
 Input.gd::GDScript::-1::1716083260::0::1::::<>Node<>::
 Player.tscn::PackedScene::8736283773858964097::1716083260::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Player/Input.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-::res://CTX/::1717085175
+::res://CTX/::1717104705
 astronaut1.png::CompressedTexture2D::8332494746115713440::1717030154::1717030154::1::::<><>::
-BreakingTileLarge_CTX.tscn::PackedScene::6685338488843589853::1717038653::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
-BreakingTileSmall_CTX.tscn::PackedScene::7457764994336013889::1717038653::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
-BreakingTile_Cortex.gd::GDScript::-1::1716843712::0::1::::<>Area2D<>::
+BreakingTileLarge_CTX.tscn::PackedScene::6685338488843589853::1717104705::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+BreakingTileSmall_CTX.tscn::PackedScene::7457764994336013889::1717104705::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+BreakingTile_Cortex.gd::GDScript::-1::1717086084::0::1::::<>Area2D<>::
 breaking_group.tscn::PackedScene::3005676868296511681::1717038653::0::1::::<><>::uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn
+chisel_tool.png::CompressedTexture2D::4468389143629899431::1717104644::1717104684::1::::<><>::
 crystalsSet.png::CompressedTexture2D::6215937488616467732::1717030154::1717030171::1::::<><>::
-Drill_Cortex.gd::GDScript::-1::1717038353::0::1::::<>Area2D<>::
-Element0_Cortex.gd::GDScript::-1::1717045445::0::1::::<>Node<>::
-Element0_CTX.tscn::PackedScene::8859902701935008588::1717045535::0::1::::<><>::uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Element0_Cortex.gd
+Drill_Cortex.gd::GDScript::-1::1717087108::0::1::::<>Area2D<>::
+Element0_Cortex.gd::GDScript::-1::1717087663::0::1::::<>Node<>::
+Element0_CTX.tscn::PackedScene::8859902701935008588::1717087663::0::1::::<><>::uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Element0_Cortex.gd
 FracPoint_Cortex.gd::GDScript::-1::1716843712::0::1::::<>Sprite2D<>::
 FracPoint_CTX.tscn::PackedScene::7950243253671513774::1716843119::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/FracPoint_Cortex.gd
-Gate_Cortex.gd::GDScript::-1::1716792467::0::1::::<>Sprite2D<>::
-Gate_CTX.tscn::PackedScene::945101181249199679::1717038653::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
+Gate_Cortex.gd::GDScript::-1::1717087250::0::1::::<>Sprite2D<>::
+Gate_CTX.tscn::PackedScene::945101181249199679::1717087450::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
 Gate_Small_CTX.tscn::PackedScene::2678823940420675566::1717038653::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
-GDScrAttempt_Cortex.gd::GDScript::-1::1717037968::0::1::::<>CharacterBody2D<>::
-Player_CTX.tscn::PackedScene::3564721345240879533::1717045535::0::1::::<><>::uid://cc2jh8phbpu05::::res://icon.svg<>res://CTX/GDScrAttempt_Cortex.gd<>uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Drill_Cortex.gd
+GDScrAttempt_Cortex.gd::GDScript::-1::1717087663::0::1::::<>CharacterBody2D<>::
+Player_CTX.tscn::PackedScene::3564721345240879533::1717104644::0::1::::<><>::res://CTX/GDScrAttempt_Cortex.gd<>uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Drill_Cortex.gd<>uid://b4wrymdv8x5d8::::res://CTX/chisel_tool.png
 PressurePlate.gd::GDScript::-1::1717085139::0::1::::PressurePlate<>Area2D<>::
-PressurePlate.tscn::PackedScene::7676224271695212487::1717085139::0::1::::<><>::res://CTX/PressurePlate.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+PressurePlate.tscn::PackedScene::7676224271695212487::1717104705::0::1::::<><>::res://CTX/PressurePlate.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
 tileSet.png::CompressedTexture2D::7115307590764127349::1717085139::1717085175::1::::<><>::
-TileStuff.gd::GDScript::-1::1717036746::0::1::::<>Node2D<>::
-TileStuff.tscn::PackedScene::3361192616638707457::1717085139::0::1::::<><>::res://CTX/TileStuff.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png<>uid://bq11o7lxqq2e0::::res://CTX/Player_CTX.tscn<>uid://np2xcg220yh0::::res://CTX/Gate_CTX.tscn<>uid://c2iosvxk0kfon::::res://CTX/BreakingTileLarge_CTX.tscn<>uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn<>uid://bi28cacpoo5tt::::res://CTX/breaking_group.tscn<>uid://dljflyvx8db8a::::res://CTX/FracPoint_CTX.tscn<>uid://befv3r124isqw::::res://CTX/Gate_Small_CTX.tscn<>uid://dhmoj63m0caqh::::res://CTX/PressurePlate.tscn<>uid://dyh2kklgqk0ma::::res://CTX/Element0_CTX.tscn
+TileStuff.gd::GDScript::-1::1717087392::0::1::::<>Node2D<>::
+TileStuff.tscn::PackedScene::3361192616638707457::1717104705::0::1::::<><>::res://CTX/TileStuff.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png<>uid://bq11o7lxqq2e0::::res://CTX/Player_CTX.tscn<>uid://np2xcg220yh0::::res://CTX/Gate_CTX.tscn<>uid://c2iosvxk0kfon::::res://CTX/BreakingTileLarge_CTX.tscn<>uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn<>uid://bi28cacpoo5tt::::res://CTX/breaking_group.tscn<>uid://dljflyvx8db8a::::res://CTX/FracPoint_CTX.tscn<>uid://befv3r124isqw::::res://CTX/Gate_Small_CTX.tscn<>uid://dhmoj63m0caqh::::res://CTX/PressurePlate.tscn<>uid://dyh2kklgqk0ma::::res://CTX/Element0_CTX.tscn
 ::res://Inventory/::1716083260
 Inventory.gd::GDScript::-1::1716083260::0::1::::Inventory<>ItemList<>::
 inventory.tscn::PackedScene::2457039457940647370::1715087759::0::1::::<><>::res://Inventory/Inventory.gd<>res://Inventory/MenuAudio.gd<>uid://dyafpek3hc74h::::res://Test Assets/menu_open.wav<>uid://cjan6804tnis6::::res://Test Assets/menu_close.wav
 Item.gd::GDScript::-1::1715025647::0::1::::Item<>Resource<>::
 MenuAudio.gd::GDScript::-1::1715025647::0::1::::<>AudioStreamPlayer<>::
-::res://Items/::1715087759
+::res://Items/::1717104705
 Base_Action.gd::GDScript::-1::1715087759::0::1::::Item_Script<>Node<>::
+FallableSprite.gd::GDScript::-1::1717104670::0::1::::FallableSprite<>Sprite2D<>::
+FallableSprite.tscn::PackedScene::2239091880003503783::1717104705::0::1::::<><>::res://Items/FallableSprite.gd
 Test_Item.tres::Resource/Resource::8068145904313589736::1715025647::0::1::::<><>::res://Inventory/Item.gd<>res://Items/Base_Action.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-::res://Level Scenes/::1717085283
-TileSet.tres::TileSet::65382799103943870::1717085283::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>uid://dgujda36gnibk::::res://Level Scenes/Collapsable/Collapsable.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://buy8jko2bv6e6::::res://Character/Enemy/enemy.tscn
+::res://Level Scenes/::1717104705
+TileSet.tres::TileSet::65382799103943870::1717104705::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>uid://dgujda36gnibk::::res://Level Scenes/Collapsable/Collapsable.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://buy8jko2bv6e6::::res://Character/Enemy/enemy.tscn
 void.tscn::PackedScene::8049138790384345108::1716083260::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn
 wall.tscn::PackedScene::683693284124066650::1716083260::0::1::::<><>::
 ::res://Level Scenes/Collapsable/::1716083260
@@ -77,12 +80,13 @@ PrototypePuzzle.tscn::PackedScene::8423223913409784255::1716083525::0::1::::<><>
 ::res://Menus/::1715087759
 OptionsMenu.gd::GDScript::-1::1715087759::0::1::::<>Control<>::
 options_menu.tscn::PackedScene::5407209952751290237::1715025647::0::1::::<><>::res://Menus/OptionsMenu.gd
-::res://SoundComponent/::1717085729
-SoundComponent.tscn::PackedScene::7454068376397516186::1717085729::0::1::::<><>::res://SoundComponent/SoundComponent.gd
-SoundComponent.gd::GDScript::-1::1717085729::0::1::::<>Node<>::
-::res://Sounds/::1717085786
+::res://SoundComponent/::1717087450
+SoundComponent.gd::GDScript::-1::1717086006::0::1::::SoundComponent<>Node<>::
+SoundComponent.tscn::PackedScene::7454068376397516186::1717087450::0::1::::<><>::res://SoundComponent/SoundComponent.gd<>uid://c0uxxsbjmpa0l::::res://Sounds/footstep.wav<>uid://ciyglowhwqvp7::::res://Sounds/enemy_footstep.wav<>uid://5qnaxrkmwp8f::::res://Sounds/menu.wav<>uid://iy31l4vuhfhh::::res://Sounds/success.wav<>uid://clr86c6wrq44x::::res://Sounds/pressure_plate_on.wav<>uid://dj81wqok0n1ns::::res://Sounds/pressure_plate_off.wav<>uid://d1yviqp5xtn2q::::res://Sounds/drill.wav<>uid://b26j7wh1b4owo::::res://Sounds/gate_open.wav<>uid://cj83akq368tro::::res://Sounds/interact.wav<>uid://eyuih5b26otq::::res://Sounds/floor_hole.wav
+::res://Sounds/::1717104809
 dig.wav::AudioStreamWAV::8924344187639577792::1717085328::1717085403::1::::<><>::
 drill.wav::AudioStreamWAV::9035007259905144418::1717085334::1717085403::1::::<><>::
+drill_2.wav::AudioStreamWAV::703509439775147481::1717104776::1717104812::1::::<><>::
 enemy_footstep.wav::AudioStreamWAV::5384281897938148658::1717085338::1717085403::1::::<><>::
 floor_hole.wav::AudioStreamWAV::331529480946467862::1717085760::1717085791::1::::<><>::
 footstep.wav::AudioStreamWAV::6570288524902300789::1717085763::1717085791::1::::<><>::
@@ -92,6 +96,7 @@ menu.wav::AudioStreamWAV::2139485908881893779::1717085349::1717085403::1::::<><>
 pressure_plate_off.wav::AudioStreamWAV::7860704901472571244::1717085355::1717085403::1::::<><>::
 pressure_plate_on.wav::AudioStreamWAV::5582072243554517237::1717085359::1717085403::1::::<><>::
 success.wav::AudioStreamWAV::612802945178013409::1717085363::1717085403::1::::<><>::
+undo.wav::AudioStreamWAV::1870781804453455557::1717104781::1717104812::1::::<><>::
 ::res://Test Assets/::1715025711
 menu_close.wav::AudioStreamWAV::5405387413879713051::1715025647::1715025711::1::::<><>::
 menu_open.wav::AudioStreamWAV::8844124897087593697::1715025647::1715025711::1::::<><>::

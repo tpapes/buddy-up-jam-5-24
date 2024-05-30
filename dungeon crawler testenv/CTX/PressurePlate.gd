@@ -13,6 +13,8 @@ func _ready():
 	body_entered.connect(trigger_plate)
 
 func trigger_plate(body):
+	if not visible:
+		return
 	if is_triggered:
 		return
 	if !body.is_in_group("player"):
