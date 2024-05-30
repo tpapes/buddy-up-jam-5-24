@@ -14,6 +14,7 @@ script = ExtResource("2_totul")
 
 [node name="GroundCheck" type="RayCast2D" parent="."]
 target_position = Vector2(0, 32)
+hit_from_inside = true
 collide_with_areas = true
 
 [node name="WallCheck" type="RayCast2D" parent="."]

@@ -78,8 +78,8 @@ func _process(delta):
 
 func check_direction(from, direction):
 	# Check if there is ground
-	groundCheck.position = Vector2.ZERO
-	groundCheck.target_position = direction
+	groundCheck.position = direction
+	groundCheck.target_position = Vector2.DOWN
 	groundCheck.force_raycast_update()
 	# Check if the spot is taken
 	wallCheck.position = Vector2.ZERO
