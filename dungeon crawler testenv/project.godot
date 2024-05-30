@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Sizes="*res://Autoloads/sizes.gd"
 MovementServer="*res://Autoloads/movement_server.gd"
+Music="*res://Autoloads/Music.tscn"
 
 [display]
 

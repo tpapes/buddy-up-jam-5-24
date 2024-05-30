@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://begs4bjkjjk8l"]
+
+[ext_resource type="Script" path="res://Autoloads/music.gd" id="1_rs7pa"]
+[ext_resource type="AudioStream" uid="uid://b0x3d3cahicge" path="res://Music/lostinspace_techno_version.wav" id="2_ndb6d"]
+[ext_resource type="AudioStream" uid="uid://qv2hy4jpm18c" path="res://Music/lostinspace.wav" id="3_nq722"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_rs7pa")
+
+[node name="TechnoTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ndb6d")
+volume_db = -5.0
+
+[node name="NotTechnoTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nq722")
+volume_db = -5.0

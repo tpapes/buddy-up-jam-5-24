@@ -5,3 +5,5 @@ res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/Element0_CTX.tscn
 res://Menus/MainMenu.gd
 res://CTX/TileStuff.gd
+res://Autoloads/Music.tscn
+res://Autoloads/music.gd

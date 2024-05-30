@@ -12,6 +12,7 @@ extends Node2D
 var game_pl:= preload("res://CTX/TileStuff.tscn")
 
 func _ready():
+	Music.play_theme()
 	help_button.pressed.connect(show_menu.bind(help_canvas))
 	credits_button.pressed.connect(show_menu.bind(credits_canvas))
 	play_button.pressed.connect(start_game)
@@ -32,6 +33,7 @@ func connect_button_sounds(node: Node):
 		connect_button_sounds(child)
 
 func start_game():
+	Music.switch_themes()
 	get_tree().change_scene_to_packed(game_pl)
 
 
