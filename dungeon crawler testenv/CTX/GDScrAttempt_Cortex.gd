@@ -28,7 +28,7 @@ func _ready():
 func check_direction(from: Vector2, direction: Vector2) -> bool:
 	for cast in [groundCheck, wallCheck]:
 		cast.global_position = from + direction
-		cast.target_position = -direction / 4
+		cast.target_position = Vector2.DOWN
 		cast.force_raycast_update()
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()
 

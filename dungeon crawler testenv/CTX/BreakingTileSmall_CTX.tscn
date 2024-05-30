@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbqni"]
 resource_local_to_scene = true
 resource_name = "thisShape"
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
 [node name="BreakingTile_CTX" type="Area2D" groups=["breaking_tile", "undoable"]]
 z_index = -3
