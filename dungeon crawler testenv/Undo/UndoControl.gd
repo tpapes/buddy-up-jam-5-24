@@ -14,10 +14,17 @@ var item_states:= []
 class EnemyState:
 	var glob_pos: Vector2
 	var active: bool
+	var is_fallen: bool
+	var move_pattern: Array
+	var offset: Vector2
 	
-	func init(_glob_pos: Vector2, _active: bool):
+	func init(_glob_pos: Vector2, _active: bool, _is_fallen: bool, \
+			_move_pattern: Array, _offset: Vector2):
 		glob_pos = _glob_pos
 		active = _active
+		is_fallen = _is_fallen
+		move_pattern = _move_pattern
+		offset = _offset
 
 func init(_all_items: Array):
 	all_items = _all_items
@@ -39,7 +46,8 @@ func update_states():
 			current_state[item] = item.is_broken
 		elif item.is_in_group("enemy"):
 			var enemy_state = EnemyState.new()
-			enemy_state.init(item.global_position, item.active)
+			enemy_state.init(item.global_position, item.active, item.is_fallen,\
+					item.movePattern.duplicate(), item.offset)
 			current_state[item] = enemy_state
 		elif item.is_in_group("gate"):
 			current_state[item] = item.is_open
@@ -76,6 +84,10 @@ func undo():
 			var enemy_state = previous_state[item]
 			item.global_position = enemy_state.glob_pos
 			item.toggle_activation(enemy_state.active)
+			item.movePattern = enemy_state.move_pattern.duplicate()
+			item.offset = Vector2.ZERO
+			if item.is_fallen and not enemy_state.is_fallen:
+				item.unfall()
 		elif item.is_in_group("gate"):
 			item.attempt_undo(previous_state[item])
 		elif item.is_in_group("frac_point"):

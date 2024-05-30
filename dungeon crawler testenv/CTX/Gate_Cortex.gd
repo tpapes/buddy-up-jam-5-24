@@ -11,6 +11,7 @@ func _ready():
 	for child in get_children():
 		if child.is_in_group("frac_point"):
 			all_frac_points.append(child)
+			child.just_broke.connect(attempt_open)
 
 func attempt_undo(was_open: bool):
 	if was_open and !is_open:
@@ -34,8 +35,7 @@ func close_gate():
 	z_index = 3
 	is_open = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func attempt_open():
 	if is_open:
 		return
 	var all_broken:= true
@@ -45,4 +45,5 @@ func _process(delta):
 			break
 	if all_broken:
 		open_gate()
+
 

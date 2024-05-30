@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://iy31l4vuhfhh" path="res://Sounds/success.wav" id="5_h68e7"]
 [ext_resource type="AudioStream" uid="uid://clr86c6wrq44x" path="res://Sounds/pressure_plate_on.wav" id="6_0v3fp"]
 [ext_resource type="AudioStream" uid="uid://dj81wqok0n1ns" path="res://Sounds/pressure_plate_off.wav" id="7_2qsm5"]
-[ext_resource type="AudioStream" uid="uid://d1yviqp5xtn2q" path="res://Sounds/drill.wav" id="8_wmmif"]
+[ext_resource type="AudioStream" uid="uid://ka1xyr8bhu0p" path="res://Sounds/drill_2.wav" id="8_pjrmx"]
 [ext_resource type="AudioStream" uid="uid://b26j7wh1b4owo" path="res://Sounds/gate_open.wav" id="9_03xqp"]
 [ext_resource type="AudioStream" uid="uid://cj83akq368tro" path="res://Sounds/interact.wav" id="10_8pmlx"]
 [ext_resource type="AudioStream" uid="uid://eyuih5b26otq" path="res://Sounds/floor_hole.wav" id="11_snkjp"]
@@ -17,6 +17,7 @@ script = ExtResource("1_j2n2j")
 
 [node name="PlayerFootstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fb7yf")
+volume_db = -5.442
 
 [node name="EnemyFootstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k4t0q")
@@ -35,13 +36,17 @@ stream = ExtResource("6_0v3fp")
 stream = ExtResource("7_2qsm5")
 
 [node name="Drill" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_wmmif")
+stream = ExtResource("8_pjrmx")
+volume_db = -11.819
 
 [node name="GateOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_03xqp")
+volume_db = 4.838
 
 [node name="FractureBreak" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_8pmlx")
+volume_db = 2.419
 
 [node name="FloorFall" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_snkjp")
+volume_db = 2.0

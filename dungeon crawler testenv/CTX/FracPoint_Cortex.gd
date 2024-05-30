@@ -3,6 +3,8 @@ extends Sprite2D
 @onready var drill_obj : Node2D
 @onready var area = $Area2D
 
+signal just_broke
+
 var is_broken:= false
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +27,7 @@ func break_frac():
 	self.z_index = 0
 	self.name = "Broken_FracPoint_CTX"
 	is_broken = true
+	just_broke.emit()
 
 func unbreak_frac():
 	region_rect.position.x -= 32
