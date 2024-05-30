@@ -1004,7 +1004,7 @@ position = Vector2(-208, 176)
 pressure_plate = NodePath("../PressurePlate")
 
 [node name="PressurePlate" parent="Puzzle9" instance=ExtResource("8_55mat")]
-position = Vector2(-128, 64)
+position = Vector2(-128, 32)
 
 [node name="Puzzle10" type="Node2D" parent="."]
 position = Vector2(2112, 832)
@@ -1179,7 +1179,7 @@ layer_1/tile_data = PackedInt32Array(3080237, 327680, 3, 3080236, 327680, 3, 308
 
 [node name="Player_CTX" parent="." instance=ExtResource("3_0wtbg")]
 y_sort_enabled = true
-position = Vector2(2128, 592)
+position = Vector2(112, 48)
 
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)
