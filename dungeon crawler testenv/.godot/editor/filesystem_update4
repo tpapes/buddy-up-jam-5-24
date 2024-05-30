@@ -3,8 +3,10 @@ res://Level Scenes/TileSet.tres
 res://CTX/TileStuff.tscn
 res://CTX/Element0_CTX.tscn
 res://CTX/Player_CTX.tscn
-res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/BreakingTileLarge_CTX.tscn
+res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/breaking_group.tscn
-res://CTX/Gate_Small_CTX.tscn
 res://CTX/Gate_CTX.tscn
+res://CTX/Gate_Small_CTX.tscn
+res://CTX/Drill_Cortex.gd
+res://CTX/GDScrAttempt_Cortex.gd

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bi28cacpoo5tt" path="res://CTX/breaking_group.tscn" id="5_ict30"]
 [ext_resource type="PackedScene" uid="uid://dljflyvx8db8a" path="res://CTX/FracPoint_CTX.tscn" id="6_meavi"]
 [ext_resource type="PackedScene" uid="uid://befv3r124isqw" path="res://CTX/Gate_Small_CTX.tscn" id="6_ydnis"]
-[ext_resource type="PackedScene" path="res://CTX/PressurePlate.tscn" id="8_55mat"]
+[ext_resource type="PackedScene" uid="uid://dhmoj63m0caqh" path="res://CTX/PressurePlate.tscn" id="8_55mat"]
 [ext_resource type="PackedScene" uid="uid://dyh2kklgqk0ma" path="res://CTX/Element0_CTX.tscn" id="9_l0eg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybgho"]

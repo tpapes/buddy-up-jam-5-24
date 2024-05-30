@@ -67,7 +67,7 @@ func end_move():
 	inputLog = Vector2.ZERO
 	lerp_weight = 0.0
 	is_moving = false
-	if drill.is_moving:
+	if drill.current_state == drill.States.ROTATING:
 		await drill.move_finished
 	move_finished.emit()
 
