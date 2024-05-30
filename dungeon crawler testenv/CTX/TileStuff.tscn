@@ -520,10 +520,10 @@ player = NodePath("Player_CTX")
 [node name="Puzzle1" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Breaking_Group" parent="Puzzle1" instance=ExtResource("5_ict30")]
-
 [node name="BreakingTileLarge_CTX" parent="Puzzle1" instance=ExtResource("4_vg6iy")]
 position = Vector2(208, 16)
+
+[node name="Breaking_Group" parent="Puzzle1" instance=ExtResource("5_ict30")]
 
 [node name="BlankTileMap2" type="TileMap" parent="Puzzle1"]
 y_sort_enabled = true
