@@ -4,6 +4,7 @@ class_name PressurePlate
 
 signal triggered
 
+@onready var main_spr = $MainSprite
 var is_triggered:= false
 
 func _ready():
@@ -19,3 +20,6 @@ func trigger_plate(body):
 	is_triggered = true
 	triggered.emit()
 
+func _process(delta):
+	if (is_triggered): main_spr.hide()
+	else: main_spr.show()
