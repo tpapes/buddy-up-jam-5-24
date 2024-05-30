@@ -1,8 +1,11 @@
 res://CTX/TileStuff.tscn
-res://CTX/Gate_Small_CTX.tscn
-res://CTX/Player_CTX.tscn
-res://CTX/BreakingTileSmall_CTX.tscn
-res://CTX/Element0_CTX.tscn
-res://CTX/Gate_CTX.tscn
+res://CTX/TileStuff.gd
 res://CTX/PressurePlate.tscn
-res://CTX/PressurePlate.gd
+res://CTX/Element0_CTX.tscn
+res://CTX/Player_CTX.tscn
+res://CTX/GDScrAttempt_Cortex.gd
+res://MoveComponent/MoveComponent.gd
+res://MoveComponent/MoveComponent.tscn
+res://CTX/BreakingTileLarge_CTX.tscn
+res://CTX/BreakingTileSmall_CTX.tscn
+res://CTX/Drill_Cortex.gd

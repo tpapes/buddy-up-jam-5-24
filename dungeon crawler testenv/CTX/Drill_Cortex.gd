@@ -17,7 +17,7 @@ func _ready():
 
 func start_move(move_direction: Vector2):
 	start_position = position
-	goal_position = move_direction
+	goal_position = move_direction * Sizes.newTileSize
 	slerp_weight = 0.0
 	is_moving = true
 

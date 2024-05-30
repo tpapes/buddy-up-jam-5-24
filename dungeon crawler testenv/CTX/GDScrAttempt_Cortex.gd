@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var move_component = $MoveComponent
 @onready var groundCheck = $GroundCheck
 @onready var wallCheck = $WallCheck
 @onready var drill = $Drill
@@ -24,19 +25,22 @@ signal move_finished
 func _ready():
 	startPos = self.position
 	targetPos = self.position
+	move_component.init(self)
+	move_component.starting_move.connect(drill.start_move)
 
 func check_direction(from: Vector2, direction: Vector2) -> bool:
 	for cast in [groundCheck, wallCheck]:
 		cast.global_position = from + direction
 		cast.target_position = -direction / 4
 		cast.force_raycast_update()
+	print("player",groundCheck.is_colliding(), !wallCheck.is_colliding())
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		return
-	if is_moving:
-		return
+	#if is_moving:
+	#	return
 	if inputLog != Vector2.ZERO:
 		return
 	if event.is_action_pressed("left"):
@@ -72,15 +76,17 @@ func end_move():
 	move_finished.emit()
 
 func _physics_process(delta):
-	update_move_state()
-	if !is_moving:
-		return
-	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
-	if (sprite.offset.length() < 3):
-		end_move()
-		sprite.offset = Vector2.ZERO
-	#lerp_weight += LERP_SPEED * delta
-	#lerp_weight = clamp(lerp_weight, 0.0, 1.0)
+	move_component.attempt_move(inputLog)
+	inputLog = Vector2.ZERO
+	#update_move_state()
+	#if !is_moving:
+		#return
+	#sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
+	#if (sprite.offset.length() < 3):
+		#end_move()
+		#sprite.offset = Vector2.ZERO
+	##lerp_weight += LERP_SPEED * delta
+	##lerp_weight = clamp(lerp_weight, 0.0, 1.0)
 
 func _process(delta):
 	if (camera != null):

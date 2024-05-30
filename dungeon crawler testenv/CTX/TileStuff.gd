@@ -13,16 +13,20 @@ func _ready():
 
 func prep_undo_control():
 	undo_control = undo_control_pl.instantiate()
-	var items = get_items(self)
+	var items = get_items(self, "undoable")
 	undo_control.init(items)
 	add_child(undo_control)
 
-func get_items(parent_node: Node) -> Array:
+func init_robots():
+	var robots = get_items(self, "enemy")
+	
+
+func get_items(parent_node: Node, group: String) -> Array:
 	var items:= []
 	for child in parent_node.get_children():
-		if child.is_in_group("undoable"):
+		if child.is_in_group(group):
 			items.append(child)
-		items.append_array(get_items(child))
+		items.append_array(get_items(child, group))
 	return items
 
 

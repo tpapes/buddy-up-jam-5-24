@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://beue427valnrm"]
+
+[ext_resource type="Script" path="res://MoveComponent/MoveComponent.gd" id="1_7v286"]
+
+[node name="MoveComponent" type="Node2D"]
+script = ExtResource("1_7v286")
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
