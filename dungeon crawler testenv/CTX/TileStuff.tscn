@@ -1069,6 +1069,7 @@ position = Vector2(64, -32)
 [node name="Element0_CTX" parent="Puzzle11" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-16, 16)
 pressure_plate = NodePath("../PressurePlate")
+starting_direction = Vector2(2.08165e-12, 1)
 
 [node name="PressurePlate" parent="Puzzle11" instance=ExtResource("8_55mat")]
 position = Vector2(96, 0)
@@ -1100,8 +1101,9 @@ position = Vector2(-96, 96)
 position = Vector2(-96, 0)
 
 [node name="Element0_CTX" parent="Puzzle12" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
-position = Vector2(-80, 48)
+position = Vector2(-48, 48)
 pressure_plate = NodePath("../PressurePlate")
+starting_direction = Vector2(2.08165e-12, -1)
 
 [node name="Gate_CTX" parent="Puzzle12" instance=ExtResource("6_ydnis")]
 position = Vector2(80, 96)
@@ -1151,8 +1153,9 @@ position = Vector2(48, 96)
 position = Vector2(176, 64)
 
 [node name="Element0_CTX" parent="Puzzle13" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
-position = Vector2(80, -48)
+position = Vector2(80, 16)
 pressure_plate = NodePath("../PressurePlate")
+starting_direction = Vector2(2.08165e-12, 1)
 
 [node name="Element0_CTX2" parent="Puzzle13" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-16, -112)

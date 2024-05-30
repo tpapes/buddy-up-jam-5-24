@@ -40,7 +40,7 @@ func prep_sound_component():
 		plate.triggered.connect(play_sound.bind(sound_component.SoundEnum.PLATE_ON))
 	var enemies = get_items(self, "enemy")
 	for enemy in enemies:
-		enemy.visible_move.connect(play_sound.bind(sound_component.SoundEnum.FLOOR_FALL))
+		enemy.visible_move.connect(play_sound.bind(sound_component.SoundEnum.ENEMY_FOOTSTEP))
 	var tiles = get_items(self, "breaking_tile")
 	for tile in tiles:
 		tile.starting_break.connect(play_sound.bind(sound_component.SoundEnum.FLOOR_FALL))
