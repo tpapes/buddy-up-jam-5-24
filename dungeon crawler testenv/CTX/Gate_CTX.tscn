@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://CTX/Gate_Cortex.gd" id="2_vtf1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi2ky"]
-size = Vector2(64, 64)
+size = Vector2(48, 48)
 
 [node name="Gate_CTX" type="Sprite2D" groups=["gate", "undoable"]]
 z_index = 3
