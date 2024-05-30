@@ -575,6 +575,7 @@ layer_1/tile_data = PackedInt32Array(262151, 327680, 3, 262150, 327680, 5, 26214
 position = Vector2(160, 96)
 
 [node name="PressurePlate" parent="Puzzle2" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(64, 96)
 
 [node name="Puzzle3" type="Node2D" parent="."]
@@ -611,6 +612,7 @@ position = Vector2(-64, 32)
 position = Vector2(-96, 64)
 
 [node name="PressurePlate" parent="Puzzle3" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(96, 64)
 
 [node name="Puzzle4" type="Node2D" parent="."]
@@ -682,6 +684,7 @@ position = Vector2(240, -64)
 position = Vector2(0, 96)
 
 [node name="PressurePlate" parent="Puzzle4" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(160, 0)
 
 [node name="Puzzle5" type="Node2D" parent="."]
@@ -772,6 +775,7 @@ z_as_relative = true
 position = Vector2(-112, -96)
 
 [node name="PressurePlate" parent="Puzzle5" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(-112, 96)
 
 [node name="BlankTileMap2" type="TileMap" parent="Puzzle5"]
@@ -884,6 +888,7 @@ layer_1/z_index = -4
 layer_1/tile_data = PackedInt32Array(917536, 327680, 3, 917534, 327680, 5, 917535, 327680, 5, 917537, 327680, 5, 917538, 327680, 5, 1114147, 327680, 5, 1376294, 327680, 5, 1245220, 327680, 5, 1310757, 327680, 5, 1376290, 327680, 5)
 
 [node name="PressurePlate" parent="Puzzle6" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(-16, -112)
 
 [node name="Puzzle7" type="Node2D" parent="."]
@@ -921,6 +926,7 @@ position = Vector2(-160, -64)
 position = Vector2(-128, -64)
 
 [node name="PressurePlate" parent="Puzzle7" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(128, -128)
 
 [node name="Puzzle8" type="Node2D" parent="."]
@@ -928,6 +934,7 @@ position = Vector2(2048, 352)
 metadata/_edit_lock_ = true
 
 [node name="PressurePlate" parent="Puzzle8" instance=ExtResource("8_55mat")]
+visible = false
 position = Vector2(-32, 64)
 
 [node name="BreakingTile_CTX2" parent="Puzzle8" instance=ExtResource("5_fyigq")]
@@ -992,8 +999,9 @@ position = Vector2(-64, -32)
 [node name="FracPoint_CTX2" parent="Puzzle9/Gate_CTX" instance=ExtResource("6_meavi")]
 position = Vector2(64, -64)
 
-[node name="Element0_CTX" parent="Puzzle9" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX" parent="Puzzle9" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-208, 176)
+pressure_plate = NodePath("../PressurePlate")
 
 [node name="PressurePlate" parent="Puzzle9" instance=ExtResource("8_55mat")]
 position = Vector2(-128, 32)
@@ -1002,8 +1010,9 @@ position = Vector2(-128, 32)
 position = Vector2(2112, 832)
 metadata/_edit_lock_ = true
 
-[node name="Element0_CTX" parent="Puzzle10" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX" parent="Puzzle10" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(48, 176)
+pressure_plate = NodePath("../PressurePlate")
 
 [node name="Gate_CTX" parent="Puzzle10" instance=ExtResource("4_juaek")]
 position = Vector2(0, 224)
@@ -1065,8 +1074,9 @@ position = Vector2(32, 64)
 [node name="FracPoint_CTX3" parent="Puzzle11/Gate_CTX" instance=ExtResource("6_meavi")]
 position = Vector2(64, -32)
 
-[node name="Element0_CTX" parent="Puzzle11" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX" parent="Puzzle11" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-16, 16)
+pressure_plate = NodePath("../PressurePlate")
 
 [node name="PressurePlate" parent="Puzzle11" instance=ExtResource("8_55mat")]
 position = Vector2(96, 0)
@@ -1094,8 +1104,9 @@ position = Vector2(-96, 96)
 [node name="BreakingTile_CTX6" parent="Puzzle12" instance=ExtResource("5_fyigq")]
 position = Vector2(-96, 0)
 
-[node name="Element0_CTX" parent="Puzzle12" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX" parent="Puzzle12" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-48, 48)
+pressure_plate = NodePath("../PressurePlate")
 
 [node name="Gate_CTX" parent="Puzzle12" instance=ExtResource("6_ydnis")]
 position = Vector2(80, 96)
@@ -1144,11 +1155,13 @@ position = Vector2(48, 96)
 [node name="FracPoint_CTX3" parent="Puzzle13/Gate_CTX" instance=ExtResource("6_meavi")]
 position = Vector2(176, 64)
 
-[node name="Element0_CTX" parent="Puzzle13" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX" parent="Puzzle13" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(80, -48)
+pressure_plate = NodePath("../PressurePlate")
 
-[node name="Element0_CTX2" parent="Puzzle13" instance=ExtResource("9_l0eg3")]
+[node name="Element0_CTX2" parent="Puzzle13" node_paths=PackedStringArray("pressure_plate") instance=ExtResource("9_l0eg3")]
 position = Vector2(-16, -112)
+pressure_plate = NodePath("../PressurePlate")
 
 [node name="PressurePlate" parent="Puzzle13" instance=ExtResource("8_55mat")]
 position = Vector2(160, 0)
@@ -1166,7 +1179,7 @@ layer_1/tile_data = PackedInt32Array(3080237, 327680, 3, 3080236, 327680, 3, 308
 
 [node name="Player_CTX" parent="." instance=ExtResource("3_0wtbg")]
 y_sort_enabled = true
-position = Vector2(112, 48)
+position = Vector2(2128, 560)
 
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)

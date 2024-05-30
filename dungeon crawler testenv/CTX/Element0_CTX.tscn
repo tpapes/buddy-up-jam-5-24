@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
 size = Vector2(4, 4)
 
-[node name="Element0_CTX" type="Sprite2D" groups=["player", "undoable"]]
+[node name="Element0_CTX" type="Sprite2D" groups=["enemy", "undoable"]]
 modulate = Color(1, 0.34, 0.34, 1)
 z_index = 1
 texture = ExtResource("1_1w42s")
@@ -21,7 +21,7 @@ target_position = Vector2(0, 32)
 collision_mask = 2
 collide_with_areas = true
 
-[node name="Foot" type="Area2D" parent="." groups=["player"]]
+[node name="Foot" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 3
 

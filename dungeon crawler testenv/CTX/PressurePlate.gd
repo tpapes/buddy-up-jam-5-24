@@ -12,10 +12,10 @@ func _ready():
 	body_entered.connect(trigger_plate)
 
 func trigger_plate(body):
+	if is_triggered:
+		return
 	if !body.is_in_group("player"):
 		return
 	is_triggered = true
 	triggered.emit()
 
-func untrigger_plate():
-	is_triggered = false
