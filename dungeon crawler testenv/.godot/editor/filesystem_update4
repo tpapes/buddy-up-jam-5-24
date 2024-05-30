@@ -1,16 +1,7 @@
-res://node.tscn
-res://Level Scenes/TileSet.tres
+res://Menus/MainMenu.tscn
 res://CTX/TileStuff.tscn
-res://CTX/PressurePlate.tscn
-res://Items/FallableSprite.tscn
-res://CTX/BreakingTileSmall_CTX.tscn
-res://CTX/BreakingTileLarge_CTX.tscn
 res://SoundComponent/SoundComponent.tscn
-res://CTX/PressurePlate.gd
-res://CTX/Gate_Cortex.gd
-res://CTX/FracPoint_Cortex.gd
-res://CTX/TileStuff.gd
+res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/Element0_CTX.tscn
-res://CTX/Element0_Cortex.gd
-res://Items/FallableSprite.gd
-res://Undo/UndoControl.gd
+res://Menus/MainMenu.gd
+res://CTX/TileStuff.gd

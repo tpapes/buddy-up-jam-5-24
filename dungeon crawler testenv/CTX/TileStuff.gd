@@ -11,6 +11,7 @@ func _ready():
 	assert(player != null, "player variable must be set in Inspector.")
 	prep_undo_control()
 	prep_sound_component()
+	sound_component.play_sound(sound_component.SoundEnum.MENU_CLICK)
 	player.move_finished.connect(undo_control.update_states)
 	player.drill.drilled_frac.connect(undo_control.update_states)
 
