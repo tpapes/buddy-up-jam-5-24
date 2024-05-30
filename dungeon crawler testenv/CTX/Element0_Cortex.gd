@@ -8,9 +8,11 @@ extends Node
 @onready var groundCheck = $GroundCheck
 @onready var wallCheck = $WallCheck
 @onready var foot = $Foot
+@onready var sprite : Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	sprite = self.get_node(".")
 	targetPos = self.position
 	moveStep = 0
 	move_ready = true
@@ -24,39 +26,42 @@ func _process(delta):
 	# When the player is ready to move, determine the move direction for this step
 	if (player != null and move_ready and movePattern.size() > 0):
 		move_ready = false
-		self.position = targetPos
 		var direction = Vector2.ZERO
 		
 		for i in movePattern.size():
-			if (check_direction(targetPos, movePattern[moveStep] * 32)):
+			if (check_direction(self.global_position, movePattern[moveStep] * 32)):
 				direction = movePattern[moveStep] * 32
 				break;
 			else:
 				movePattern[moveStep] *= -1
-				if (check_direction(targetPos, movePattern[moveStep] * 32)):
+				if (check_direction(self.global_position, movePattern[moveStep] * 32)):
 					direction = movePattern[moveStep] * 32
 					break;
 				else:
 					moveStep = (moveStep + 1) % movePattern.size()
-		targetPos += direction
+		self.position += direction
+		sprite.offset = -direction
 		moveStep = (moveStep + 1) % movePattern.size()
+		
 	
-	# Slide player into target position
-	self.position = lerp(self.position, targetPos, 16 * delta)
+	# Slide into target position
+	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
+	if (sprite.offset.length() < 3):
+		sprite.offset = Vector2.ZERO
 	
 	# Move foot onto target position
-	foot.global_position = targetPos
+	foot.global_position = self.global_position
 	foot.force_update_transform()
 	
 
 func check_direction(from, direction):
 	# Check if there is ground
-	groundCheck.global_position = from + direction
-	groundCheck.target_position = -direction
+	groundCheck.position = Vector2.ZERO
+	groundCheck.target_position = direction
 	groundCheck.force_raycast_update()
 	# Check if the spot is taken
-	wallCheck.global_position = from + direction
-	wallCheck.target_position = -direction
+	wallCheck.position = Vector2.ZERO
+	wallCheck.target_position = direction
 	wallCheck.force_raycast_update()
 	# Return true if there is ground and spot is not taken
 	return groundCheck.is_colliding() && !wallCheck.is_colliding()

@@ -1193,11 +1193,11 @@ metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Player_CTX/Camera2D"]
 z_index = -20
-offset_left = -288.0
-offset_top = -160.0
-offset_right = -276.0
-offset_bottom = -146.0
-scale = Vector2(48, 24)
+offset_left = -76.0
+offset_top = -44.0
+offset_right = -71.0
+offset_bottom = -38.0
+scale = Vector2(30.225, 15.113)
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
