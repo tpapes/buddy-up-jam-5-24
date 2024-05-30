@@ -11,6 +11,9 @@ extends Node
 @onready var wallCheck = $WallCheck
 @onready var foot = $Foot
 @onready var sprite : Sprite2D
+@onready var visibility_notifier:= $VisibleOnScreenNotifier2D
+
+signal visible_move
 
 var active:= false
 
@@ -60,7 +63,8 @@ func _process(delta):
 		self.position += direction
 		sprite.offset = -direction
 		moveStep = (moveStep + 1) % movePattern.size()
-		
+		if visibility_notifier.is_on_screen():
+			visible_move.emit()
 	
 	# Slide into target position
 	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)

@@ -11,6 +11,7 @@ var goal_position: Vector2
 var previous_direction: Vector2
 
 signal drill(frac_area)
+signal used_drill
 signal drilled_frac
 signal move_finished
 
@@ -42,6 +43,7 @@ func attempt_drill():
 		if (n.is_in_group("frac_point")):
 			drill_used = true
 			drill.emit(n)
+	used_drill.emit()
 	if drill_used:
 		drilled_frac.emit()
 

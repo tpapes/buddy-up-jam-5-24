@@ -1,93 +1,107 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717088909
-default_bus_layout.tres::AudioBusLayout::230519161501026014::1715912854::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1715912854::0::1::::<><>::
-icon.svg::CompressedTexture2D::4969517964276732136::1715912854::1715912854::1::::<><>::
-Level.gd::GDScript::-1::1715912854::0::1::::Level<>Node<>::
-node.tscn::PackedScene::3858848370103980822::1717085182::0::1::::<><>::uid://bbahc0rp87tck::::res://Inventory/inventory.tscn<>res://Inventory/Item.gd<>uid://cc2jh8phbpu05::::res://icon.svg<>res://Weapon/BlasterGun.gd<>uid://dsajjc5iivurf::::res://Levels/PrototypePuzzle.tscn<>uid://cjbj7tmbbup8p::::res://Menus/options_menu.tscn
-Test_Action_Two.gd::GDScript::-1::1715912854::0::1::::<>Item_Script<>::
-::res://Autoloads/::1716895182
-movement_server.gd::GDScript::-1::1715912854::0::1::::<>Node<>::
-sizes.gd::GDScript::-1::1716895182::0::1::::<>Node<>::
-::res://Character/::1715912854
-Character.gd::GDScript::-1::1715912854::0::1::::Player<>Node2D<>::
-character.tscn::PackedScene::3191088517741026491::1715912854::0::1::::<><>::res://Character/Character.gd<>res://Character/Movement.gd<>uid://bxrn4c726rtvr::::res://Test Assets/sand_walk.wav
-Movement.gd::GDScript::-1::1715912854::0::1::::Movement<>RayCast2D<>::
-::res://Character/Enemy/::1715912854
-DiagonalWander.gd::GDScript::-1::1715912854::0::1::::<>Node<>::
-enemy.tscn::PackedScene::3841762903547338171::1715912854::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/DiagonalWander.gd
-::res://Character/Enemy/Charger/::1715912854
-Charger.tscn::PackedScene::692332773654138048::1715912854::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/Charger/ChargerBehavior.gd
-ChargerBehavior.gd::GDScript::-1::1715912854::0::1::::<>Node2D<>::
-::res://Character/Enemy/Mimic/::1715912854
-Mimic.gd::GDScript::-1::1715912854::0::1::::<>Node<>::
-Mimic.tscn::PackedScene::5724764383091467615::1715912854::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/Mimic/Mimic.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-::res://Character/Player/::1715912854
-Input.gd::GDScript::-1::1715912854::0::1::::<>Node<>::
-Player.tscn::PackedScene::8736283773858964097::1715912854::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Player/Input.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-::res://CTX/::1717088954
-astronaut1.png::CompressedTexture2D::8332494746115713440::1717033196::1717033196::1::::<><>::
-BreakingTileLarge_CTX.tscn::PackedScene::6685338488843589853::1717085183::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
-BreakingTileSmall_CTX.tscn::PackedScene::7457764994336013889::1717085183::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
-BreakingTile_Cortex.gd::GDScript::-1::1716895182::0::1::::<>Area2D<>::
-breaking_group.tscn::PackedScene::3005676868296511681::1717035233::0::1::::<><>::uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn
-chisel_tool.png::CompressedTexture2D::4468389143629899431::1717088954::1717088954::1::::<><>::
-crystalsSet.png::CompressedTexture2D::6215937488616467732::1717028795::1717028795::1::::<><>::
-Drill_Cortex.gd::GDScript::-1::1717078073::0::1::::<>Area2D<>::
-Element0_Cortex.gd::GDScript::-1::1717084806::0::1::::<>Node<>::
-Element0_CTX.tscn::PackedScene::8859902701935008588::1717085183::0::1::::<><>::uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Element0_Cortex.gd
-FracPoint_Cortex.gd::GDScript::-1::1716895182::0::1::::<>Sprite2D<>::
-FracPoint_CTX.tscn::PackedScene::7950243253671513774::1716895182::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/FracPoint_Cortex.gd
-Gate_Cortex.gd::GDScript::-1::1716895182::0::1::::<>Sprite2D<>::
-Gate_CTX.tscn::PackedScene::945101181249199679::1717035233::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
-Gate_Small_CTX.tscn::PackedScene::2678823940420675566::1717035233::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
-GDScrAttempt_Cortex.gd::GDScript::-1::1717084756::0::1::::<>CharacterBody2D<>::
-Player_CTX.tscn::PackedScene::3564721345240879533::1717085183::0::1::::<><>::uid://cc2jh8phbpu05::::res://icon.svg<>res://CTX/GDScrAttempt_Cortex.gd<>uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Drill_Cortex.gd
-PressurePlate.gd::GDScript::-1::1717082359::0::1::::PressurePlate<>Area2D<>::
-PressurePlate.tscn::PackedScene::7676224271695212487::1717085183::0::1::::<><>::res://CTX/PressurePlate.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
-tileSet.png::CompressedTexture2D::7115307590764127349::1717082847::1717082847::1::::<><>::
-TileStuff.gd::GDScript::-1::1716895182::0::1::::<>Node2D<>::
-TileStuff.tscn::PackedScene::3361192616638707457::1717085303::0::1::::<><>::res://CTX/TileStuff.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png<>uid://bq11o7lxqq2e0::::res://CTX/Player_CTX.tscn<>uid://np2xcg220yh0::::res://CTX/Gate_CTX.tscn<>uid://c2iosvxk0kfon::::res://CTX/BreakingTileLarge_CTX.tscn<>uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn<>uid://bi28cacpoo5tt::::res://CTX/breaking_group.tscn<>uid://dljflyvx8db8a::::res://CTX/FracPoint_CTX.tscn<>uid://befv3r124isqw::::res://CTX/Gate_Small_CTX.tscn<>uid://dhmoj63m0caqh::::res://CTX/PressurePlate.tscn<>uid://dyh2kklgqk0ma::::res://CTX/Element0_CTX.tscn
-::res://Inventory/::1715912854
-Inventory.gd::GDScript::-1::1715912854::0::1::::Inventory<>ItemList<>::
-inventory.tscn::PackedScene::2457039457940647370::1715912854::0::1::::<><>::res://Inventory/Inventory.gd<>res://Inventory/MenuAudio.gd<>uid://dyafpek3hc74h::::res://Test Assets/menu_open.wav<>uid://cjan6804tnis6::::res://Test Assets/menu_close.wav
-Item.gd::GDScript::-1::1715912854::0::1::::Item<>Resource<>::
-MenuAudio.gd::GDScript::-1::1715912854::0::1::::<>AudioStreamPlayer<>::
-::res://Items/::1715912854
-Base_Action.gd::GDScript::-1::1715912854::0::1::::Item_Script<>Node<>::
-Test_Item.tres::Resource/Resource::8068145904313589736::1715912854::0::1::::<><>::res://Inventory/Item.gd<>res://Items/Base_Action.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-::res://Level Scenes/::1717078256
-TileSet.tres::TileSet::65382799103943870::1717078256::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>uid://dgujda36gnibk::::res://Level Scenes/Collapsable/Collapsable.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://buy8jko2bv6e6::::res://Character/Enemy/enemy.tscn
-void.tscn::PackedScene::8049138790384345108::1715912854::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn
-wall.tscn::PackedScene::683693284124066650::1715912854::0::1::::<><>::
-::res://Level Scenes/Collapsable/::1715912854
-Collapsable.tscn::PackedScene::7622234522976865908::1715912854::0::1::::<><>::uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>res://Level Scenes/Collapsable/Collapse.gd
-Collapse.gd::GDScript::-1::1715912854::0::1::::<>Area2D<>::
-::res://Level Scenes/Door/::1715912854
-door.gd::GDScript::-1::1715912854::0::1::::<>Node2D<>::
-door.tscn::PackedScene::998130019789055207::1715912854::0::1::::<><>::res://Level Scenes/Door/door.gd
-::res://Level Scenes/DoorTrigger/::1715912854
-door_trigger.gd::GDScript::-1::1715912854::0::1::::DoorTrigger<>Node2D<>::
-door_trigger.tscn::PackedScene::7987521240178629016::1715912854::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>res://Level Scenes/DoorTrigger/door_trigger.gd
-::res://Level Scenes/Exit/::1715912854
-level_transition.gd::GDScript::-1::1715912854::0::1::::<>Node2D<>::
-level_transition.tscn::PackedScene::7809247674519225403::1715912854::0::1::::<><>::res://Level Scenes/Exit/level_transition.gd
-::res://Levels/::1716895019
-CombatTest.tscn::PackedScene::9171908170169861021::1716895019::0::1::::<><>::res://Level.gd<>uid://6w3y8yvk6gw::::res://Level Scenes/TileSet.tres<>uid://dji4fyrb3l67h::::res://Level Scenes/Exit/level_transition.tscn<>uid://j4mvcj8hglxg::::res://Character/Enemy/Charger/Charger.tscn<>uid://dwp6k14335tjt::::res://Character/Player/Player.tscn<>uid://cntebeexa3d5x::::res://Character/Enemy/Mimic/Mimic.tscn
-PrototypePuzzle.tscn::PackedScene::8423223913409784255::1716895019::0::1::::<><>::res://Level.gd<>uid://6w3y8yvk6gw::::res://Level Scenes/TileSet.tres<>uid://dwp6k14335tjt::::res://Character/Player/Player.tscn<>uid://ohrb5jgxd8gp::::res://Level Scenes/Door/door.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://dji4fyrb3l67h::::res://Level Scenes/Exit/level_transition.tscn
-::res://Menus/::1715912854
-OptionsMenu.gd::GDScript::-1::1715912854::0::1::::<>Control<>::
-options_menu.tscn::PackedScene::5407209952751290237::1715912854::0::1::::<><>::res://Menus/OptionsMenu.gd
-::res://Test Assets/::1715912854
-menu_close.wav::AudioStreamWAV::5405387413879713051::1715912854::1715912854::1::::<><>::
-menu_open.wav::AudioStreamWAV::8844124897087593697::1715912854::1715912854::1::::<><>::
-sand_walk.wav::AudioStreamWAV::4036699773865383423::1715912854::1715912854::1::::<><>::
-Test_Action_Two.gd::GDScript::-1::1715912854::0::1::::<>Item_Script<>::
-::res://Undo/::1717078073
-UndoControl.gd::GDScript::-1::1717078073::0::1::::UndoControl<>Node<>::
-UndoControl.tscn::PackedScene::3988746810465741296::1716925785::0::1::::<><>::res://Undo/UndoControl.gd
-::res://Weapon/::1717028770
-BlasterGun.gd::GDScript::-1::1715912854::0::1::::<>Item_Script<>::
-Bullet.gd::GDScript::-1::1715912854::0::1::::Bullet<>Area2D<>::
-Bullet.tscn::PackedScene::1473982523963953205::1715912854::0::1::::<><>::res://Weapon/Bullet.gd<>uid://cc2jh8phbpu05::::res://icon.svg
-test_sprite_32x32.png::CompressedTexture2D::8615898868683739666::1717028770::1717028770::1::::<><>::
+::res://::1717085272
+default_bus_layout.tres::AudioBusLayout::230519161501026014::1715087759::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1716083260::0::1::::<><>::
+icon.svg::CompressedTexture2D::4969517964276732136::1715025647::1715025711::1::::<><>::
+Level.gd::GDScript::-1::1716083260::0::1::::Level<>Node<>::
+node.tscn::PackedScene::3858848370103980822::1717045535::0::1::::<><>::uid://bbahc0rp87tck::::res://Inventory/inventory.tscn<>res://Inventory/Item.gd<>uid://cc2jh8phbpu05::::res://icon.svg<>res://Weapon/BlasterGun.gd<>uid://dsajjc5iivurf::::res://Levels/PrototypePuzzle.tscn<>uid://cjbj7tmbbup8p::::res://Menus/options_menu.tscn
+Test_Action_Two.gd::GDScript::-1::1716083260::0::1::::<>Item_Script<>::
+::res://Autoloads/::1716843712
+movement_server.gd::GDScript::-1::1716083260::0::1::::<>Node<>::
+sizes.gd::GDScript::-1::1716843712::0::1::::<>Node<>::
+::res://Character/::1716788679
+Character.gd::GDScript::-1::1716083260::0::1::::Player<>Node2D<>::
+character.tscn::PackedScene::3191088517741026491::1716788679::0::1::::<><>::res://Character/Character.gd<>res://Character/Movement.gd<>uid://bxrn4c726rtvr::::res://Test Assets/sand_walk.wav
+Movement.gd::GDScript::-1::1716083260::0::1::::Movement<>RayCast2D<>::
+::res://Character/Enemy/::1716083260
+DiagonalWander.gd::GDScript::-1::1715087759::0::1::::<>Node<>::
+enemy.tscn::PackedScene::3841762903547338171::1716083260::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/DiagonalWander.gd
+::res://Character/Enemy/Charger/::1716083260
+Charger.tscn::PackedScene::692332773654138048::1716083260::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/Charger/ChargerBehavior.gd
+ChargerBehavior.gd::GDScript::-1::1716083260::0::1::::<>Node2D<>::
+::res://Character/Enemy/Mimic/::1716083260
+Mimic.gd::GDScript::-1::1716083260::0::1::::<>Node<>::
+Mimic.tscn::PackedScene::5724764383091467615::1716083260::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Enemy/Mimic/Mimic.gd<>uid://cc2jh8phbpu05::::res://icon.svg
+::res://Character/Player/::1716083260
+Input.gd::GDScript::-1::1716083260::0::1::::<>Node<>::
+Player.tscn::PackedScene::8736283773858964097::1716083260::0::1::::<><>::uid://blp105qoeh1tv::::res://Character/character.tscn<>res://Character/Player/Input.gd<>uid://cc2jh8phbpu05::::res://icon.svg
+::res://CTX/::1717085175
+astronaut1.png::CompressedTexture2D::8332494746115713440::1717030154::1717030154::1::::<><>::
+BreakingTileLarge_CTX.tscn::PackedScene::6685338488843589853::1717038653::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+BreakingTileSmall_CTX.tscn::PackedScene::7457764994336013889::1717038653::0::1::::<><>::res://CTX/BreakingTile_Cortex.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+BreakingTile_Cortex.gd::GDScript::-1::1716843712::0::1::::<>Area2D<>::
+breaking_group.tscn::PackedScene::3005676868296511681::1717038653::0::1::::<><>::uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn
+crystalsSet.png::CompressedTexture2D::6215937488616467732::1717030154::1717030171::1::::<><>::
+Drill_Cortex.gd::GDScript::-1::1717038353::0::1::::<>Area2D<>::
+Element0_Cortex.gd::GDScript::-1::1717045445::0::1::::<>Node<>::
+Element0_CTX.tscn::PackedScene::8859902701935008588::1717045535::0::1::::<><>::uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Element0_Cortex.gd
+FracPoint_Cortex.gd::GDScript::-1::1716843712::0::1::::<>Sprite2D<>::
+FracPoint_CTX.tscn::PackedScene::7950243253671513774::1716843119::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/FracPoint_Cortex.gd
+Gate_Cortex.gd::GDScript::-1::1716792467::0::1::::<>Sprite2D<>::
+Gate_CTX.tscn::PackedScene::945101181249199679::1717038653::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
+Gate_Small_CTX.tscn::PackedScene::2678823940420675566::1717038653::0::1::::<><>::uid://cutbt2d3vkgtw::::res://CTX/crystalsSet.png<>res://CTX/Gate_Cortex.gd
+GDScrAttempt_Cortex.gd::GDScript::-1::1717037968::0::1::::<>CharacterBody2D<>::
+Player_CTX.tscn::PackedScene::3564721345240879533::1717045535::0::1::::<><>::uid://cc2jh8phbpu05::::res://icon.svg<>res://CTX/GDScrAttempt_Cortex.gd<>uid://dqyk8atftcbdw::::res://CTX/astronaut1.png<>res://CTX/Drill_Cortex.gd
+PressurePlate.gd::GDScript::-1::1717085139::0::1::::PressurePlate<>Area2D<>::
+PressurePlate.tscn::PackedScene::7676224271695212487::1717085139::0::1::::<><>::res://CTX/PressurePlate.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png
+tileSet.png::CompressedTexture2D::7115307590764127349::1717085139::1717085175::1::::<><>::
+TileStuff.gd::GDScript::-1::1717036746::0::1::::<>Node2D<>::
+TileStuff.tscn::PackedScene::3361192616638707457::1717085139::0::1::::<><>::res://CTX/TileStuff.gd<>uid://c8mycung3lkfl::::res://CTX/tileSet.png<>uid://bq11o7lxqq2e0::::res://CTX/Player_CTX.tscn<>uid://np2xcg220yh0::::res://CTX/Gate_CTX.tscn<>uid://c2iosvxk0kfon::::res://CTX/BreakingTileLarge_CTX.tscn<>uid://deiukgv3sml0d::::res://CTX/BreakingTileSmall_CTX.tscn<>uid://bi28cacpoo5tt::::res://CTX/breaking_group.tscn<>uid://dljflyvx8db8a::::res://CTX/FracPoint_CTX.tscn<>uid://befv3r124isqw::::res://CTX/Gate_Small_CTX.tscn<>uid://dhmoj63m0caqh::::res://CTX/PressurePlate.tscn<>uid://dyh2kklgqk0ma::::res://CTX/Element0_CTX.tscn
+::res://Inventory/::1716083260
+Inventory.gd::GDScript::-1::1716083260::0::1::::Inventory<>ItemList<>::
+inventory.tscn::PackedScene::2457039457940647370::1715087759::0::1::::<><>::res://Inventory/Inventory.gd<>res://Inventory/MenuAudio.gd<>uid://dyafpek3hc74h::::res://Test Assets/menu_open.wav<>uid://cjan6804tnis6::::res://Test Assets/menu_close.wav
+Item.gd::GDScript::-1::1715025647::0::1::::Item<>Resource<>::
+MenuAudio.gd::GDScript::-1::1715025647::0::1::::<>AudioStreamPlayer<>::
+::res://Items/::1715087759
+Base_Action.gd::GDScript::-1::1715087759::0::1::::Item_Script<>Node<>::
+Test_Item.tres::Resource/Resource::8068145904313589736::1715025647::0::1::::<><>::res://Inventory/Item.gd<>res://Items/Base_Action.gd<>uid://cc2jh8phbpu05::::res://icon.svg
+::res://Level Scenes/::1717085283
+TileSet.tres::TileSet::65382799103943870::1717085283::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>uid://dgujda36gnibk::::res://Level Scenes/Collapsable/Collapsable.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://buy8jko2bv6e6::::res://Character/Enemy/enemy.tscn
+void.tscn::PackedScene::8049138790384345108::1716083260::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn
+wall.tscn::PackedScene::683693284124066650::1716083260::0::1::::<><>::
+::res://Level Scenes/Collapsable/::1716083260
+Collapsable.tscn::PackedScene::7622234522976865908::1716083260::0::1::::<><>::uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>res://Level Scenes/Collapsable/Collapse.gd
+Collapse.gd::GDScript::-1::1716083260::0::1::::<>Area2D<>::
+::res://Level Scenes/Door/::1716083260
+door.gd::GDScript::-1::1716083260::0::1::::<>Node2D<>::
+door.tscn::PackedScene::998130019789055207::1716083260::0::1::::<><>::res://Level Scenes/Door/door.gd
+::res://Level Scenes/DoorTrigger/::1716083260
+door_trigger.gd::GDScript::-1::1716083260::0::1::::DoorTrigger<>Node2D<>::
+door_trigger.tscn::PackedScene::7987521240178629016::1716083260::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>res://Level Scenes/DoorTrigger/door_trigger.gd
+::res://Level Scenes/Exit/::1716083260
+level_transition.gd::GDScript::-1::1716083260::0::1::::<>Node2D<>::
+level_transition.tscn::PackedScene::7809247674519225403::1716083260::0::1::::<><>::res://Level Scenes/Exit/level_transition.gd
+::res://Levels/::1716083525
+CombatTest.tscn::PackedScene::9171908170169861021::1716083525::0::1::::<><>::res://Level.gd<>uid://6w3y8yvk6gw::::res://Level Scenes/TileSet.tres<>uid://dji4fyrb3l67h::::res://Level Scenes/Exit/level_transition.tscn<>uid://j4mvcj8hglxg::::res://Character/Enemy/Charger/Charger.tscn<>uid://dwp6k14335tjt::::res://Character/Player/Player.tscn<>uid://cntebeexa3d5x::::res://Character/Enemy/Mimic/Mimic.tscn
+PrototypePuzzle.tscn::PackedScene::8423223913409784255::1716083525::0::1::::<><>::res://Level.gd<>uid://6w3y8yvk6gw::::res://Level Scenes/TileSet.tres<>uid://dwp6k14335tjt::::res://Character/Player/Player.tscn<>uid://ohrb5jgxd8gp::::res://Level Scenes/Door/door.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://dji4fyrb3l67h::::res://Level Scenes/Exit/level_transition.tscn
+::res://Menus/::1715087759
+OptionsMenu.gd::GDScript::-1::1715087759::0::1::::<>Control<>::
+options_menu.tscn::PackedScene::5407209952751290237::1715025647::0::1::::<><>::res://Menus/OptionsMenu.gd
+::res://SoundComponent/::1717085729
+SoundComponent.tscn::PackedScene::7454068376397516186::1717085729::0::1::::<><>::res://SoundComponent/SoundComponent.gd
+SoundComponent.gd::GDScript::-1::1717085729::0::1::::<>Node<>::
+::res://Sounds/::1717085786
+dig.wav::AudioStreamWAV::8924344187639577792::1717085328::1717085403::1::::<><>::
+drill.wav::AudioStreamWAV::9035007259905144418::1717085334::1717085403::1::::<><>::
+enemy_footstep.wav::AudioStreamWAV::5384281897938148658::1717085338::1717085403::1::::<><>::
+floor_hole.wav::AudioStreamWAV::331529480946467862::1717085760::1717085791::1::::<><>::
+footstep.wav::AudioStreamWAV::6570288524902300789::1717085763::1717085791::1::::<><>::
+gate_open.wav::AudioStreamWAV::4346119938146831530::1717085342::1717085403::1::::<><>::
+interact.wav::AudioStreamWAV::5474366053075237140::1717085766::1717085791::1::::<><>::
+menu.wav::AudioStreamWAV::2139485908881893779::1717085349::1717085403::1::::<><>::
+pressure_plate_off.wav::AudioStreamWAV::7860704901472571244::1717085355::1717085403::1::::<><>::
+pressure_plate_on.wav::AudioStreamWAV::5582072243554517237::1717085359::1717085403::1::::<><>::
+success.wav::AudioStreamWAV::612802945178013409::1717085363::1717085403::1::::<><>::
+::res://Test Assets/::1715025711
+menu_close.wav::AudioStreamWAV::5405387413879713051::1715025647::1715025711::1::::<><>::
+menu_open.wav::AudioStreamWAV::8844124897087593697::1715025647::1715025711::1::::<><>::
+sand_walk.wav::AudioStreamWAV::4036699773865383423::1715025647::1715025711::1::::<><>::
+Test_Action_Two.gd::GDScript::-1::1715025647::0::1::::<>Item_Script<>::
+::res://Undo/::1717043813
+UndoControl.gd::GDScript::-1::1717043813::0::1::::UndoControl<>Node<>::
+UndoControl.tscn::PackedScene::3988746810465741296::1716790987::0::1::::<><>::res://Undo/UndoControl.gd
+::res://Weapon/::1717036756
+BlasterGun.gd::GDScript::-1::1715087759::0::1::::<>Item_Script<>::
+Bullet.gd::GDScript::-1::1716083260::0::1::::Bullet<>Area2D<>::
+Bullet.tscn::PackedScene::1473982523963953205::1716083260::0::1::::<><>::res://Weapon/Bullet.gd<>uid://cc2jh8phbpu05::::res://icon.svg
+test_sprite_32x32.png::CompressedTexture2D::8615898868683739666::1717036746::1717036756::1::::<><>::

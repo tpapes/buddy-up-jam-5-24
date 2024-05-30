@@ -2,6 +2,8 @@ extends Sprite2D
 
 @onready var area = $Area2D
 
+signal opened
+
 var is_open:= false
 var all_frac_points:= []
 
@@ -24,6 +26,7 @@ func open_gate():
 	region_rect.position.x += 96
 	z_index = 1
 	is_open = true
+	opened.emit()
 
 func close_gate():
 	set_collision(true)

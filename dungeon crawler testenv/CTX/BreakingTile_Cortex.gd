@@ -7,6 +7,8 @@ var is_broken:= false
 var original_position: Vector2
 var falling:= 0.0
 
+signal starting_break
+
 func _ready():
 	collision_mask = 0b1000
 	body_exited.connect(attempt_break)
@@ -18,6 +20,7 @@ func attempt_break(body):
 		falling = 0.0
 		is_broken = true
 		is_breaking = true
+		starting_break.emit()
 
 func attempt_undo(was_broken: bool):
 	if was_broken == false and is_broken == true:

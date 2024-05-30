@@ -1,8 +1,16 @@
-res://CTX/Player_CTX.tscn
 res://Level Scenes/TileSet.tres
+res://SoundComponent/SoundComponent.tscn
+res://SoundComponent/SoundComponent.gd
+res://CTX/TileStuff.gd
+res://CTX/BreakingTile_Cortex.gd
+res://CTX/BreakingTileSmall_CTX.tscn
+res://CTX/Element0_CTX.tscn
 res://node.tscn
 res://CTX/TileStuff.tscn
 res://CTX/PressurePlate.tscn
+res://CTX/Player_CTX.tscn
+res://CTX/PressurePlate.gd
 res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/BreakingTileLarge_CTX.tscn
-res://CTX/Element0_CTX.tscn
+res://CTX/GDScrAttempt_Cortex.gd
+res://CTX/Element0_Cortex.gd
