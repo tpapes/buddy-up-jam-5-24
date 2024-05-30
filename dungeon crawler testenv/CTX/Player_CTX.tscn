@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq11o7lxqq2e0"]
 
-[ext_resource type="Texture2D" uid="uid://cc2jh8phbpu05" path="res://icon.svg" id="1_hxr1c"]
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
 [ext_resource type="Texture2D" uid="uid://dqyk8atftcbdw" path="res://CTX/astronaut1.png" id="2_opavn"]
 [ext_resource type="Script" path="res://CTX/Drill_Cortex.gd" id="3_okef3"]
+[ext_resource type="Texture2D" uid="uid://b4wrymdv8x5d8" path="res://CTX/chisel_tool.png" id="4_o5gq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6nyx"]
 size = Vector2(16, 16)
@@ -45,7 +45,15 @@ position = Vector2(0, -2.08165e-12)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Drill"]
+[node name="DrillSpot" type="Sprite2D" parent="Drill"]
 z_index = 2
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_hxr1c")
+texture = ExtResource("4_o5gq4")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="DrillSprite" type="Sprite2D" parent="Drill"]
+z_index = 3
+position = Vector2(0, -16)
+texture = ExtResource("4_o5gq4")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
