@@ -9,6 +9,7 @@ resource_name = "thisShape"
 size = Vector2(16, 16)
 
 [node name="BreakingTile_CTX" type="Area2D" groups=["breaking_tile", "undoable"]]
+z_index = -3
 z_as_relative = false
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
