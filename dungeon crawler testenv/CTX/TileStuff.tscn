@@ -752,11 +752,6 @@ z_as_relative = true
 y_sort_enabled = false
 position = Vector2(80, -32)
 
-[node name="BreakingTile_CTX15" parent="Puzzle5" instance=ExtResource("5_fyigq")]
-z_as_relative = true
-y_sort_enabled = false
-position = Vector2(80, -32)
-
 [node name="BreakingTile_CTX14" parent="Puzzle5" instance=ExtResource("5_fyigq")]
 z_as_relative = true
 y_sort_enabled = false
@@ -849,9 +844,6 @@ position = Vector2(32, 64)
 position = Vector2(0, 32)
 
 [node name="BreakingTile_CTX15" parent="Puzzle6/BP_Puzzle1" instance=ExtResource("5_fyigq")]
-position = Vector2(0, 64)
-
-[node name="BreakingTile_CTX16" parent="Puzzle6/BP_Puzzle1" instance=ExtResource("5_fyigq")]
 position = Vector2(0, 64)
 
 [node name="BreakingTile_CTX17" parent="Puzzle6/BP_Puzzle1" instance=ExtResource("5_fyigq")]
