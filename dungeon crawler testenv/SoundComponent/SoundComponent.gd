@@ -2,7 +2,8 @@ extends Node
 class_name SoundComponent
 
 enum SoundEnum {PLAYER_FOOTSTEP, ENEMY_FOOTSTEP, MENU_CLICK, FINISHED_GAME, \
-		PLATE_ON, PLATE_OFF, DRILL, GATE_OPEN, FRACTURE_BREAK, FLOOR_FALL}
+		PLATE_ON, PLATE_OFF, DRILL, GATE_OPEN, FRACTURE_BREAK, FLOOR_FALL,
+		UNDO}
 
 @onready var sounds:= {
 	SoundEnum.PLAYER_FOOTSTEP: $PlayerFootstep,
@@ -14,7 +15,8 @@ enum SoundEnum {PLAYER_FOOTSTEP, ENEMY_FOOTSTEP, MENU_CLICK, FINISHED_GAME, \
 	SoundEnum.DRILL: $Drill,
 	SoundEnum.GATE_OPEN: $GateOpen,
 	SoundEnum.FRACTURE_BREAK: $FractureBreak,
-	SoundEnum.FLOOR_FALL: $FloorFall
+	SoundEnum.FLOOR_FALL: $FloorFall,
+	SoundEnum.UNDO: $Undo
 }
 
 func play_sound(sound: int):
