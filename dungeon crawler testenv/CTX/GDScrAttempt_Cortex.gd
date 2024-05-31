@@ -9,6 +9,8 @@ extends CharacterBody2D
 const LERP_SPEED:= 16
 const MAX_LATENCY:= 0.05
 
+var step_particles_pl:= preload("res://Particles/StepParticles.tscn")
+
 var startPos : Vector2
 var targetPos : Vector2
 var lerp_weight:= 0.0
@@ -22,6 +24,7 @@ var latency:= 0.0
 
 signal move(direction)
 signal move_finished
+signal add_particles(particles: CPUParticles2D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,14 +72,35 @@ func update_move_state(delta):
 		return
 	var move_direction = held_directions[-1] * Sizes.newTileSize
 	if check_direction(global_position, move_direction):
+		make_footstep_particles()
 		startPos = global_position
 		global_position = global_position + move_direction
 		sprite.offset -= move_direction
 		is_moving = true
 		drill.start_move(move_direction)
-		move.emit(move_direction)
 		sprite.flip_h = !sprite.flip_h
+		move.emit(move_direction)
 	inputLog = Vector2.ZERO
+
+func make_footstep_particles():
+	if not ground_is_tilemap():
+		return
+	var particles = step_particles_pl.instantiate()
+	particles.init(global_position)
+	add_particles.emit(particles)
+
+func ground_is_tilemap() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, \
+			global_position + Vector2.LEFT, 0b1, [self])
+	query.collide_with_areas = true
+	query.hit_from_inside = true
+	var result = space_state.intersect_ray(query)
+	if result.is_empty():
+		return false
+	if result["collider"].is_in_group("breaking_tile"):
+		return false
+	return true
 
 func end_move():
 	inputLog = Vector2.ZERO

@@ -14,6 +14,9 @@ func _ready():
 	sound_component.play_sound(sound_component.SoundEnum.MENU_CLICK)
 	player.move_finished.connect(undo_control.update_states)
 	player.drill.drilled_frac.connect(undo_control.update_states)
+	player.add_particles.connect(add_child)
+	for enemy in get_items(self, "enemy"):
+		enemy.add_particles.connect(add_child)
 
 func prep_undo_control():
 	undo_control = undo_control_pl.instantiate()
