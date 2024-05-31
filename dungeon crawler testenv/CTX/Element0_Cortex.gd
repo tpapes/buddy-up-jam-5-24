@@ -14,6 +14,9 @@ extends FallableSprite
 @onready var visibility_notifier:= $VisibleOnScreenNotifier2D
 
 signal visible_move
+signal add_particles(particles: CPUParticles2D)
+
+var step_particles_pl:= preload("res://Particles/StepParticles.tscn")
 
 var movePattern: Array
 var active:= false
@@ -87,6 +90,7 @@ func _process(delta):
 					break;
 				else:
 					moveStep = (moveStep + 1) % movePattern.size()
+		make_footstep_particles()
 		self.position += direction
 		sprite.offset = -direction
 		moveStep = (moveStep + 1) % movePattern.size()
@@ -111,6 +115,26 @@ func _process(delta):
 	# Move foot onto target position
 	foot.global_position = self.global_position
 	foot.force_update_transform()
+
+func make_footstep_particles():
+	if not ground_is_tilemap():
+		return
+	var particles = step_particles_pl.instantiate()
+	particles.init(global_position)
+	add_particles.emit(particles)
+
+func ground_is_tilemap() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, \
+			global_position + Vector2.LEFT, 0b1, [self])
+	query.collide_with_areas = true
+	query.hit_from_inside = true
+	var result = space_state.intersect_ray(query)
+	if result.is_empty():
+		return false
+	if result["collider"].is_in_group("breaking_tile"):
+		return false
+	return true
 
 func unfall():
 	super()

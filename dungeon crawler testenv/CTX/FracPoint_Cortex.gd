@@ -2,6 +2,7 @@ extends Sprite2D
 
 @onready var drill_obj : Node2D
 @onready var area = $Area2D
+@onready var particles:= [$BackParticles, $FrontParticles]
 
 signal just_broke
 
@@ -12,6 +13,9 @@ func _ready():
 	drill_obj = get_node("/root/TileStuff/Player_CTX/Drill")
 	if (drill_obj != null):
 		drill_obj.drill.connect(_on_drill_break)
+	for particle in particles:
+		particle.one_shot = true
+		particle.emitting = false
 
 func attempt_undo(was_broken: bool):
 	if was_broken and !is_broken:
@@ -27,6 +31,8 @@ func break_frac():
 	self.z_index = 0
 	self.name = "Broken_FracPoint_CTX"
 	is_broken = true
+	for particle in particles:
+		particle.emitting = true
 	just_broke.emit()
 
 func unbreak_frac():

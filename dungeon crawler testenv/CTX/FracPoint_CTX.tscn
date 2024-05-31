@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dljflyvx8db8a"]
+[gd_scene load_steps=6 format=3 uid="uid://dljflyvx8db8a"]
 
 [ext_resource type="Texture2D" uid="uid://cutbt2d3vkgtw" path="res://CTX/crystalsSet.png" id="1_a33qo"]
 [ext_resource type="Script" path="res://CTX/FracPoint_Cortex.gd" id="2_y1yyx"]
+
+[sub_resource type="Gradient" id="Gradient_xs48b"]
+offsets = PackedFloat32Array(0, 0.653144, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_30eub"]
+min_value = -1.0
+_data = [Vector2(0, 0.215139), 0.0, 0.0, 0, 0, Vector2(0.517241, 0.426295), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3kty"]
 size = Vector2(16, 16)
@@ -14,6 +23,24 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 64)
 script = ExtResource("2_y1yyx")
 
+[node name="BackParticles" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, 12)
+emitting = false
+amount = 6
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(12, 8)
+direction = Vector2(2.08165e-12, 100)
+spread = 150.0
+gravity = Vector2(2.08165e-12, 10)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+scale_amount_max = 3.0
+color = Color(0.564706, 0.843137, 0.576471, 1)
+color_ramp = SubResource("Gradient_xs48b")
+hue_variation_curve = SubResource("Curve_30eub")
+
 [node name="Area2D" type="Area2D" parent="." groups=["frac_point"]]
 collision_layer = 6
 collision_mask = 0
@@ -22,3 +49,20 @@ collision_mask = 0
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_y3kty")
 debug_color = Color(0.767954, 0.446538, 1.92523e-07, 0.42)
+
+[node name="FrontParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 12)
+emitting = false
+amount = 12
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(12, 8)
+direction = Vector2(2.08165e-12, 100)
+spread = 90.0
+gravity = Vector2(2.08165e-12, 10)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+scale_amount_max = 3.0
+color = Color(0.355785, 0.596699, 0.369126, 1)
+color_ramp = SubResource("Gradient_xs48b")
+hue_variation_curve = SubResource("Curve_30eub")
