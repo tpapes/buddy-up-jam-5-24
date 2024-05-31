@@ -1,7 +1,18 @@
+<<<<<<< HEAD
+=======
+res://Menus/MainMenu.tscn
+>>>>>>> 140d4b0b786dca7a443b05ec05584fb18c2be1f5
 res://CTX/TileStuff.tscn
 res://SoundComponent/SoundComponent.tscn
 res://CTX/BreakingTileSmall_CTX.tscn
 res://CTX/Element0_CTX.tscn
+<<<<<<< HEAD
 res://CTX/Element0_Cortex.gd
 res://CTX/Player_CTX.tscn
 res://CTX/Drill_Cortex.gd
+=======
+res://Menus/MainMenu.gd
+res://CTX/TileStuff.gd
+res://Autoloads/Music.tscn
+res://Autoloads/music.gd
+>>>>>>> 140d4b0b786dca7a443b05ec05584fb18c2be1f5

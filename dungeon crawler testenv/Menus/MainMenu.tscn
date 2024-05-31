@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4xyfieeeloul"]
+
+[ext_resource type="Texture2D" uid="uid://by521fey3s48a" path="res://CTX/Planet2.png" id="1_fl452"]
+[ext_resource type="Script" path="res://Menus/MainMenu.gd" id="1_o5awb"]
+[ext_resource type="FontFile" uid="uid://cthjevi1d5yju" path="res://Fonts/Mountains_of_Christmas/MountainsofChristmas-Bold.ttf" id="3_l2t1q"]
+[ext_resource type="FontFile" uid="uid://b0qnus1ts0j8k" path="res://Fonts/Mukta_Vaani/MuktaVaani-Regular.ttf" id="4_robs0"]
+[ext_resource type="AudioStream" uid="uid://5qnaxrkmwp8f" path="res://Sounds/menu.wav" id="5_6ymgh"]
+
+[sub_resource type="Theme" id="Theme_ecb7h"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_o5awb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(584, 504)
+scale = Vector2(0.775497, 0.775497)
+texture = ExtResource("1_fl452")
+
+[node name="MainCanvas" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Label" type="Label" parent="MainCanvas"]
+offset_left = 512.0
+offset_top = 8.0
+offset_right = 1230.0
+offset_bottom = 148.0
+theme = SubResource("Theme_ecb7h")
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+theme_override_fonts/font = ExtResource("3_l2t1q")
+theme_override_font_sizes/font_size = 70
+text = "FRACTURE POINT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainCanvas"]
+offset_left = 736.0
+offset_top = 168.0
+offset_right = 1016.0
+offset_bottom = 608.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Play" type="Button" parent="MainCanvas/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_robs0")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Help" type="Button" parent="MainCanvas/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_robs0")
+theme_override_font_sizes/font_size = 50
+text = "Help"
+
+[node name="Credits" type="Button" parent="MainCanvas/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_robs0")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="HelpCanvas" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Label" type="Label" parent="HelpCanvas"]
+offset_left = 536.0
+offset_top = 8.0
+offset_right = 1254.0
+offset_bottom = 148.0
+theme = SubResource("Theme_ecb7h")
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+theme_override_fonts/font = ExtResource("3_l2t1q")
+theme_override_font_sizes/font_size = 70
+text = "Help"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HelpCanvas"]
+offset_left = 664.0
+offset_top = 136.0
+offset_right = 1144.0
+offset_bottom = 552.0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpCanvas"]
+offset_left = 680.0
+offset_top = 136.0
+offset_right = 1152.0
+offset_bottom = 808.0
+theme_override_fonts/normal_font = ExtResource("4_robs0")
+theme_override_font_sizes/normal_font_size = 40
+text = "The goal of the game is to break each of the fracture points with your drill to advance to the next area. To use your drill, press X. To undo a move, press Z."
+fit_content = true
+
+[node name="Back" type="Button" parent="HelpCanvas"]
+offset_left = 984.0
+offset_top = 544.0
+offset_right = 1144.0
+offset_bottom = 636.0
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_robs0")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="CreditsCanvas" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Label" type="Label" parent="CreditsCanvas"]
+offset_left = 536.0
+offset_top = 8.0
+offset_right = 1254.0
+offset_bottom = 148.0
+theme = SubResource("Theme_ecb7h")
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+theme_override_fonts/font = ExtResource("3_l2t1q")
+theme_override_font_sizes/font_size = 70
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CreditsCanvas"]
+offset_left = 664.0
+offset_top = 136.0
+offset_right = 1144.0
+offset_bottom = 552.0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsCanvas"]
+offset_left = 704.0
+offset_top = 136.0
+offset_right = 1136.0
+offset_bottom = 520.0
+theme_override_fonts/normal_font = ExtResource("4_robs0")
+theme_override_font_sizes/normal_font_size = 40
+text = "Art:
+Cortex
+Elise G
+mochi
+
+Programming:
+Dustin Garner
+Cortex
+skeeth
+Tpapes
+
+Sound Effects and Music:
+hhhhhhhhhh
+
+Puzzle Design:
+Dustin Garner
+Cortex"
+
+[node name="Back" type="Button" parent="CreditsCanvas"]
+offset_left = 984.0
+offset_top = 544.0
+offset_right = 1144.0
+offset_bottom = 636.0
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_robs0")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6ymgh")
