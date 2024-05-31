@@ -9,8 +9,8 @@ script = ExtResource("1_rs7pa")
 
 [node name="TechnoTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ndb6d")
-volume_db = -5.0
+volume_db = -4.5
 
 [node name="NotTechnoTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nq722")
-volume_db = -5.0
+volume_db = -3.0
