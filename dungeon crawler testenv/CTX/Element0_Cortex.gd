@@ -45,6 +45,25 @@ func toggle_player_connection(toggle: bool):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	
+	var spr:Sprite2D = self
+	var dir = movePattern[0].normalized()
+	dir.x = round(dir.x)
+	dir.y = round(dir.y)
+	
+	spr.flip_h = false
+	spr.frame = 3
+	if (!active):
+		spr.frame = 3 if (dir.x == 0) else 7
+	else:
+		if (dir.x == 0):
+			spr.frame = 0 if (dir.y >= 0) else 1
+		else:
+			spr.frame = 2
+			spr.flip_h = (dir.x < 0)
+	if (is_moving): spr.frame += 4
+	
 	super(delta)
 	if not active:
 		return
@@ -92,7 +111,6 @@ func _process(delta):
 	# Move foot onto target position
 	foot.global_position = self.global_position
 	foot.force_update_transform()
-	
 
 func unfall():
 	super()

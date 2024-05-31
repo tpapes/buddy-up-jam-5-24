@@ -113,7 +113,6 @@ func _process(delta):
 		rect.x = 64
 		sprite.flip_h = (dir.x < 0)
 	rect.y = 32 if is_moving else 0
-	
 	sprite.region_rect.position = rect
 	
 	if (camera != null):

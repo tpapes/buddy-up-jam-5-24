@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyh2kklgqk0ma"]
 
-[ext_resource type="Texture2D" uid="uid://dqyk8atftcbdw" path="res://CTX/astronaut1.png" id="1_1w42s"]
+[ext_resource type="Texture2D" uid="uid://doxpuwk2l71ej" path="res://CTX/robot_ss.png" id="1_34025"]
 [ext_resource type="Script" path="res://CTX/Element0_Cortex.gd" id="2_totul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
 size = Vector2(4, 4)
 
 [node name="Element0_CTX" type="Sprite2D" groups=["enemy", "undoable"]]
-modulate = Color(1, 0.34, 0.34, 1)
 z_index = 1
-texture = ExtResource("1_1w42s")
+texture = ExtResource("1_34025")
+hframes = 4
+vframes = 2
+frame = 2
 script = ExtResource("2_totul")
 
 [node name="GroundCheck" type="RayCast2D" parent="."]

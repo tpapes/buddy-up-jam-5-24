@@ -39,8 +39,7 @@ func _process(delta):
 	position.y += 256 * (2 * falling + delta) * delta
 	falling += delta
 	var f = 1 - falling / 0.45
-	modulate = Color(f*modulate.r,pow(f*modulate.g,0.82),\
-			pow(f*modulate.b,0.70),pow(f,0.1))
+	modulate = Color(f,pow(f,0.82),pow(f,0.70),pow(f,0.5))
 	#modulate = Color(f,pow(f,0.82),pow(f,0.70),pow(f,0.1))
 	if falling > 0.45:
 		finish_fall()
