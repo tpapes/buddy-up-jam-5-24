@@ -1,7 +1,4 @@
-res://CTX/TileStuff.tscn
-res://SoundComponent/SoundComponent.tscn
-res://CTX/BreakingTileSmall_CTX.tscn
-res://CTX/Element0_CTX.tscn
-res://CTX/Element0_Cortex.gd
 res://CTX/Player_CTX.tscn
-res://CTX/Drill_Cortex.gd
+res://CTX/GDScrAttempt_Cortex.gd
+res://SoundComponent/SoundComponent.tscn
+res://CTX/TileStuff.tscn

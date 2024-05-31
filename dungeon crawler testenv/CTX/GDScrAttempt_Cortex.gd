@@ -12,6 +12,7 @@ var startPos : Vector2
 var targetPos : Vector2
 var lerp_weight:= 0.0
 var inputLog:= Vector2.ZERO
+var held_directions:= []
 var move_ready:= true
 var move_timer:= 0.0
 var move_fire:= true
@@ -35,6 +36,14 @@ func check_direction(from: Vector2, direction: Vector2) -> bool:
 func _unhandled_input(event):
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		return
+	if event.is_action_released("left"):
+		held_directions.erase(Vector2.LEFT)
+	elif event.is_action_released("right"):
+		held_directions.erase(Vector2.RIGHT)
+	elif event.is_action_released("up"):
+		held_directions.erase(Vector2.UP)
+	elif event.is_action_released("down"):
+		held_directions.erase(Vector2.DOWN)
 	if is_moving:
 		return
 	if inputLog != Vector2.ZERO:
@@ -47,6 +56,8 @@ func _unhandled_input(event):
 		inputLog.y = -1
 	elif event.is_action_pressed("down"):
 		inputLog.y = 1
+	if not inputLog in held_directions:
+		held_directions.append(inputLog)
 
 func update_move_state():
 	if is_moving:
