@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 
 const LERP_SPEED:= 16
-const MAX_LATENCY:= 0.2
+const MAX_LATENCY:= 0.05
 
 var startPos : Vector2
 var targetPos : Vector2
@@ -93,7 +93,6 @@ func end_move():
 	move_finished.emit()
 
 func _physics_process(delta):
-	print(latency)
 	update_move_state(delta)
 	if !is_moving:
 		return
