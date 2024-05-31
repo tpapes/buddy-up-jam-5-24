@@ -1,3 +1,4 @@
-.godot
-.DS_Store
+*.godot
+*.DS_Store
 *.cfg
+.godot/

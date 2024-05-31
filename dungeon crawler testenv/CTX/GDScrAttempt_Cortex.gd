@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 
 const LERP_SPEED:= 16
+const MAX_LATENCY:= 0.2
 
 var startPos : Vector2
 var targetPos : Vector2
@@ -17,6 +18,7 @@ var move_ready:= true
 var move_timer:= 0.0
 var move_fire:= true
 var is_moving:= false
+var latency:= 0.0
 
 signal move(direction)
 signal move_finished
@@ -59,12 +61,18 @@ func _unhandled_input(event):
 	if not inputLog in held_directions:
 		held_directions.append(inputLog)
 
-func update_move_state():
+func update_move_state(delta):
 	if is_moving:
 		return
-	if inputLog == Vector2.ZERO:
+	#if inputLog == Vector2.ZERO:
+	#	return
+	if held_directions.size() == 0:
 		return
-	var move_direction = inputLog * Sizes.newTileSize
+	if latency > 0.0:
+		latency -= delta
+		return
+	#var move_direction = inputLog * Sizes.newTileSize
+	var move_direction = held_directions[-1] * Sizes.newTileSize
 	if check_direction(global_position, move_direction):
 		startPos = global_position
 		global_position = global_position + move_direction
@@ -81,10 +89,12 @@ func end_move():
 	is_moving = false
 	if drill.current_state == drill.States.ROTATING:
 		await drill.move_finished
+	latency = MAX_LATENCY
 	move_finished.emit()
 
 func _physics_process(delta):
-	update_move_state()
+	print(latency)
+	update_move_state(delta)
 	if !is_moving:
 		return
 	sprite.offset = lerp(sprite.offset, Vector2.ZERO, 16 * delta)
