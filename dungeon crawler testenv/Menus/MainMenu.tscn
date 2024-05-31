@@ -1,20 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4xyfieeeloul"]
 
-[ext_resource type="Texture2D" uid="uid://by521fey3s48a" path="res://CTX/Planet2.png" id="1_fl452"]
 [ext_resource type="Script" path="res://Menus/MainMenu.gd" id="1_o5awb"]
 [ext_resource type="FontFile" uid="uid://cthjevi1d5yju" path="res://Fonts/Mountains_of_Christmas/MountainsofChristmas-Bold.ttf" id="3_l2t1q"]
 [ext_resource type="FontFile" uid="uid://b0qnus1ts0j8k" path="res://Fonts/Mukta_Vaani/MuktaVaani-Regular.ttf" id="4_robs0"]
 [ext_resource type="AudioStream" uid="uid://5qnaxrkmwp8f" path="res://Sounds/menu.wav" id="5_6ymgh"]
+[ext_resource type="Texture2D" uid="uid://dsq6dplsohxs" path="res://CTX/menu-bg.png" id="5_tvwx6"]
 
 [sub_resource type="Theme" id="Theme_ecb7h"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_o5awb")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(584, 504)
-scale = Vector2(0.775497, 0.775497)
-texture = ExtResource("1_fl452")
 
 [node name="MainCanvas" type="CanvasLayer" parent="."]
 layer = 2
@@ -172,3 +167,9 @@ text = "Back"
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6ymgh")
+
+[node name="Menu-bg" type="Sprite2D" parent="."]
+position = Vector2(-24, -96)
+scale = Vector2(4, 4)
+texture = ExtResource("5_tvwx6")
+centered = false

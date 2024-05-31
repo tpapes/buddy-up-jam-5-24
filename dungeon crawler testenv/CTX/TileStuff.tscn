@@ -1177,7 +1177,7 @@ layer_1/tile_data = PackedInt32Array(3080237, 327680, 3, 3080236, 327680, 3, 308
 
 [node name="Player_CTX" parent="." instance=ExtResource("3_0wtbg")]
 y_sort_enabled = true
-position = Vector2(2096, 1168)
+position = Vector2(112, 48)
 
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)

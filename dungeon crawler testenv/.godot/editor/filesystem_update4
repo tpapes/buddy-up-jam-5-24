@@ -3,12 +3,6 @@ res://CTX/Player_CTX.tscn
 res://SoundComponent/SoundComponent.tscn
 res://CTX/Element0_CTX.tscn
 res://Menus/MainMenu.tscn
-res://CTX/Element0_Cortex.gd
-res://CTX/GDScrAttempt_Cortex.gd
-res://Items/FallableSprite.gd
 res://Particles/StepParticles.tscn
 res://CTX/FracPoint_CTX.tscn
-res://CTX/BreakingTile_Cortex.gd
-res://CTX/FracPoint_Cortex.gd
 res://CTX/BreakingTileLarge_CTX.tscn
-res://CTX/Gate_Cortex.gd
