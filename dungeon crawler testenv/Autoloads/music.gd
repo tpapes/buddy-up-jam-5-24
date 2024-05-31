@@ -3,6 +3,10 @@ extends Node
 @onready var theme_techno:= $TechnoTheme
 @onready var theme:= $NotTechnoTheme
 
+func _ready():
+	for song in [theme_techno, theme]:
+		song.finished.connect(repeat_theme.bind(song))
+
 func play_theme():
 	theme_techno.stop()
 	if theme.playing:
@@ -18,4 +22,7 @@ func switch_themes():
 	var playback_position = theme.get_playback_position()
 	theme.stop()
 	theme_techno.play(playback_position)
+
+func repeat_theme(theme):
+	theme.play()
 
