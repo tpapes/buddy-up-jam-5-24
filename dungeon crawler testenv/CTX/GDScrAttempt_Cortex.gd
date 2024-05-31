@@ -46,8 +46,6 @@ func _unhandled_input(event):
 		held_directions.erase(Vector2.UP)
 	elif event.is_action_released("down"):
 		held_directions.erase(Vector2.DOWN)
-	if is_moving:
-		return
 	inputLog = Vector2.ZERO
 	if event.is_action_pressed("left"):
 		inputLog.x = -1
