@@ -1205,3 +1205,10 @@ layer_0/z_index = 1
 layer_1/y_sort_enabled = true
 layer_1/z_index = -2
 layer_1/tile_data = PackedInt32Array()
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-240, -192)
+speed_scale = 0.01
+emission_shape = 3
+emission_rect_extents = Vector2(2, 2)
+gravity = Vector2(2.08165e-12, 2.08165e-12)

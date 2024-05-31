@@ -45,6 +45,7 @@ func prep_sound_component():
 	var tiles = get_items(self, "breaking_tile")
 	for tile in tiles:
 		tile.starting_break.connect(play_sound.bind(sound_component.SoundEnum.FLOOR_FALL))
+	undo_control.starting_undo.connect(play_sound.bind(sound_component.SoundEnum.UNDO))
 
 func play_sound(sound_index: int):
 	sound_component.play_sound(sound_index)

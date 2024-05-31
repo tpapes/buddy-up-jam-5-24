@@ -1,6 +1,8 @@
 extends Node
 class_name UndoControl
 
+signal starting_undo
+
 @onready var timer = 0
 @onready var undoing = false
 @onready var curr_max_time = 0
@@ -95,6 +97,7 @@ func undo():
 		elif item.is_in_group("pressure_plate"):
 			if item.is_triggered and not previous_state[item]:
 				item.is_triggered = false
+	starting_undo.emit()
 
 func _input(event):
 	if event.is_action_pressed("undo"):

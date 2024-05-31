@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://deg2ogf7dhsi1"]
+[gd_scene load_steps=13 format=3 uid="uid://deg2ogf7dhsi1"]
 
 [ext_resource type="Script" path="res://SoundComponent/SoundComponent.gd" id="1_j2n2j"]
 [ext_resource type="AudioStream" uid="uid://c0uxxsbjmpa0l" path="res://Sounds/footstep.wav" id="2_fb7yf"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b26j7wh1b4owo" path="res://Sounds/gate_open.wav" id="9_03xqp"]
 [ext_resource type="AudioStream" uid="uid://cj83akq368tro" path="res://Sounds/interact.wav" id="10_8pmlx"]
 [ext_resource type="AudioStream" uid="uid://eyuih5b26otq" path="res://Sounds/floor_hole.wav" id="11_snkjp"]
+[ext_resource type="AudioStream" uid="uid://1whrdpx60ij2" path="res://Sounds/undo.wav" id="12_hhlpw"]
 
 [node name="SoundComponent" type="Node"]
 script = ExtResource("1_j2n2j")
@@ -49,4 +50,8 @@ volume_db = 2.419
 
 [node name="FloorFall" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_snkjp")
+volume_db = 2.0
+
+[node name="Undo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hhlpw")
 volume_db = 2.0
