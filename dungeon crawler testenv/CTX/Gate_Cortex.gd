@@ -25,7 +25,7 @@ func set_collision(toggle: bool):
 func open_gate():
 	set_collision(false)
 	region_rect.position.x += 96
-	z_index = 1
+	z_index = 0
 	is_open = true
 	opened.emit()
 
