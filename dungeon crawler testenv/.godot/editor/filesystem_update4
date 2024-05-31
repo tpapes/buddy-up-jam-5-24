@@ -3,3 +3,4 @@ res://CTX/Player_CTX.tscn
 res://SoundComponent/SoundComponent.tscn
 res://CTX/Element0_CTX.tscn
 res://CTX/GDScrAttempt_Cortex.gd
+res://Menus/MainMenu.tscn

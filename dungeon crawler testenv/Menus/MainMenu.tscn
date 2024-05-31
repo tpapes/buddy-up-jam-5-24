@@ -152,7 +152,13 @@ hhhhhhhhhh
 
 Puzzle Design:
 Dustin Garner
-Cortex"
+Cortex
+
+Fonts:
+Mountains of Christmas
+by Tart Workshop
+Mukta Vaani
+by Ek Type"
 
 [node name="Back" type="Button" parent="CreditsCanvas"]
 offset_left = 984.0
