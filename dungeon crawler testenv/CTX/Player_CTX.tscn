@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq11o7lxqq2e0"]
 
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
-[ext_resource type="Texture2D" uid="uid://dqyk8atftcbdw" path="res://CTX/astronaut1.png" id="2_opavn"]
+[ext_resource type="Texture2D" uid="uid://r0dblqug3vj3" path="res://CTX/astronaut_ss.png" id="2_eyrxa"]
 [ext_resource type="Script" path="res://CTX/Drill_Cortex.gd" id="3_okef3"]
 [ext_resource type="Texture2D" uid="uid://b4wrymdv8x5d8" path="res://CTX/chisel_tool.png" id="4_o5gq4"]
 
@@ -139,7 +139,9 @@ script = ExtResource("2_160q7")
 shape = SubResource("RectangleShape2D_k6nyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_opavn")
+texture = ExtResource("2_eyrxa")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
 
 [node name="GroundCheck" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, 32)

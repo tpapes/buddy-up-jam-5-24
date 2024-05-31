@@ -61,6 +61,7 @@ func update_move_state():
 		is_moving = true
 		drill.start_move(move_direction)
 		move.emit(move_direction)
+		sprite.flip_h = !sprite.flip_h
 	inputLog = Vector2.ZERO
 
 func end_move():
@@ -83,6 +84,23 @@ func _physics_process(delta):
 	#lerp_weight = clamp(lerp_weight, 0.0, 1.0)
 
 func _process(delta):
+	
+	var rect = sprite.region_rect.position
+	var dir = drill.goal_position.normalized()
+	if (drill.current_state == drill.States.IDLE):
+		dir = drill.position.normalized()
+	dir.x = round(dir.x)
+	dir.y = round(dir.y)
+	
+	if (dir == Vector2.UP): rect.x = 32
+	elif (dir == Vector2.DOWN): rect.x = 0
+	else:
+		rect.x = 64
+		sprite.flip_h = (dir.x < 0)
+	rect.y = 32 if is_moving else 0
+	
+	sprite.region_rect.position = rect
+	
 	if (camera != null):
 		camera.position = sprite.offset
 	pass
