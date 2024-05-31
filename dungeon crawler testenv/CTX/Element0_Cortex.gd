@@ -71,7 +71,7 @@ func _process(delta):
 		self.position += direction
 		sprite.offset = -direction
 		moveStep = (moveStep + 1) % movePattern.size()
-		if visibility_notifier.is_on_screen():
+		if visibility_notifier != null && visibility_notifier.is_on_screen():
 			visible_move.emit()
 		is_moving = true
 	

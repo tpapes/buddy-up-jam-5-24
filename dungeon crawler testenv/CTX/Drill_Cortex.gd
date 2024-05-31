@@ -10,6 +10,8 @@ var start_position: Vector2
 var goal_position: Vector2
 var previous_direction: Vector2
 
+@onready var anim = $Animator
+
 signal drill(frac_area)
 signal used_drill
 signal drilled_frac
@@ -38,6 +40,9 @@ func end_move():
 	move_finished.emit()
 
 func attempt_drill():
+	anim.stop()
+	anim.play("Drill_break")
+	anim.speed_scale = 4
 	var drill_used = false
 	for n in get_overlapping_areas():
 		if (n.is_in_group("frac_point")):
@@ -53,6 +58,10 @@ func _unhandled_input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if (!anim.is_playing()):
+		anim.play("Drill")
+		anim.speed_scale = 0.5
+	
 	if current_state == States.IDLE:
 		return
 	if current_state == States.MOVING and \
@@ -68,4 +77,6 @@ func _process(delta):
 		end_move()
 	slerp_weight += SLERP_SPEED * delta
 	slerp_weight = clamp(slerp_weight, 0.0, 1.0)
+	
+	
 

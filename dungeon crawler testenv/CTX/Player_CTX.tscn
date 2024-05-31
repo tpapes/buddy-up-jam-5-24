@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq11o7lxqq2e0"]
+[gd_scene load_steps=10 format=3 uid="uid://bq11o7lxqq2e0"]
 
 [ext_resource type="Script" path="res://CTX/GDScrAttempt_Cortex.gd" id="2_160q7"]
 [ext_resource type="Texture2D" uid="uid://dqyk8atftcbdw" path="res://CTX/astronaut1.png" id="2_opavn"]
@@ -7,6 +7,125 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6nyx"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_e0ynt"]
+resource_name = "Drill"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(100000, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(0, 0, 32, 32)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-16, 0, 0, 0.2, 0, -19.5, -0.2, 0, 0.2, 0, -16, -0.12, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../DrillSpot:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.403922), Color(1, 1, 1, 1), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.937797)]
+}
+
+[sub_resource type="Animation" id="Animation_enugy"]
+resource_name = "Drill_break"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-16, 0, 0, 1.85, 0.5, -16, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(32, 32, 32, 32), Rect2(64, 32, 32, 32), Rect2(96, 32, 32, 32), Rect2(0, 0, 32, 32)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 6), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DrillSpot:offset")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.5, 0.65, 0.8, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(0, -2), Vector2(0, 2), Vector2(0, -2), Vector2(0, -1), Vector2(0, 1), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t32ui"]
+_data = {
+"Drill": SubResource("Animation_e0ynt"),
+"Drill_break": SubResource("Animation_enugy")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7dl"]
 size = Vector2(4, 4)
@@ -39,6 +158,14 @@ collision_layer = 0
 collision_mask = 6
 script = ExtResource("3_okef3")
 
+[node name="Animator" type="AnimationPlayer" parent="Drill"]
+root_node = NodePath("../DrillSprite")
+libraries = {
+"": SubResource("AnimationLibrary_t32ui")
+}
+speed_scale = 0.5
+movie_quit_on_finish = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drill"]
 z_index = 1
 position = Vector2(0, -2.08165e-12)
@@ -46,14 +173,17 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_tu7dl")
 
 [node name="DrillSpot" type="Sprite2D" parent="Drill"]
+modulate = Color(1, 1, 1, 0.500606)
 z_index = 2
 texture = ExtResource("4_o5gq4")
+offset = Vector2(0, 2)
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
 
 [node name="DrillSprite" type="Sprite2D" parent="Drill"]
 z_index = 3
-position = Vector2(0, -16)
+position = Vector2(0, -18.2163)
 texture = ExtResource("4_o5gq4")
+offset = Vector2(0, 6)
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
