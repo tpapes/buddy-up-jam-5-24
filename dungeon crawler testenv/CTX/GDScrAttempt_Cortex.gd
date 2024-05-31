@@ -58,20 +58,18 @@ func _unhandled_input(event):
 		inputLog.y = -1
 	elif event.is_action_pressed("down"):
 		inputLog.y = 1
-	if not inputLog in held_directions:
+	if inputLog != Vector2.ZERO and not inputLog in held_directions:
 		held_directions.append(inputLog)
 
 func update_move_state(delta):
 	if is_moving:
 		return
-	#if inputLog == Vector2.ZERO:
-	#	return
 	if held_directions.size() == 0:
+		latency = 0.0
 		return
 	if latency > 0.0:
 		latency -= delta
 		return
-	#var move_direction = inputLog * Sizes.newTileSize
 	var move_direction = held_directions[-1] * Sizes.newTileSize
 	if check_direction(global_position, move_direction):
 		startPos = global_position
