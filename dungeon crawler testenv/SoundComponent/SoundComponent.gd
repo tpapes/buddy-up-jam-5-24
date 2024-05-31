@@ -20,6 +20,9 @@ enum SoundEnum {PLAYER_FOOTSTEP, ENEMY_FOOTSTEP, MENU_CLICK, FINISHED_GAME, \
 }
 
 func play_sound(sound: int):
+	if (sounds[sound] == null):
+		print("Sound not found")
+		return
 	sounds[sound].play()
 
 
