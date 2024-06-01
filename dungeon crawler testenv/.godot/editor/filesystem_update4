@@ -1,10 +1,7 @@
+res://Particles/Explosion.tscn
 res://CTX/TileStuff.tscn
 res://CTX/Player_CTX.tscn
 res://SoundComponent/SoundComponent.tscn
 res://CTX/Element0_CTX.tscn
 res://Menus/MainMenu.tscn
-res://Particles/StepParticles.tscn
-res://CTX/FracPoint_CTX.tscn
-res://CTX/BreakingTileLarge_CTX.tscn
 res://CTX/BigFracPoint_CTX.tscn
-res://CTX/BigFracPoint_CTX.gd

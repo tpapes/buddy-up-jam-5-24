@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717253353
+::res://::1717255062
 default_bus_layout.tres::AudioBusLayout::230519161501026014::1715087759::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1716083260::0::1::::<><>::
 icon.svg::CompressedTexture2D::4969517964276732136::1715025647::1715025711::1::::<><>::
@@ -85,7 +85,7 @@ MenuAudio.gd::GDScript::-1::1715025647::0::1::::<>AudioStreamPlayer<>::
 Base_Action.gd::GDScript::-1::1715087759::0::1::::Item_Script<>Node<>::
 FallableSprite.gd::GDScript::-1::1717191451::0::1::::FallableSprite<>Sprite2D<>::
 FallableSprite.tscn::PackedScene::2239091880003503783::1717104705::0::1::::<><>::res://Items/FallableSprite.gd
-Test_Item.tres::Resource/Item::8068145904313589736::1715025647::0::1::::<><>::res://Inventory/Item.gd<>res://Items/Base_Action.gd<>uid://cc2jh8phbpu05::::res://icon.svg
+Test_Item.tres::Resource/Resource::8068145904313589736::1715025647::0::1::::<><>::res://Inventory/Item.gd<>res://Items/Base_Action.gd<>uid://cc2jh8phbpu05::::res://icon.svg
 ::res://Level Scenes/::1717104705
 TileSet.tres::TileSet::65382799103943870::1717104705::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn<>uid://dmxce0x8w3bwe::::res://Level Scenes/void.tscn<>uid://dgujda36gnibk::::res://Level Scenes/Collapsable/Collapsable.tscn<>uid://dl2hkp4ebhg8w::::res://Level Scenes/DoorTrigger/door_trigger.tscn<>uid://buy8jko2bv6e6::::res://Character/Enemy/enemy.tscn
 void.tscn::PackedScene::8049138790384345108::1716083260::0::1::::<><>::uid://j0glf0nj5ale::::res://Level Scenes/wall.tscn
@@ -113,7 +113,8 @@ options_menu.tscn::PackedScene::5407209952751290237::1715025647::0::1::::<><>::r
 ::res://Music/::1717112714
 lostinspace.wav::AudioStreamWAV::1168026596195000444::1717112714::1717112714::1::::<><>::
 lostinspace_techno_version.wav::AudioStreamWAV::4190329369919545352::1717112714::1717112714::1::::<><>::
-::res://Particles/::1717212065
+::res://Particles/::1717254491
+Explosion.tscn::PackedScene::5561881859092936389::1717254491::0::1::::<><>::
 StepParticles.gd::GDScript::-1::1717179197::0::1::::<>CPUParticles2D<>::
 StepParticles.tscn::PackedScene::3277276037074310259::1717212065::0::1::::<><>::res://Particles/StepParticles.gd<>uid://bm15frhftj1w1::::res://CTX/particles_xx1.png
 ::res://SoundComponent/::1717249782
