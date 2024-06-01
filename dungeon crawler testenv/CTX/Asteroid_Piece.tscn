@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gn22aq4nnvsr"]
+
+[ext_resource type="Texture2D" uid="uid://r7qxpi3gxc8p" path="res://CTX/small_Asteroid_ss.png" id="1_65dr8"]
+[ext_resource type="Script" path="res://CTX/Asteroid_Piece.gd" id="2_fjdi4"]
+
+[node name="AsteroidPiece" type="Sprite2D"]
+z_index = 7
+texture = ExtResource("1_65dr8")
+hframes = 8
+vframes = 2
+script = ExtResource("2_fjdi4")

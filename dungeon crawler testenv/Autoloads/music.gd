@@ -23,6 +23,10 @@ func switch_themes():
 	theme.stop()
 	theme_techno.play(playback_position)
 
+func stop():
+	theme.stop()
+	theme_techno.stop()
+
 func repeat_theme(theme):
 	theme.play()
 

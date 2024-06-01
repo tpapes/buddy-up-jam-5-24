@@ -9,10 +9,12 @@ enum ShakeStates {IDLE = 0, FIRST, SECOND, THIRD}
 @onready var collision:= $Area2D
 @onready var particles:= [$BackParticles, $FrontParticles]
 
+var game_pl:= preload("res://CTX/EndingCutscene.tscn")
+
 signal just_broke
 
-const SHAKE_LENGTH:= 2
-const SHAKE_SPEED:= 80
+const SHAKE_LENGTH:= 3
+const SHAKE_SPEED:= 100
 const SCALE_DIMINISH_FACTOR:= 0.96
 
 var is_broken:= false
@@ -36,17 +38,18 @@ func attempt_undo(prev_health: int):
 	elif prev_health > 0 and health == 0:
 		unbreak_frac()
 	if prev_health == health + 1:
-		scale /= SCALE_DIMINISH_FACTOR
-		collision.scale *= SCALE_DIMINISH_FACTOR
+		pass
+		#scale /= SCALE_DIMINISH_FACTOR
+		#collision.scale *= SCALE_DIMINISH_FACTOR
 	health = prev_health
 
 func break_frac():
+	shake_lerp = 1
 	health -= 1
 	if health > 0:
 		shaking = ShakeStates.FIRST
-		shake_lerp = 1
-		scale *= SCALE_DIMINISH_FACTOR
-		collision.scale /= SCALE_DIMINISH_FACTOR
+		#scale *= SCALE_DIMINISH_FACTOR
+		#collision.scale /= SCALE_DIMINISH_FACTOR
 		return
 	var spr : Sprite2D = self.get_node(".")
 	var p = spr.region_rect.position + Vector2.RIGHT * 32
@@ -57,7 +60,6 @@ func break_frac():
 	is_broken = true
 	offset.x = 0
 	shaking = 0
-	shake_lerp = 0
 	scale = original_scale
 	collision.scale = Vector2.ONE
 	for particle in particles:
@@ -80,7 +82,6 @@ func shake_process(delta):
 	var direction = -1
 	if shaking == ShakeStates.SECOND:
 		direction = 1
-	shake_lerp -= delta * 4
 	offset.x = SHAKE_LENGTH * shake_lerp * sin(shake_lerp * SHAKE_SPEED) 
 	#if offset.length() > SHAKE_LENGTH and (shaking == ShakeStates.FIRST or \
 			#shaking == ShakeStates.SECOND):
@@ -95,4 +96,8 @@ func _process(delta):
 	var spr:Sprite2D = self
 	spr.frame = 3 - health
 	shake_process(delta)
-	if (shake_lerp > 0): spr.frame = 3
+	shake_lerp -= delta * 5
+	if (shake_lerp > 0):
+		spr.frame = 3
+	elif (health <= 0):
+		get_tree().change_scene_to_packed(game_pl)

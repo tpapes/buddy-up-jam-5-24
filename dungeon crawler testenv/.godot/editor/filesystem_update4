@@ -1,7 +1,15 @@
-res://Particles/Explosion.tscn
 res://CTX/TileStuff.tscn
 res://CTX/Player_CTX.tscn
 res://SoundComponent/SoundComponent.tscn
 res://CTX/Element0_CTX.tscn
 res://Menus/MainMenu.tscn
 res://CTX/BigFracPoint_CTX.tscn
+res://Particles/Explosion.tscn
+res://CTX/BigFracPoint_CTX.gd
+res://CTX/Asteroid_Piece.tscn
+res://CTX/EndingCutscene.tscn
+res://CTX/Asteroid_Piece.gd
+res://CTX/FinalCutscene.gd
+res://CTX/GDScrAttempt_Cortex.gd
+res://Autoloads/music.gd
+res://Menus/MainMenu.gd

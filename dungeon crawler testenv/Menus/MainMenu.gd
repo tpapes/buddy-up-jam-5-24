@@ -36,4 +36,3 @@ func start_game():
 	Music.switch_themes()
 	get_tree().change_scene_to_packed(game_pl)
 
-

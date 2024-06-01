@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://clihm8fecroiv"]
 
 [sub_resource type="Gradient" id="Gradient_eexs6"]
-offsets = PackedFloat32Array(0, 0.346154, 0.679487, 1)
-colors = PackedColorArray(1, 0.117647, 0, 1, 1, 0.333333, 0.027451, 1, 1, 0.701961, 0.0627451, 0.447059, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.117647, 0, 1)
 
 [node name="Explosion" type="CPUParticles2D"]
 emitting = false

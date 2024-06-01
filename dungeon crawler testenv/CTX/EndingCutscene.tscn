@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://d37bplifcf073"]
+
+[ext_resource type="PackedScene" uid="uid://gn22aq4nnvsr" path="res://CTX/Asteroid_Piece.tscn" id="1_3tuo8"]
+[ext_resource type="PackedScene" uid="uid://clihm8fecroiv" path="res://Particles/Explosion.tscn" id="1_f2fr0"]
+[ext_resource type="Script" path="res://CTX/FinalCutscene.gd" id="2_grqm8"]
+
+[sub_resource type="Curve" id="Curve_511s7"]
+_data = [Vector2(0, 1), 0.0, -2.50302, 0, 0, Vector2(1, 0.0105847), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_w3pji"]
+offsets = PackedFloat32Array(0, 0.466102, 0.838983, 1)
+colors = PackedColorArray(0.872591, 0.869577, 0.854857, 1, 0.666239, 0.659975, 0.669294, 1, 0.416386, 0.486932, 0.612661, 1, 0.306, 0.3564, 0.45, 1)
+
+[node name="EndingCutscene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 580.0
+offset_bottom = 320.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 160)
+zoom = Vector2(2, 2)
+script = ExtResource("2_grqm8")
+
+[node name="Explosion" parent="Camera2D" instance=ExtResource("1_f2fr0")]
+position = Vector2(-45, -31)
+scale = Vector2(2, 2)
+lifetime = 3.0
+initial_velocity_min = 50.0
+initial_velocity_max = 350.0
+scale_amount_min = 0.5
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_511s7")
+color_ramp = null
+color_initial_ramp = SubResource("Gradient_w3pji")
+
+[node name="AsteroidPiece" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(243, 129)
+
+[node name="AsteroidPiece2" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(249, 141)
+frame = 1
+
+[node name="AsteroidPiece3" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(261, 149)
+frame = 2
+
+[node name="AsteroidPiece5" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(279, 135)
+frame = 4
+
+[node name="AsteroidPiece4" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(273, 145)
+frame = 3
+
+[node name="AsteroidPiece6" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(291, 147)
+frame = 5
+
+[node name="AsteroidPiece7" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(303, 141)
+frame = 6
+
+[node name="AsteroidPiece8" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(321, 145)
+frame = 7
+
+[node name="AsteroidPiece9" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(325, 155)
+frame = 8
+
+[node name="AsteroidPiece10" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(323, 167)
+frame = 9
+
+[node name="AsteroidPiece11" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(315, 177)
+frame = 10
+
+[node name="AsteroidPiece12" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(299, 175)
+frame = 11
+
+[node name="AsteroidPiece13" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(295, 187)
+frame = 12
+
+[node name="AsteroidPiece14" parent="." instance=ExtResource("1_3tuo8")]
+position = Vector2(277, 187)
+frame = 13

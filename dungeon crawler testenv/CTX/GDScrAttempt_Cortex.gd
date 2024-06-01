@@ -60,6 +60,9 @@ func _unhandled_input(event):
 		inputLog.y = 1
 	if inputLog != Vector2.ZERO and not inputLog in held_directions:
 		held_directions.append(inputLog)
+	
+	if (event.is_action_pressed("r")):
+		get_tree().reload_current_scene()
 
 func update_move_state(delta):
 	if is_moving:
@@ -141,4 +144,3 @@ func _process(delta):
 	
 	if (camera != null):
 		camera.position = sprite.offset
-	pass
