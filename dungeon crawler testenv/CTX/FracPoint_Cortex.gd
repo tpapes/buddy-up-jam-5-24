@@ -36,6 +36,7 @@ func break_frac():
 	health -= 1
 	if health > 0:
 		shaking = ShakeStates.FIRST
+		just_broke.emit()
 		return
 	var spr : Sprite2D = self.get_node(".")
 	var p = spr.region_rect.position + Vector2.RIGHT * 32
