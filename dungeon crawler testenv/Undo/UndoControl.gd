@@ -28,6 +28,7 @@ class EnemyState:
 		move_pattern = _move_pattern
 		offset = _offset
 
+
 func init(_all_items: Array):
 	all_items = _all_items
 
@@ -54,7 +55,7 @@ func update_states():
 		elif item.is_in_group("gate"):
 			current_state[item] = item.is_open
 		elif item.is_in_group("frac_point"):
-			current_state[item] = item.is_broken
+			current_state[item] = item.health
 		elif item.is_in_group("pressure_plate"):
 			current_state[item] = item.is_triggered
 	item_states.append(current_state)
