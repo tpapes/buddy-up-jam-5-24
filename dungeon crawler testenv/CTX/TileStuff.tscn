@@ -1208,7 +1208,7 @@ color_ramp = SubResource("Gradient_pm7ra")
 
 [node name="Player_CTX" parent="." instance=ExtResource("3_0wtbg")]
 y_sort_enabled = true
-position = Vector2(112, 48)
+position = Vector2(1200, 1488)
 
 [node name="Camera2D" type="Camera2D" parent="Player_CTX" groups=["player"]]
 scale = Vector2(4, 4)

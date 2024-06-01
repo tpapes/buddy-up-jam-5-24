@@ -6,15 +6,18 @@ enum ShakeStates {IDLE = 0, FIRST, SECOND, THIRD}
 
 @onready var drill_obj : Node2D
 @onready var area = $Area2D
+@onready var collision:= $Area2D
 @onready var particles:= [$BackParticles, $FrontParticles]
 
 signal just_broke
 
 const SHAKE_LENGTH:= 2
 const SHAKE_SPEED:= 40
+const SCALE_DIMINISH_FACTOR:= 0.96
 
 var is_broken:= false
 var shaking:= 0
+var original_scale: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,18 +27,24 @@ func _ready():
 	for particle in particles:
 		particle.one_shot = true
 		particle.emitting = false
+	original_scale = scale
 
 func attempt_undo(prev_health: int):
 	if prev_health == 0 and health > 0:
 		break_frac()
 	elif prev_health > 0 and health == 0:
 		unbreak_frac()
+	if prev_health == health + 1:
+		scale /= SCALE_DIMINISH_FACTOR
+		collision.scale *= SCALE_DIMINISH_FACTOR
 	health = prev_health
 
 func break_frac():
 	health -= 1
 	if health > 0:
 		shaking = ShakeStates.FIRST
+		scale *= SCALE_DIMINISH_FACTOR
+		collision.scale /= SCALE_DIMINISH_FACTOR
 		return
 	var spr : Sprite2D = self.get_node(".")
 	var p = spr.region_rect.position + Vector2.RIGHT * 32
@@ -46,6 +55,8 @@ func break_frac():
 	is_broken = true
 	offset.x = 0
 	shaking = 0
+	scale = original_scale
+	collision.scale = Vector2.ONE
 	for particle in particles:
 		particle.emitting = true
 	just_broke.emit()
