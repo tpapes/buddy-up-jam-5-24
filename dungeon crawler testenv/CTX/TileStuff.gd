@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player: Node
+@export var final_crystal: Node
 
 var undo_control_pl:= preload("res://Undo/UndoControl.tscn")
 var undo_control: UndoControl
@@ -9,6 +10,7 @@ var sound_component: SoundComponent
 
 func _ready():
 	assert(player != null, "player variable must be set in Inspector.")
+	assert(final_crystal != null, "final_crystal variable must be set in Inspector.")
 	prep_undo_control()
 	prep_sound_component()
 	sound_component.play_sound(sound_component.SoundEnum.MENU_CLICK)
@@ -17,6 +19,7 @@ func _ready():
 	player.add_particles.connect(add_child)
 	for enemy in get_items(self, "enemy"):
 		enemy.add_particles.connect(add_child)
+	final_crystal.finish_game.connect(finish_game)
 
 func prep_undo_control():
 	undo_control = undo_control_pl.instantiate()
@@ -61,4 +64,5 @@ func get_items(parent_node: Node, group: String) -> Array:
 		items.append_array(get_items(child, group))
 	return items
 
-
+func finish_game():
+	get_tree().change_scene_to_file("res://CTX/EndingCutscene.tscn")

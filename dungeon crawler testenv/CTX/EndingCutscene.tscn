@@ -25,7 +25,6 @@ zoom = Vector2(2, 2)
 script = ExtResource("2_grqm8")
 
 [node name="Explosion" parent="Camera2D" instance=ExtResource("1_f2fr0")]
-position = Vector2(-45, -31)
 scale = Vector2(2, 2)
 lifetime = 3.0
 initial_velocity_min = 50.0

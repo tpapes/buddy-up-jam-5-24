@@ -9,8 +9,6 @@ extends Node2D
 @onready var back_buttons:= [$HelpCanvas/Back,$CreditsCanvas/Back]
 @onready var button_sound:= $ButtonSound
 
-var game_pl:= preload("res://CTX/TileStuff.tscn")
-
 func _ready():
 	Music.play_theme()
 	help_button.pressed.connect(show_menu.bind(help_canvas))
@@ -34,5 +32,5 @@ func connect_button_sounds(node: Node):
 
 func start_game():
 	Music.switch_themes()
-	get_tree().change_scene_to_packed(game_pl)
+	get_tree().change_scene_to_file("res://CTX/TileStuff.tscn")
 

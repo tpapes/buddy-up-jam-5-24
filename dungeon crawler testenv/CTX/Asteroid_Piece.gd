@@ -13,7 +13,7 @@ func _ready():
 	if (timer != null):
 		timer.explode.connect(_on_explode)
 	speed += pow(randf_range(-1,1), 3) * 90
-	angle += pow(randf_range(-1,1), 3) * 125
+	angle += pow(randf_range(0,2 * PI), 3) * 125
 	ang_velocity = pow(randf_range(-1,1), 3) * 10
 	pass # Replace with function body.
 

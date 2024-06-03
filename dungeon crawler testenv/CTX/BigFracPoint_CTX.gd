@@ -9,9 +9,8 @@ enum ShakeStates {IDLE = 0, FIRST, SECOND, THIRD}
 @onready var collision:= $Area2D
 @onready var particles:= [$BackParticles, $FrontParticles]
 
-var game_pl:= preload("res://CTX/EndingCutscene.tscn")
-
 signal just_broke
+signal finish_game
 
 const SHAKE_LENGTH:= 3
 const SHAKE_SPEED:= 100
@@ -100,4 +99,5 @@ func _process(delta):
 	if (shake_lerp > 0):
 		spr.frame = 3
 	elif (health <= 0):
-		get_tree().change_scene_to_packed(game_pl)
+		await get_tree().create_timer(1).timeout
+		finish_game.emit()
